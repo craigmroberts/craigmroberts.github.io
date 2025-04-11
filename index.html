@@ -4,19 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Craig - Shopify Development</title>
+  <link rel="stylesheet" href="base.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-
     .section-hero {
       position: relative;
       height: 90vh;
@@ -53,62 +42,6 @@
       text-align: center;
       background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
     }
-
-    .hero__content h1 {
-      font-size: 1.75rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
-
-    .button-group {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .button {
-  position: relative;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  color: white;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 12px;
-  background: transparent;
-  z-index: 1;
-  cursor: pointer;
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 2px;
-  background: linear-gradient(90deg, #fbbc04, #ea4335);
-  -webkit-mask: 
-    linear-gradient(#fff 0 0) content-box, 
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-  pointer-events: none;
-}
-
-    .button:last-child::before {
-        background: linear-gradient(90deg, #4285f4, #34a853);
-    }
-
-    .button:hover {
-      
-    }
-
-    @media (min-width: 768px) {
-      .hero__content h1 {
-        font-size: 2.5rem;
-      }
-    }
   </style>
 </head>
 <body>
@@ -127,7 +60,7 @@
       </div>
     </div>
   </section>
-  <section class="section-brands">
+  <section class="section-brands container">
     <h2>Brands I've worked with</h2>
     <ul>
         <li>
@@ -150,7 +83,7 @@
         </li>
     </ul>
   </section>
-  <section class="section-articles">
+  <section class="section-articles container">
     <h2>Latest Articles</h2>
     <ul>
         <li>
