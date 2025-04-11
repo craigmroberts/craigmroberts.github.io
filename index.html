@@ -1,7 +1,171 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craig - Shopify Development</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .section-hero {
+      position: relative;
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    .logo {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      width: 70px;
+      z-index: 2;
+    }
+
+    .hero__background {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .hero__content {
+      position: relative;
+      z-index: 3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
+    }
+
+    .hero__content h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .button {
+  position: relative;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 12px;
+  background: transparent;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(90deg, #fbbc04, #ea4335);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+}
+
+    .button:last-child::before {
+        background: linear-gradient(90deg, #4285f4, #34a853);
+    }
+
+    .button:hover {
+      
+    }
+
+    @media (min-width: 768px) {
+      .hero__content h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+  <section class="section-hero">
+    <img class="logo"
+         src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
+         alt="Craig Logo">
+    <img class="hero__background"
+         src="./hero-background.png"
+         alt="Background image of Craig">
+    <div class="container hero__content">
+      <h1>Shopify development, simplified and styled</h1>
+      <div class="button-group">
+        <a class="button" href="#work">View work</a>
+        <a class="button" href="#articles">See articles</a>
+      </div>
+    </div>
+  </section>
+  <section class="section-brands">
+    <h2>Brands I've worked with</h2>
+    <ul>
+        <li>
+            <h3>Brand 1</h3>
+        </li>
+        <li>
+            <h3>Brand 2</h3>
+        </li>
+        <li>
+            <h3>Brand 3</h3>
+        </li>
+        <li>
+            <h3>Brand 4</h3>
+        </li>
+        <li>
+            <h3>Brand 5</h3>
+        </li>
+        <li>
+            <h3>Brand 6</h3>
+        </li>
+    </ul>
+  </section>
+  <section class="section-articles">
+    <h2>Latest Articles</h2>
+    <ul>
+        <li>
+            <h3>Building a streamlined checkout journey</h3>
+            <p>April 2024</p>
+        </li>
+        <li>
+            <h3>The power of micro-interactions</h3>
+            <p>April 2024</p>
+        </li>
+        <li>
+            <h3>Enhancing UX with prototyping</h3>
+            <p>April 2024</p>
+        </li>
+    </ul>
+  </section>
 </body>
 </html>
