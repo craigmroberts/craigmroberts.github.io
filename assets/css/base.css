@@ -46,22 +46,23 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 600;
   margin-bottom: var(--space-sm);
 }
 
-h1 { font-size: var(--font-size-xl); }
+h1, .h1 { font-size: var(--font-size-xl); }
 @media (min-width: 768px) {
-  h1 {
+  h1, .h1 {
     font-size: var(--font-size-xxl);
   }
 }
-h2 { font-size: var(--font-size-xl); }
-h3 { font-size: var(--font-size-lg); }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1.125rem; }
-h6 { font-size: var(--font-size-sm); }
+h2, .h2 { font-size: var(--font-size-xl); }
+h3, .h3 { font-size: var(--font-size-lg); }
+h4, .h4 { font-size: 1.25rem; }
+h5, .h5 { font-size: 1.125rem; }
+h6, .h6 { font-size: var(--font-size-sm); }
 
 p { margin-bottom: var(--space-sm); }
 a { color: var(--color-accent-3); text-decoration: none; }
@@ -79,9 +80,19 @@ a:hover { text-decoration: underline; }
   margin: 0 auto;
   padding: var(--space-sm);
 }
+
 .section {
-  padding: var(--space-lg) 0;
+  margin: var(--space-lg) 0;
 }
+
+.section:first-child {
+  margin-top: 0;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
 .flex {
   display: flex;
 }
@@ -117,6 +128,10 @@ a:hover { text-decoration: underline; }
   background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-white {
+  color: var(--color-text);
 }
 
 /* Updated Button Gradient */
@@ -203,6 +218,12 @@ legend {
 ul, ol {
   margin-left: var(--space-md);
   margin-bottom: var(--space-sm);
+}
+
+ul.list-unstyled,
+ol.list-unstyled {
+  list-style: none;
+  margin-left: 0;
 }
 
 li {

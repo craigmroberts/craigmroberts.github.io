@@ -1,0 +1,21 @@
+.footer {
+    padding: 2rem;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: var(--color-accent-1);
+    position: absolute;
+    top: 0;
+    left: 2rem;
+    right: 2rem;
+    z-index: 1;
+}
+
+.footer__logo {
+    width: 130px;
+    margin: 1rem auto;
+}

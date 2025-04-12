@@ -4,49 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Craig - Shopify Development</title>
-  <link rel="stylesheet" href="base.css?id=1" />
-  <style>
-    .section-hero {
-      position: relative;
-      height: 90vh;
-      overflow: hidden;
-    }
-
-    .logo {
-      position: absolute;
-      top: 1.5rem;
-      left: 1.5rem;
-      width: 70px;
-      z-index: 2;
-    }
-
-    .hero__background {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      z-index: 1;
-    }
-
-    .hero__content {
-      position: relative;
-      z-index: 3;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 3rem 1.5rem;
-      text-align: center;
-      background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
-    }
-  </style>
+  <link rel="stylesheet" href="./assets/css/base.css" />
+  <link rel="stylesheet" href="./assets/css/hero.css" />
+  <link rel="stylesheet" href="./assets/css/footer.css" />
 </head>
 <body>
-  <section class="section-hero">
-    <img class="logo"
+  <section class="section-hero section hero">
+    <img class="hero__logo"
          src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
          alt="Craig Logo">
     <img class="hero__background"
@@ -60,7 +24,7 @@
       </div>
     </div>
   </section>
-  <section class="section-brands container">
+  <section class="section-brands brands section container">
     <h2>Brands I've worked with</h2>
     <ul>
         <li>
@@ -83,7 +47,7 @@
         </li>
     </ul>
   </section>
-  <section class="section-articles container">
+  <section class="section-articles articles section container">
     <h2>Recent Articles</h2>
     <ul>
         <li>
@@ -100,5 +64,22 @@
         </li>
     </ul>
   </section>
+
+  <footer class="section-footer footer container">
+    <img class="footer__logo"
+         src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
+         alt="Craig Logo">
+         <ul class="list-unstyled">
+          <li>
+            <a class="h2 text-white" href="#Projects">Projects</a>
+          </li>
+          <li>
+            <a class="h2 text-white" href="#Articles">Articles</a>
+          </li>
+          <li>
+            <a class="h2 text-white" href="#Contact">Contact</a>
+          </li>
+      </ul>
+  </footer>
 </body>
 </html>
