@@ -106,18 +106,40 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   z-index: 1;
 }
+/* Gradient Text Utilities */
+.text-gradient-1 {
+  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
+.text-gradient-2 {
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Updated Button Gradient */
 .button::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
+}
+
+/* Button Variant Classes */
+.button.button--style-1::before {
+  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+}
+
+.button.button--style-2::before {
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
 }
 
 /* Form Elements */
