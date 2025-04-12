@@ -135,9 +135,20 @@ a:hover { text-decoration: underline; }
   z-index: 1;
 }
 
-.button.animate::before {
+.button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
   background-size: 200% 200%;
-  animation: animate-gradient 5s ease infinite;
+  background-position: 0% 50%;
+  transition: background-position 0.3s ease;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
 }
 
 /* Gradient Text Utilities */
@@ -184,6 +195,11 @@ a:hover { text-decoration: underline; }
 
 .button.button--style-2::before {
   background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+}
+
+.button.animate::before {
+  background-size: 200% 200%;
+  animation: animate-gradient 5s ease infinite;
 }
 
 /* Form Elements */
