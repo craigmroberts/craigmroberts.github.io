@@ -103,6 +103,23 @@ a:hover { text-decoration: underline; }
 .space-between { justify-content: space-between; }
 .align-center { align-items: center; }
 
+@keyframes animate-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate {
+  background-size: 200% 200%;
+  animation: animate-gradient 5s ease infinite;
+}
+
 /* Buttons */
 .button {
   position: relative;
@@ -117,6 +134,12 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   z-index: 1;
 }
+
+.button.animate::before {
+  background-size: 200% 200%;
+  animation: animate-gradient 5s ease infinite;
+}
+
 /* Gradient Text Utilities */
 .text-gradient-1 {
   background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
@@ -132,6 +155,12 @@ a:hover { text-decoration: underline; }
 
 .text-white {
   color: var(--color-text);
+}
+
+.text-gradient-1.animate,
+.text-gradient-2.animate {
+  background-size: 200% 200%;
+  animation: animate-gradient 5s ease infinite;
 }
 
 /* Updated Button Gradient */
