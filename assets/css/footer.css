@@ -6,16 +6,18 @@
 .footer::before {
     content: '';
     display: block;
-    height: 1px;
-    background-color: var(--color-accent-1);
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
     position: absolute;
     top: 0;
-    left: 2rem;
-    right: 2rem;
+    left: 0;
+    right: 0;
     z-index: 1;
+    margin: auto;
+    max-width: 50vw;
 }
 
 .footer__logo {
     width: 130px;
-    margin: 1rem auto;
+    margin: 1rem auto 2rem;
 }
