@@ -51,17 +51,52 @@ class MediumArticles extends HTMLElement {
   
           const articleElement = document.createElement('div');
           articleElement.innerHTML = articleHTML;
-  
-          this.appendChild(articleElement.firstElementChild);
 
-          window.animateText(document);
+          
+          // check if swiper-wrapper already exists
+            const swiperWrapper = this.querySelector('.swiper-wrapper');
+            if (swiperWrapper) {
+                // If it exists, append the new article element to it
+                swiperWrapper.appendChild(articleElement.firstElementChild);
+            } else {
+                this.appendChild(articleElement.firstElementChild);
+            }
         });
+        
+        window.animateText(document);
+        // Initialize Swiper after appending all articles
+        new Swiper(this, {
+            slidesPerView: 1.15, // Default for small screens
+            spaceBetween: 24,
+            loop: true,
+            grabCursor: true,
+            freeModeMomentum: false,
+            autoplay: false,
+            navigation: {
+                nextEl: '#articles-btn-next',
+                prevEl: '#articles-btn-previous',
+            },
+            breakpoints: {
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 32,
+              },
+              968: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+              },
+              1200: {
+                slidesPerView: 4,
+                spaceBetween: 48,
+              }
+            }
+          });          
+
       } catch (error) {
         console.error('Error fetching Medium articles:', error);
       }
     }
-  }
+}
   
-  // Register the custom element
-  customElements.define('medium-articles', MediumArticles);
-  
+// Register the custom element
+customElements.define('medium-articles', MediumArticles);

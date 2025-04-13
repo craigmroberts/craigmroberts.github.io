@@ -1,7 +1,7 @@
 .articles {
     max-width: initial;
 }
-.articles__content {
+/* .articles__content {
     display: flex;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--space-md);
@@ -11,12 +11,9 @@
     -ms-overflow-style: none;
     margin: 0 0 0 0
   }
-  
-.articles__content::-webkit-scrollbar {
-    display: none
-}
+   */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .articles__content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -33,7 +30,7 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
     }
-}
+} */
 
   article-card {
     display: block;
@@ -42,9 +39,8 @@
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    min-width: calc(100% - 3rem);
-    max-width: calc(100% - 3rem);
-    scroll-snap-align: start
+    /* min-width: calc(100% - 3rem); */
+    /* max-width: calc(100% - 3rem); */
   }
   
   article-card:hover {
@@ -102,3 +98,31 @@
     color: var(--color-accent-4);
   }
   
+
+.articles__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+
+.articles .swiper-buttons button {
+    aspect-ratio: 1;
+    width: 40px;
+    display: flex;
+    position: relative;
+    color: white;
+    left: initial;
+    right: initial;
+}
+
+.articles .swiper-buttons button::after {
+    display: none;
+}
+
+.articles .swiper-buttons {
+    display: flex;
+}
+
+.articles__header h2 {
+    margin: 0;
+}

@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="./assets/css/footer.css" />
   <link rel="stylesheet" href="./assets/css/articles.css" />
   <link rel="stylesheet" href="./assets/css/scroll-animate.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
 </head>
 <body>
   <section class="section-hero section hero">
@@ -51,7 +53,7 @@
         filter: invert(1);
       }
     </style>
-    <h2 class="text-gradient-2 animate scroll-animate">Brands I’ve Worked With</h2>
+    <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
     <div class="brands__content">
       <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
       <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
@@ -80,14 +82,23 @@
   </section>
 
   <section class="section-articles articles section container">
-    <h2 class="text-gradient-1 animate scroll-animate">Recent Articles</h2>
+    <div class="articles__header">
+      <h2 class="text-gradient-1 animate">Recent Articles</h2>
+      <div class="swiper-buttons">
+        <button id="articles-btn-previous" class="swiper-button-prev button" aria-label="Previous slide">←</button>
+        <button id="articles-btn-next" class="swiper-button-next button" aria-label="Next slide">→</button>
+      </div>      
+    </div>
 
-    <medium-articles class="articles__content" data-limit="4" data-username="craigmroberts">
+    <medium-articles class="articles__content swiper" data-limit="10" data-username="craigmroberts">
+      <div class="swiper-wrapper">
+
+      </div>
       <template data-type="article-card">
-        <article-card id="{{ article.guid }}">
+        <article-card id="{{ article.guid }}" class="article-card swiper-slide">
           <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
           <div class="article-card__content">
-            <h3 class="article-card__title scroll-animate">{{ article.title }}</h3>
+            <h3 class="article-card__title">{{ article.title }}</h3>
             <p class="article-card__description">{{ article.description }}</p>
             <div class="article-card__meta">
               <span class="article-card__author">{{ article.author }}</span>
@@ -102,77 +113,103 @@
   </section>
 
 <style>
-.brands-marquee {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-}
-
-.brands-marquee__content {
-  display: flex;
-  gap: 3rem;
-  animation: scroll-marquee 40s linear infinite;
-  width: max-content;
-  padding: 1rem 0;
-}
-
-.brands-marquee__content img {
-  height: 40px;
-  object-fit: contain;
-  flex-shrink: 0;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-.brands-marquee__content img {
-  filter: invert(1);
-}
-
-.brands-marquee__content img:hover {
-  opacity: 1;
-}
-
-/* Keyframes */
-@keyframes scroll-marquee {
-  0% {
-    transform: translateX(0%);
+  .brands-swiper .swiper-wrapper {
+    will-change: transform;
+    -webkit-transition-timing-function:linear!important;
+    transition-timing-function:linear!important; 
+    position: relative;
   }
-  100% {
-    transform: translateX(-50%);
+
+  .brands-swiper .swiper-slide {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-}
 
+  .brands-swiper {
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+  }
 
+  .brands-swiper img {
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    filter: invert(1);
+  }
+
+  .brands-swiper img:hover {
+    opacity: 1;
+  }
 </style>
 
-  <div class="brands-marquee">
-    <div class="brands-marquee__content">
+<div class="swiper brands-swiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
       <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
-      <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
-      <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
-      <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
-
-      <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
-      <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
-      <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
-      <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
-      
-      <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
-      <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
-      <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
-      <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
-      
-      <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
-      <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
-      <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
-      <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
-      
-      <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
-      <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
-      <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
     </div>
-  </div>  
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+    </div>
+
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+    </div>
+    
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+    </div>
+    
+    <div class="swiper-slide">
+      <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+    </div>
+    
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+    </div>
+    <div class="swiper-slide">
+      <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" /> 
+    </div>
+  </div>
+</div>
 
   <footer class="section-footer footer">
     <ul class="list-unstyled footer__links">
@@ -213,8 +250,10 @@
     </ul>
   </footer>
 
+  <script src="./assets/js/scroll-animate.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="./assets/js/medium-articles.js"></script>
-<script src="./assets/js/scroll-animate.js"></script>
+<script src="./assets/js/brands-swiper.js"></script>
 
 </body>
 </html>
