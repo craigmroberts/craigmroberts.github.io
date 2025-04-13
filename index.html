@@ -34,6 +34,16 @@
         max-width: initial;
       }
 
+      .brands__header {
+          display: flex;
+          justify-content: space-between;
+          padding: 1rem 0;
+      }
+
+      .brands__header h2 {
+        margin: 0;
+      }
+
       .brands .brands__content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -41,6 +51,12 @@
         align-items: center;
         margin-top: 3rem;
         max-width: initial;
+        grid-auto-flow: dense;
+      }
+
+      .brands .large-block {
+        grid-column: span 2;
+        grid-row: span 2;
       }
 
       @media (min-width: 768px) {
@@ -51,7 +67,7 @@
 
       @media (min-width: 1024px) {
         .brands .brands__content {
-          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         }
       }
 
@@ -77,6 +93,8 @@
           max-height: 40px;
           width: auto;
           margin: auto;
+          max-width: 50%;
+          max-height: 80%;
       }
 
       .brands__item {
@@ -89,150 +107,154 @@
     object-fit: cover;
 }
     </style>
-    <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
-    <div class="brands__content">
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
+    <div class="brands__header sticky">
+      <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
+    </div>
+    <div id="brands-worked-with" class="swiper">
+      <div class="brands__content swiper-wrapper">
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/patou.jpg" alt="Patou logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/patou.jpg" alt="Patou logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/triangl.jpg" alt="Triangl logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/triangl.jpg" alt="Triangl logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/pucci.jpg" alt="Pucci logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/pucci.jpg" alt="Pucci logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/victoria-beckham.jpg" alt="Victoria Beckham logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/victoria-beckham.jpg" alt="Victoria Beckham logo" />
-      </div>
-
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+  
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/kit-and-kaboodal.jpg" alt="Kit and Kaboodal logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/kit-and-kaboodal.jpg" alt="Kit and Kaboodal logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/mutt-motorcycles.jpg" alt="Mutt Motorcycles logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/mutt-motorcycles.jpg" alt="Mutt Motorcycles logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/medik8.webp" alt="Medik8 logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/medik8.webp" alt="Medik8 logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/indu.jpg" alt="Indu logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/indu.jpg" alt="Indu logo" />
-      </div>
-      
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+        
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/beis.jpg" alt="BÉIS logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/beis.jpg" alt="BÉIS logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/pattern.jpg" alt="Pattern logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/pattern.jpg" alt="Pattern logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/st-john.jpg" alt="St. John logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/st-john.jpg" alt="St. John logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/kjaer-weiss.jpg" alt="Kjaer Weis logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/kjaer-weiss.jpg" alt="Kjaer Weis logo" />
-      </div>
-      
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+        
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/new-era.jpg" alt="New Era logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-        src="./assets/brand-lifestyle/new-era.jpg" alt="New Era logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/rad.jpg" alt="R.A.D">
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/rad.jpg" alt="R.A.D">
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/rhino-greenhouses.jpg" alt="Rhino Greenhouses logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/rhino-greenhouses.jpg" alt="Rhino Greenhouses logo" />
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/protectapet.jpg" alt="ProtectaPet logo" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/protectapet.jpg" alt="ProtectaPet logo" />
-      </div>
-      
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+        
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/and-sons.jpg" alt="&brand-lifestyle/patou.jpg"/>
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/and-sons.jpg" alt="&brand-lifestyle/patou.jpg"/>
-      </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+        <div class="brands__item swiper-slide">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/pandco.jpg" alt="brand-lifestyle/patou.jpg" />
+          </div>
+        <div class="brands__item swiper-slide large-block">
+          <div class="brands__brand-logo">
+            <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
+          </div>
+          <img class="brands__brand-lifestyle-image"
+            src="./assets/brand-lifestyle/pangaia.jpg" />
         </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/pandco.jpg" alt="brand-lifestyle/patou.jpg" />
-        </div>
-      <div class="brands__item">
-        <div class="brands__brand-logo">
-          <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
-        </div>
-        <img class="brands__brand-lifestyle-image"
-          src="./assets/brand-lifestyle/pangaia.jpg" />
       </div>
     </div>
   </section>
 
   <section class="section-articles articles section container">
-    <div class="articles__header">
+    <div class="articles__header sticky">
       <h2 class="text-gradient-1 animate">Recent Articles</h2>
       <div class="swiper-buttons">
         <button id="articles-btn-previous" class="swiper-button-prev button" aria-label="Previous slide">←</button>
@@ -241,9 +263,7 @@
     </div>
 
     <medium-articles class="articles__content swiper" data-limit="10" data-username="craigmroberts">
-      <div class="swiper-wrapper">
-
-      </div>
+      <div class="swiper-wrapper"></div>
       <template data-type="article-card">
         <article-card id="{{ article.guid }}" class="article-card swiper-slide">
           <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
