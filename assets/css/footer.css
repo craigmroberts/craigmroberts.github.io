@@ -14,10 +14,34 @@
     right: 0;
     z-index: 1;
     margin: auto;
-    max-width: 50vw;
 }
 
 .footer__logo {
     width: 130px;
     margin: 1rem auto 2rem;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.footer__social img {
+    filter: invert(1);
+    color: white;
+    max-width: 16PX;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+    margin: auto 0;
+}
+
+.footer__links {
+    align-items: center;
+    height: fit-content;
+    margin: auto 0;
 }
