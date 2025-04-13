@@ -31,12 +31,13 @@
         max-width: initial;
       }
 
-      .brands .brands-grid {
+      .brands .brands__content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         gap: 3rem;
         align-items: center;
         margin-top: 3rem;
+        max-width: initial;
       }
 
       .brands img {
@@ -50,7 +51,7 @@
       }
     </style>
     <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
-    <div class="brands-grid">
+    <div class="brands__content">
       <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
       <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
       <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
@@ -78,9 +79,9 @@
   </section>
 
   <section class="section-articles articles section container">
-    <h2>Recent Articles</h2>
+    <h2 class="text-gradient-1 animate">Recent Articles</h2>
 
-    <medium-articles data-limit="4" data-username="craigmroberts">
+    <medium-articles class="articles__content" data-limit="4" data-username="craigmroberts">
       <template data-type="article-card">
         <article-card id="{{ article.guid }}">
           <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
