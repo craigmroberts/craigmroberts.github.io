@@ -43,6 +43,18 @@
         max-width: initial;
       }
 
+      @media (min-width: 768px) {
+        .brands .brands__content {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .brands .brands__content {
+          grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        }
+      }
+
       .brands img {
         width: 100%;
         height: auto;
