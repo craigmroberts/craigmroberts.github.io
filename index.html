@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./assets/css/base.css" />
   <link rel="stylesheet" href="./assets/css/hero.css" />
   <link rel="stylesheet" href="./assets/css/footer.css" />
+  <link rel="stylesheet" href="./assets/css/articles.css" />
 </head>
 <body>
   <section class="section-hero section hero">
@@ -14,9 +15,9 @@
          src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
          alt="Craig Logo">
     <img class="hero__background"
-         src="./bg-2.jpg"
+         src="./hero-background-2.png"
          alt="Background image of Craig">
-    <div class="container hero__content">
+    <div class="hero__content">
       <h1>Shopify development, simplified and styled</h1>
       <div class="button-group">
         <a class="button animate button--style-1" href="#work">View work</a>
@@ -26,6 +27,10 @@
   </section>
   <section class="section-brands section brands container">
     <style>
+      .brands {
+        max-width: initial;
+      }
+
       .brands .brands-grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -44,38 +49,56 @@
         filter: invert(1);
       }
     </style>
-    <div class="container">
-      <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
-      <div class="brands-grid">
-        <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
-        <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
-        <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
-        <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+    <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
+    <div class="brands-grid">
+      <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
+      <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+      <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+      <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
 
-        <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
-        <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
-        <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
-        <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
-        
-        <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
-        <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
-        <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
-        <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
-        
-        <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
-        <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
-        <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
-        <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
-        
-        <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
-        <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
-        <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
-      </div>
+      <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+      <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+      <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+      <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+      
+      <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+      <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+      <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+      <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+      
+      <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+      <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+      <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+      <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+      
+      <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+      <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+      <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
     </div>
   </section>
 
   <section class="section-articles articles section container">
     <h2>Recent Articles</h2>
+
+    <medium-articles data-limit="4" data-username="craigmroberts">
+      <template data-type="article-card">
+        <article-card id="{{ article.guid }}">
+          <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
+          <div class="article-card__content">
+            <h3 class="article-card__title">{{ article.title }}</h3>
+            <p class="article-card__description">{{ article.description }}</p>
+            <div class="article-card__meta">
+              <span class="article-card__author">{{ article.author }}</span>
+              <span class="article-card__date">{{ article.pubDate }}</span>
+              <span class="article-card__categories">{{ article.categories }}</span>
+            </div>
+            <a class="article-card__link" href="{{ article.link }}" target="_blank">Read more →</a>
+          </div>
+        </article-card>
+      </template>
+    </medium-articles>
+    
+
     <ul>
         <li>
             <h3 class="text-gradient-1 animate">Building a streamlined checkout journey</h3>
@@ -108,5 +131,8 @@
           </li>
       </ul>
   </footer>
+
+<script src="./assets/js/medium-articles.js"></script>
+
 </body>
 </html>
