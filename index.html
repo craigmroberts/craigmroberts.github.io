@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./assets/css/footer.css" />
   <link rel="stylesheet" href="./assets/css/articles.css" />
   <link rel="stylesheet" href="./assets/css/scroll-animate.css" />
+  <link rel="stylesheet" href="./assets/css/modal.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 </head>
@@ -443,10 +444,33 @@
     </ul>
   </footer>
 
+<modal id="modal" class="modal">
+  <div class="modal__content">
+    <button class="modal__close" aria-label="Close modal">×</button>
+    <button class="modal__drag-bar" aria-label="Drag modal"></button>
+
+    <div class="modal__inner-content">
+      <img class="modal__image" src="https://cdn-images-1.medium.com/max/1024/1*LK7LQc7L_KisbtVQmCfkKQ.jpeg" alt="Example image">
+      <h2 class="modal__title">Creating Custom Scrollbars for Your Website as a Web Component: A Workaround for iOS Safari…</h2>
+      <p class="modal__description">
+Creating Custom Scrollbars for Your Website as a Web Component: A Workaround for iOS Safari Limitations with Jest Tests
+Introduction
+Custom scrollbar...
+      </p>
+      <div class="modal__buttons">
+        <a class="button button--style-1" href="#work">View work</a>
+        <a class="button button--style-2" href="#articles">See articles</a>
+      </div>
+    </div>    
+  </div>
+  <div class="modal__overlay"></div>
+</modal>
+
   <script src="./assets/js/scroll-animate.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="./assets/js/medium-articles.js"></script>
-<script src="./assets/js/brands-swiper.js"></script>
+  <script src="./assets/js/medium-articles.js"></script>
+  <script src="./assets/js/modal.js"></script>
+  <script src="./assets/js/brands-swiper.js"></script>
 
 </body>
 </html>
