@@ -101,6 +101,79 @@
     </medium-articles>
   </section>
 
+<style>
+.brands-marquee {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.brands-marquee__content {
+  display: flex;
+  gap: 3rem;
+  animation: scroll-marquee 40s linear infinite;
+  width: max-content;
+  padding: 1rem 0;
+}
+
+.brands-marquee__content img {
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.brands-marquee__content img {
+  filter: invert(1);
+}
+
+.brands-marquee__content img:hover {
+  opacity: 1;
+}
+
+/* Keyframes */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+</style>
+
+  <div class="brands-marquee">
+    <div class="brands-marquee__content">
+      <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
+      <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+      <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+      <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+
+      <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+      <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+      <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+      <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+      
+      <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+      <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+      <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+      <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+      
+      <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+      <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+      <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+      <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+      
+      <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+      <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+      <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
+    </div>
+  </div>  
+
   <footer class="section-footer footer">
     <ul class="list-unstyled footer__links">
       <li>
