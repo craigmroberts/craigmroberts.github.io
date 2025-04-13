@@ -53,6 +53,8 @@ class MediumArticles extends HTMLElement {
           articleElement.innerHTML = articleHTML;
   
           this.appendChild(articleElement.firstElementChild);
+
+          window.animateText(document);
         });
       } catch (error) {
         console.error('Error fetching Medium articles:', error);

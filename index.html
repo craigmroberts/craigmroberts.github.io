@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./assets/css/hero.css" />
   <link rel="stylesheet" href="./assets/css/footer.css" />
   <link rel="stylesheet" href="./assets/css/articles.css" />
+  <link rel="stylesheet" href="./assets/css/scroll-animate.css" />
 </head>
 <body>
   <section class="section-hero section hero">
@@ -18,7 +19,7 @@
          src="./hero-background-2.png"
          alt="Background image of Craig">
     <div class="hero__content">
-      <h1>Shopify development, simplified and styled</h1>
+      <h1 class="scroll-animate">Shopify development, simplified and styled</h1>
       <div class="button-group">
         <a class="button animate button--style-1" href="#work">View work</a>
         <a class="button animate button--style-2" href="#articles">See articles</a>
@@ -50,7 +51,7 @@
         filter: invert(1);
       }
     </style>
-    <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
+    <h2 class="text-gradient-2 animate scroll-animate">Brands I’ve Worked With</h2>
     <div class="brands__content">
       <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
       <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
@@ -79,14 +80,14 @@
   </section>
 
   <section class="section-articles articles section container">
-    <h2 class="text-gradient-1 animate">Recent Articles</h2>
+    <h2 class="text-gradient-1 animate scroll-animate">Recent Articles</h2>
 
     <medium-articles class="articles__content" data-limit="4" data-username="craigmroberts">
       <template data-type="article-card">
         <article-card id="{{ article.guid }}">
           <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
           <div class="article-card__content">
-            <h3 class="article-card__title">{{ article.title }}</h3>
+            <h3 class="article-card__title scroll-animate">{{ article.title }}</h3>
             <p class="article-card__description">{{ article.description }}</p>
             <div class="article-card__meta">
               <span class="article-card__author">{{ article.author }}</span>
@@ -103,13 +104,13 @@
   <footer class="section-footer footer">
     <ul class="list-unstyled footer__links">
       <li>
-        <a class="text-white" href="#Projects">Projects</a>
+        <a class="text-white scroll-animate" href="#Projects">Projects</a>
       </li>
       <li>
-        <a class="text-white" href="#Articles">Articles</a>
+        <a class="text-white scroll-animate" href="#Articles">Articles</a>
       </li>
       <li>
-        <a class="text-white" href="#Contact">Contact</a>
+        <a class="text-white scroll-animate" href="#Contact">Contact</a>
       </li>
     </ul>
 
@@ -140,6 +141,7 @@
   </footer>
 
 <script src="./assets/js/medium-articles.js"></script>
+<script src="./assets/js/scroll-animate.js"></script>
 
 </body>
 </html>
