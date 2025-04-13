@@ -37,7 +37,7 @@
       .brands .brands__content {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 3rem;
+        gap: 1rem;
         align-items: center;
         margin-top: 3rem;
         max-width: initial;
@@ -52,32 +52,170 @@
       .brands img.invert {
         filter: invert(1);
       }
+
+      .brands__brand-logo {
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+      }
+
+      .brands__brand-logo img {
+          max-height: 40px;
+          width: auto;
+          margin: auto;
+      }
+
+      .brands__item {
+    background-color: rgba(255,255,255,0.09);
+    padding: 0.6rem;
+    border-radius: 0.6rem;
+}
+.brands img.brands__brand-lifestyle-image {
+    aspect-ratio: 1;
+    object-fit: cover;
+}
     </style>
     <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
     <div class="brands__content">
-      <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
-      <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
-      <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
-      <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Patou logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/triangl.jpg" alt="Triangl logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/pucci.jpg" alt="Pucci logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Victoria Beckham logo" />
+      </div>
 
-      <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
-      <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
-      <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
-      <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Kit and Kaboodal logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Mutt Motorcycles logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Medik8 logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Indu logo" />
+      </div>
       
-      <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
-      <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
-      <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
-      <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="BÉIS logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Pattern logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="St. John logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class=" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Kjaer Weis logo" />
+      </div>
       
-      <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
-      <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
-      <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
-      <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+        src="./assets/brand-lifestyle/patou.jpg" alt="New Era logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="R.A.D">
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="Rhino Greenhouses logo" />
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class=" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="ProtectaPet logo" />
+      </div>
       
-      <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
-      <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
-      <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="&brand-lifestyle/patou.jpg"/>
+      </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" alt="brand-lifestyle/patou.jpg" />
+        </div>
+      <div class="brands__item">
+        <div class="brands__brand-logo">
+          <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
+        </div>
+        <img class="brands__brand-lifestyle-image"
+          src="./assets/brand-lifestyle/patou.jpg" />
+      </div>
     </div>
   </section>
 
