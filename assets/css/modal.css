@@ -1,107 +1,155 @@
 modal.modal {
-    position: fixed;
-    inset: 0;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    z-index: 9999;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-  
-  modal.is-active {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  
-  .modal__overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(255, 255, 255, 0.1);
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+/* Overlay Blur */
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(0px);
+  animation: blur-in 0.4s forwards;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+modal.is-active .modal__overlay {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+@keyframes blur-in {
+  to {
     backdrop-filter: blur(6px);
   }
-  
+}
+
+/* Content Drawer (Mobile default) */
+.modal__content {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+  transform: translateY(100%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+  margin-top: auto;
+}
+
+@media (min-width: 768px) {
   .modal__content {
-    position: relative;
-    width: 100%;
-    
-    z-index: 1;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
+    margin-top: initial;
   }
-  
+}
+
+modal.is-active .modal__content {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Inner Box Styling */
 .modal__inner-content {
-    background-color: #0a0a0a;
-    border-radius: 1rem 1rem 0 0;
-    padding: 3rem 1.5rem 1.5rem;
-    overflow-y: scroll;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    max-height: 95dvh;
+  background-color: #0a0a0a;
+  border-radius: 1rem 1rem 0 0;
+  padding: 3rem 1.5rem 1.5rem;
+  overflow-y: scroll;
+  max-height: 95dvh;
+  color: white;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .modal__inner-content::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+  display: none;
+}
+
+/* Desktop - centered modal */
+@media (min-width: 768px) {
+  .modal.modal {
+    align-items: center;
   }
 
-  .is-active .modal__content {
-    transform: translateY(0);
+  .modal__content {
+    width: 100%;
+    max-width: 640px;
+    transform: scale(0.98);
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
-  
-  .modal__close {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    height: 3rem;
-    background: transparent;
-    color: #fff;
-    font-size: 1.5rem;
-    border: none;
-    cursor: pointer;
+
+  modal.is-active .modal__content {
+    transform: scale(1);
   }
-  
-  .modal__drag-bar {
-    width: 40px;
-    height: 4px;
-    background: #333;
-    border-radius: 2px;
-    margin: 0 auto 0.5rem;
-    display: block;
-  }
-  
+
   .modal__inner-content {
-    color: white;
+    border-radius: 1rem;
   }
-  
-  .modal__inner-content h2:first-of-type {
-    font-size: var(--font-size-lg);
-    font-weight: 600;
-    line-height: 1.3;
-    margin-bottom: var(--space-xs);
-    background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  
-  .modal__inner-content p {
-    font-size: var(--font-size-sm);
-    color: var(--color-muted);
-    margin-bottom: var(--space-sm);
-  }
+}
 
-  .modal__inner-content .button {
-    text-align: center;
-    width: 100%;
+/* Close + Drag */
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  height: 3rem;
+  background: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal__drag-bar {
+  width: 40px;
+  height: 4px;
+  background: #333;
+  border-radius: 2px;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .modal__drag-bar {
+    display: none;
   }
-  
+}
+
+/* Typography */
+.modal__inner-content h2:first-of-type {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: var(--space-xs);
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal__inner-content p {
+  font-size: var(--font-size-sm);
+  color: var(--color-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.modal__inner-content .button {
+  text-align: center;
+  width: 100%;
+}
+
 .modal__inner-content img:first-of-type {
-    margin-bottom: 1rem;
-    width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
+  margin-bottom: 1rem;
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
 }
 
 modal-content {
-    display: none;
+  display: none;
 }

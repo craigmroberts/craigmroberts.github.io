@@ -48,7 +48,9 @@ class ModalContent extends HTMLElement {
       innerContent.innerHTML = "";
       const clone = this.cloneNode(true);
       innerContent.append(...clone.childNodes);
-      modal.classList.add("is-active");
+      setTimeout(() => {
+        modal.classList.add("is-active");
+      }, 50);
     }
   
     closeModal() {
