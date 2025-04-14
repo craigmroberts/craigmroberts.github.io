@@ -99,260 +99,263 @@
       }
 
       .brands__item {
-    background-color: rgba(255,255,255,0.09);
-    padding: 0.6rem;
-    border-radius: 0.6rem;
-}
-.brands img.brands__brand-lifestyle-image {
-    aspect-ratio: 1;
-    object-fit: cover;
-}
+        background-color: rgba(255,255,255,0.09);
+        padding: 0.6rem;
+        border-radius: 0.6rem;
+        overflow: hidden;
+      }
+
+      .brands img.brands__brand-lifestyle-image {
+        aspect-ratio: 1;
+        object-fit: cover;
+        height: 100%;
+      }
     </style>
     <div class="brands__header sticky">
       <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
     </div>
     <div id="brands-worked-with" class="swiper">
       <div class="brands__content swiper-wrapper">
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-patou" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-patou.svg" alt="Patou logo" />
           </div>
           <img class="brands__brand-lifestyle-image" src="./assets/brand-lifestyle/patou.jpg" alt="Patou logo" />
-
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-patou">
             <img src="./assets/brand-lifestyle/patou.jpg" alt="Patou logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-triangl" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-triangl.svg" alt="Triangl logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/triangl.jpg" alt="Triangl logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-triangl">
             <img src="./assets/brand-lifestyle/triangl.jpg" alt="Triangl logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-pucci" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-pucci.svg" alt="Pucci logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/pucci.jpg" alt="Pucci logo" />
-          <template class="js-modal-content">
+
+          <modal-content data-triggers="#brands-item-pucci">
             <img src="./assets/brand-lifestyle/pucci.jpg" alt="Pucci logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-victoria-beckham" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/victoria-beckham.jpg" alt="Victoria Beckham logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-victoria-beckham">
             <img src="./assets/brand-lifestyle/victoria-beckham.jpg" alt="Victoria Beckham logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
   
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-kit-and-kaboodal" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/kit-and-kaboodal.jpg" alt="Kit and Kaboodal logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-kit-and-kaboodal">
             <img src="./assets/brand-lifestyle/kit-and-kaboodal.jpg" alt="Kit and Kaboodal logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-mutt-motorcycles" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/mutt-motorcycles.jpg" alt="Mutt Motorcycles logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-mutt-motorcycles">
             <img src="./assets/brand-lifestyle/mutt-motorcycles.jpg" alt="Mutt Motorcycles logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-medik8" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-medik8.svg" alt="Medik8 logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/medik8.webp" alt="Medik8 logo" />
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-medik8">
             <img src="./assets/brand-lifestyle/medik8.webp" alt="Medik8 logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-indu" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-indu.svg" alt="Indu logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/indu.jpg" alt="Indu logo" />
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-indu">
             <img src="./assets/brand-lifestyle/indu.jpg" alt="Indu logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
         
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-beis" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-beis.svg" alt="BÉIS logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/beis.jpg" alt="BÉIS logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-beis">
             <img src="./assets/brand-lifestyle/beis.jpg" alt="BÉIS logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-pattern" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-pattern.svg" alt="Pattern logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/pattern.jpg" alt="Pattern logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-pattern">
             <img src="./assets/brand-lifestyle/pattern.jpg" alt="Pattern logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-st-john" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-st-john.svg" alt="St. John logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/st-john.jpg" alt="St. John logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-st-john">
             <img src="./assets/brand-lifestyle/st-john.jpg" alt="St. John logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-kjaer-weis" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="" src="./assets/logos/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/kjaer-weiss.jpg" alt="Kjaer Weis logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-kjaer-weis">
             <img src="./assets/brand-lifestyle/kjaer-weiss.jpg" alt="Kjaer Weis logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
         
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-new-era" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="" src="./assets/logos/logo-new-era.svg" alt="New Era logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
           src="./assets/brand-lifestyle/new-era.jpg" alt="New Era logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-new-era">
             <img src="./assets/brand-lifestyle/new-era.jpg" alt="New Era logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-rad" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-rad.svg" alt="R.A.D logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/rad.jpg" alt="R.A.D">
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-rad">
             <img src="./assets/brand-lifestyle/rad.jpg" alt="R.A.D logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-rhino-greenhouses" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="" src="./assets/logos/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/rhino-greenhouses.jpg" alt="Rhino Greenhouses logo" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-rhino-greenhouses">
             <img src="./assets/brand-lifestyle/rhino-greenhouses.jpg" alt="Rhino Greenhouses logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-protectapet" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="" src="./assets/logos/logo-protectapet.png" alt="ProtectaPet logo" />
           </div>
@@ -360,53 +363,53 @@
             src="./assets/brand-lifestyle/protectapet.jpg" alt="ProtectaPet logo" />
         </div>
         
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-and-sons" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-and-sons.png" alt="&Sons Trading Co logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/and-sons.jpg" alt="&brand-lifestyle/patou.jpg"/>
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-and-sons">
             <img src="./assets/brand-lifestyle/and-sons.jpg" alt="&Sons Trading Co logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
-        <div class="brands__item swiper-slide">
+        <div id="brands-item-pandco" class="brands__item swiper-slide">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-pandco.svg" alt="P&Co logo" />
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/pandco.jpg" alt="brand-lifestyle/patou.jpg" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-pandco">
             <img src="./assets/brand-lifestyle/pandco.jpg" alt="P&Co logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
           </div>
-        <div class="brands__item swiper-slide large-block">
+        <div id="brands-item-pangaia" class="brands__item swiper-slide large-block">
           <div class="brands__brand-logo">
             <img class="invert" src="./assets/logos/logo-pangaia.svg" alt="Pangaia logo" />      
           </div>
           <img class="brands__brand-lifestyle-image"
             src="./assets/brand-lifestyle/pangaia.jpg" />
 
-          <template class="js-modal-content">
+          <modal-content data-triggers="#brands-item-pangaia">
             <img src="./assets/brand-lifestyle/pangaia.jpg" alt="Pangaia logo" />
             <h2>Loreum Ipsum, Lorem Ipsum</h2>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
     
             <a class="button button--style-1" href="#work">View work</a>
             <a class="button button--style-2" href="#articles">See articles</a>
-          </template>
+          </modal-content>
         </div>
       </div>
     </div>
@@ -602,22 +605,10 @@
     </ul>
   </footer>
 
-
-<modal id="modal" class="modal">
-  <div class="modal__content">
-    <button class="modal__close" aria-label="Close modal">×</button>
-    <button class="modal__drag-bar" aria-label="Drag modal"></button>
-
-    <div class="modal__inner-content"></div>
-  </div>
-  <div class="modal__overlay"></div>
-</modal>
-
   <script src="./assets/js/scroll-animate.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="./assets/js/medium-articles.js"></script>
   <script src="./assets/js/modal.js"></script>
   <script src="./assets/js/brands-swiper.js"></script>
-
 </body>
 </html>
