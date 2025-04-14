@@ -151,6 +151,10 @@ a:hover { text-decoration: underline; }
   z-index: -1;
 }
 
+.button.button--filled::before {
+  mask: initial;
+}
+
 /* Gradient Text Utilities */
 .text-gradient-1 {
   background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));

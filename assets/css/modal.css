@@ -79,7 +79,7 @@ modal.is-active .modal__content {
   .modal__content {
     width: 100%;
     max-width: 640px;
-    transform: scale(0.98);
+    transform: scale(0);
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
@@ -119,6 +119,11 @@ modal.is-active .modal__content {
   .modal__drag-bar {
     display: none;
   }
+
+  .modal__content .button {
+    max-width: 240px;
+    display: inline-block;
+  }
 }
 
 /* Typography */
@@ -152,4 +157,15 @@ modal.is-active .modal__content {
 
 modal-content {
   display: none;
+}
+
+.modal__nav {
+}
+
+.modal__nav--prev {
+  
+}
+
+.modal__nav--next {
+  
 }
