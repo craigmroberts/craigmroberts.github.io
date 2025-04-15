@@ -51,7 +51,7 @@ class ModalContent extends HTMLElement {
     innerContent.append(...clone.childNodes);
 
     if (this.dataset.nav === "true") {
-      this.addNavigation(modal);
+      this.setupNavigation(modal);
     }
 
     setTimeout(() => {
@@ -59,29 +59,21 @@ class ModalContent extends HTMLElement {
     }, 50);
   }
 
-  addNavigation(modal) {
-    // Clean up existing nav if present
-    modal.querySelectorAll(".modal__nav").forEach(btn => btn.remove());
-
+  setupNavigation(modal) {
     const allModals = Array.from(document.querySelectorAll("modal-content[data-nav='true']"));
     const currentIndex = allModals.indexOf(this);
     const nextIndex = (currentIndex + 1) % allModals.length;
     const prevIndex = (currentIndex - 1 + allModals.length) % allModals.length;
 
-    const nextBtn = document.createElement("button");
-    nextBtn.textContent = "›";
-    nextBtn.className = "button modal__nav modal__nav--next";
-    nextBtn.addEventListener("click", () => allModals[nextIndex].showModal());
+    const nextBtn = modal.querySelector(".modal__nav--next");
+    const prevBtn = modal.querySelector(".modal__nav--prev");
 
-    const prevBtn = document.createElement("button");
-    prevBtn.textContent = "‹";
-    prevBtn.className = "button modal__nav modal__nav--prev";
-    prevBtn.addEventListener("click", () => allModals[prevIndex].showModal());
-
-    const innerContent = modal.querySelector(".modal__inner-content");
-
-    innerContent.appendChild(prevBtn);
-    innerContent.appendChild(nextBtn);
+    if (nextBtn) {
+      nextBtn.onclick = () => allModals[nextIndex].showModal();
+    }
+    if (prevBtn) {
+      prevBtn.onclick = () => allModals[prevIndex].showModal();
+    }
   }
 
   closeModal() {

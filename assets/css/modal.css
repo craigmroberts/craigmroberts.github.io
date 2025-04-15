@@ -56,9 +56,9 @@ modal.is-active .modal__content {
 
 /* Inner Box Styling */
 .modal__inner-content {
-  background-color: #0a0a0a;
+  background-color: rgba(0,0,0, 0.8);
   border-radius: 1rem 1rem 0 0;
-  padding: 3rem 1.5rem 1.5rem;
+  padding: 3rem 1.5rem 4rem;
   overflow-y: scroll;
   max-height: 95dvh;
   color: white;
@@ -96,7 +96,7 @@ modal.is-active .modal__content {
 .modal__close {
   position: absolute;
   top: 1rem;
-  right: 1rem;
+  right: 1.5rem;
   height: 3rem;
   background: transparent;
   color: #fff;
@@ -138,7 +138,7 @@ modal.is-active .modal__content {
 }
 
 .modal__inner-content p {
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-base);
   color: var(--color-muted);
   margin-bottom: var(--space-sm);
 }
@@ -153,6 +153,9 @@ modal.is-active .modal__content {
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
+  min-width: calc(100% + 3rem);
+  margin-left: -1.5rem;
+  margin-top: -3rem;
 }
 
 modal-content {
@@ -160,12 +163,27 @@ modal-content {
 }
 
 .modal__nav {
+  width: 100%;
+  background: rgba(0,0,0, 0.8);
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  justify-content: end;
+  z-index: 1;
+  padding: 0.4rem 1rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
-.modal__nav--prev {
-  
+@media (min-width: 768px) {
+  .modal__nav {
+    background: transparent;
+  }
 }
 
-.modal__nav--next {
-  
+.modal__nav-btn {
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
 }
