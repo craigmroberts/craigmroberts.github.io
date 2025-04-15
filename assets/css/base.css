@@ -104,6 +104,7 @@ a:hover { text-decoration: underline; }
 
 .section {
   margin: var(--space-lg) 0;
+  background-color: var(--color-bg);
 }
 
 .section:first-child {

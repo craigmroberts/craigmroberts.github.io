@@ -33,6 +33,7 @@
     <style>
       .brands {
         max-width: initial;
+        margin-top: 0;
       }
 
       .brands__header {
@@ -610,7 +611,9 @@
   .brands-swiper {
     overflow: hidden;
     padding: 2rem 0;
-    mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
+    mask-image: linear-gradient(to right, transparent, var(--color-bg) 10%, var(--color-bg) 90%, transparent);
+    margin: 0;
+    background-color: var(--color-bg);
   }
 
   .brands-swiper img {
