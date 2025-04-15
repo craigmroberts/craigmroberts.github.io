@@ -33,6 +33,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: var(--font-size-base);
 }
 
 body {
@@ -58,11 +59,31 @@ h1, .h1 { font-size: var(--font-size-xl); }
     font-size: var(--font-size-xxl);
   }
 }
+
 h2, .h2 { font-size: var(--font-size-xl); }
 h3, .h3 { font-size: var(--font-size-lg); }
 h4, .h4 { font-size: 1.25rem; }
 h5, .h5 { font-size: 1.125rem; }
 h6, .h6 { font-size: var(--font-size-sm); }
+
+h1 *,
+.h1 *,
+h2 *,
+.h2 *,
+h3 *,
+.h3 *,
+h4 *,
+.h4 *,
+h5 *,
+.h5 *,
+h6 *,
+h6 *,
+p *,
+a *,
+strong * {
+  font-size: inherit
+}
+
 
 p { margin-bottom: var(--space-sm); }
 a { color: var(--color-accent-3); text-decoration: none; }

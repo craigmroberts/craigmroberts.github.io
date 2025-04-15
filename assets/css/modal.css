@@ -187,3 +187,11 @@ modal-content {
   justify-content: center;
   gap: 0.8rem;
 }
+
+.modal .stats p {
+  margin-bottom: 0;
+}
+
+.modal .stats {
+  margin-bottom: 1rem;
+}
