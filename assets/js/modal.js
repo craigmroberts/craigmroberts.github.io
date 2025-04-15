@@ -1,3 +1,5 @@
+import { lockBody, unlockBody } from './helpers/bodyLock.js';
+
 class ModalContent extends HTMLElement {
   constructor() {
     super();
@@ -55,6 +57,7 @@ class ModalContent extends HTMLElement {
     }
 
     setTimeout(() => {
+      lockBody();
       modal.classList.add("is-active");
     }, 50);
   }
@@ -78,6 +81,7 @@ class ModalContent extends HTMLElement {
 
   closeModal() {
     const modal = document.getElementById("modal");
+    unlockBody();
     modal.classList.remove("is-active");
   }
 }
