@@ -158,7 +158,7 @@ modal.is-active .modal__content {
   margin-top: -3rem;
 }
 
-modal-content {
+.modal-content {
   display: none;
 }
 

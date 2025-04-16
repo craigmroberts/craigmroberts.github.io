@@ -1,4 +1,4 @@
-import { lockBody, unlockBody } from './helpers/bodyLock.js';
+import { lockBody, unlockBody } from './bodyLock.js';
 
 class ModalContent extends HTMLElement {
   constructor() {
@@ -87,3 +87,5 @@ class ModalContent extends HTMLElement {
 }
 
 customElements.define("modal-content", ModalContent);
+
+export default ModalContent;
