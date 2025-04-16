@@ -1,108 +1,108 @@
 const brands = [
   {
-    "id": "patou",
-    "largeBlock": false,
-    "name": "Patou",
-    "logo": "./assets/images/logos/logo-patou.svg",
-    "lifestyleImage": "./assets/images/brand-lifestyle/patou.jpg",
-    "website": "https://www.patou.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 3,
-      "max": 5
+    id: "patou",
+    largeBlock: false,
+    name: "Patou",
+    logo: "./assets/images/logos/logo-patou.svg",
+    lifestyleImage: "./assets/images/brand-lifestyle/patou.jpg",
+    website: "https://www.patou.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 3,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-patou",
-      "description_html": `
-        <h2>Loreum Ipsum, Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+    modal: {
+      id: "brands-item-patou",
+      description_html: `
+        <h2>Patou – Sustainable Luxury</h2>
+        <p>Patou is a Parisian fashion house blending heritage with sustainability. Their collections are known for bold silhouettes, joyful color, and a commitment to eco-conscious practices.</p>
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
           <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+        <p>I worked on performance tuning and responsive layout tweaks across seasonal collection drops. Collaborated closely with their in-house team on content updates and accessibility improvements.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://www.patou.com/" target="_blank">View Website</a>`
     }
   },
   {
-    "id": "triangl",
-    "largeBlock": true,
-    "name": "Triangl",
-    "logo": "./assets/images/logos/logo-triangl.svg",
-    "lifestyleImage": "./assets/images/brand-lifestyle/triangl.jpg",
-    "website": "https://triangl.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 2,
-      "max": 5
+    id: "triangl",
+    largeBlock: true,
+    name: "Triangl",
+    logo: "./assets/images/logos/logo-triangl.svg",
+    lifestyleImage: "./assets/images/brand-lifestyle/triangl.jpg",
+    website: "https://triangl.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 2,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-triangl",
-      "description_html": `
-        <h2>Loreum Ipsum, Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+    modal: {
+      id: "brands-item-triangl",
+      description_html: `
+        <h2>TRIANGL – Swimwear, Reimagined</h2>
+        <p>TRIANGL is a globally recognized swimwear brand known for their clean aesthetic, vibrant campaigns, and modern silhouettes.</p>
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
           <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+        <p>I provided technical support for campaign updates and refreshed components on key landing pages. Work included hero modules, content blocks, and global styling tweaks.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://triangl.com/" target="_blank">View Website</a>`
     }
   },
   {
-    "id": "pucci",
-    "largeBlock": false,
-    "name": "Pucci",
-    "logo": "./assets/images/logos/logo-pucci.svg",
-    "lifestyleImage": "./assets/images/brand-lifestyle/pucci.jpg",
-    "website": "https://www.pucci.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 4,
-      "max": 5
+    id: "pucci",
+    largeBlock: false,
+    name: "Pucci",
+    logo: "./assets/images/logos/logo-pucci.svg",
+    lifestyleImage: "./assets/images/brand-lifestyle/pucci.jpg",
+    website: "https://www.pucci.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 4,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-pucci",
-      "description_html": `
-        <h2>Loreum Ipsum, Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+    modal: {
+      id: "brands-item-pucci",
+      description_html: `
+        <h2>Pucci – A Digital Renaissance</h2>
+        <p>Pucci, an icon of Italian fashion, needed a modern online experience to match their vibrant heritage. Their site showcases fluid animations and rich storytelling.</p>
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
           <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+        <p>I collaborated with the design team to develop interactive page templates, optimized animations, and refined the core layout system for mobile users.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://www.pucci.com/" target="_blank">View Website</a>`
     }
   },
   {
-    "id": "victoria-beckham",
-    "largeBlock": false,
-    "name": "Victoria Beckham",
-    "logo": "./assets/images/logos/logo-victoria-beckham.svg",
-    "lifestyleImage": "./assets/images/brand-lifestyle/victoria-beckham.jpg",
-    "website": "https://www.victoriabeckham.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 1,
-      "max": 5
+    id: "victoria-beckham",
+    largeBlock: false,
+    name: "Victoria Beckham",
+    logo: "./assets/images/logos/logo-victoria-beckham.svg",
+    lifestyleImage: "./assets/images/brand-lifestyle/victoria-beckham.jpg",
+    website: "https://www.victoriabeckham.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 1,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-victoria-beckham",
-      "description_html": `
-        <h2>Loreum Ipsum, Lorem Ipsum</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+    modal: {
+      id: "brands-item-victoria-beckham",
+      description_html: `
+        <h2>Victoria Beckham – Modern Elegance</h2>
+        <p>Luxury meets minimalism. I supported backend tweaks and frontend content placement to align with their high-end aesthetic and product storytelling.</p>
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
           <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
+        <p>My involvement included structural content layout adjustments and theme integration during their seasonal site refresh.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://www.victoriabeckham.com/" target="_blank">View Website</a>`
     }
