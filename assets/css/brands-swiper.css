@@ -1,0 +1,36 @@
+.section-brands-logos {
+    padding: 2rem 0;
+    background: var(--color-bg);
+}
+
+.brands-swiper .swiper-wrapper {
+    will-change: transform;
+    -webkit-transition-timing-function:linear!important;
+    transition-timing-function:linear!important; 
+    position: relative;
+}
+
+.brands-swiper .swiper-slide {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brands-swiper {
+    overflow: hidden;
+    padding: 2rem 0;
+    mask-image: linear-gradient(to right, transparent, var(--color-bg) 10%, var(--color-bg) 90%, transparent);
+    margin: 0;
+}
+
+.brands-swiper img {
+    height: 40px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    filter: invert(1);
+}
+
+.brands-swiper img:hover {
+    opacity: 1;
+}
