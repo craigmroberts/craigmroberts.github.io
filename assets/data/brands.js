@@ -1,5 +1,6 @@
 const brands = [
   {
+    "id": "patou",
     "name": "Patou",
     "logo": "./assets/images/logos/logo-patou.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/patou.jpg",
@@ -22,6 +23,7 @@ const brands = [
     }
   },
   {
+    "id": "triangl",
     "name": "Triangl",
     "logo": "./assets/images/logos/logo-triangl.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/triangl.jpg",
@@ -44,6 +46,7 @@ const brands = [
     }
   },
   {
+    "id": "pucci",
     "name": "Pucci",
     "logo": "./assets/images/logos/logo-pucci.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/pucci.jpg",
@@ -66,6 +69,7 @@ const brands = [
     }
   },
   {
+    "id": "victoria-beckham",
     "name": "Victoria Beckham",
     "logo": "./assets/images/logos/logo-victoria-beckham.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/victoria-beckham.jpg",
@@ -88,6 +92,7 @@ const brands = [
     }
   },
   {
+    "id": "kit-and-kaboodal",
     "name": "Kit and Kaboodal",
     "logo": "./assets/images/logos/logo-kit-and-kaboodal.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/kit-and-kaboodal.jpg",
@@ -110,6 +115,7 @@ const brands = [
     }
   },
   {
+    "id": "mutt-motorcycles",
     "name": "Mutt Motorcycles",
     "logo": "./assets/images/logos/logo-mutt-motorcycles.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/mutt-motorcycles.jpg",
@@ -132,6 +138,7 @@ const brands = [
     }
   },
   {
+    "id": "medik8",
     "name": "Medik8",
     "logo": "./assets/images/logos/logo-medik8.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/medik8.webp",
@@ -158,6 +165,7 @@ const brands = [
     }
   },
   {
+    "id": "indu",
     "name": "Indu",
     "logo": "./assets/images/logos/logo-indu.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/indu.jpg",
@@ -180,6 +188,7 @@ const brands = [
     }
   },
   {
+    "id": "beis",
     "name": "BÉIS",
     "logo": "./assets/images/logos/logo-beis.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/beis.jpg",
@@ -202,6 +211,7 @@ const brands = [
     }
   },
   {
+    "id": "pattern",
     "name": "Pattern",
     "logo": "./assets/images/logos/logo-pattern.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/pattern.jpg",
@@ -224,6 +234,7 @@ const brands = [
     }
   },
   {
+    "id": "st-john",
     "name": "St John",
     "logo": "./assets/images/logos/logo-st-john.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/st-john.jpg",
@@ -246,6 +257,7 @@ const brands = [
     }
   },
   {
+    "id": "kjear-weis",
     "name": "Kjaer Weis",
     "logo": "./assets/images/logos/logo-kjaer-weis.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/kjaer-weis.jpg",
@@ -268,6 +280,7 @@ const brands = [
     }
   },
   {
+    "id": "new-era",
     "name": "New Era",
     "logo": "./assets/images/logos/logo-new-era.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/new-era.jpg",
@@ -290,6 +303,7 @@ const brands = [
     }
   },
   {
+    "id": "rad",
     "name": "Rad",
     "logo": "./assets/images/logos/logo-rad.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/rad.jpg",
@@ -312,6 +326,7 @@ const brands = [
     }
   },
   {
+    "id": "rhino-greenhouses",
     "name": "Rhino Greenhouses",
     "logo": "./assets/images/logos/logo-rhino-greenhouses.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/rhino-greenhouses.jpg",
@@ -334,6 +349,7 @@ const brands = [
     }
   },
   {
+    "id": "protectapet",
     "name": "Protectapet",
     "logo": "./assets/images/logos/logo-protectapet.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/protectapet.jpg",
@@ -356,6 +372,7 @@ const brands = [
     }
   },
   {
+    "id": "and-sons",
     "name": "And Sons",
     "logo": "./assets/images/logos/logo-and-sons.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/and-sons.jpg",
@@ -378,6 +395,7 @@ const brands = [
     }
   },
   {
+    "id": "pandco",
     "name": "Pandco",
     "logo": "./assets/images/logos/logo-pandco.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/pandco.jpg",
@@ -400,6 +418,7 @@ const brands = [
     }
   },
   {
+    "id": "pangaia",
     "name": "Pangaia",
     "logo": "./assets/images/logos/logo-pangaia.svg",
     "lifestyleImage": "./assets/images/brand-lifestyle/pangaia.jpg",

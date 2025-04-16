@@ -25,8 +25,8 @@ class ModalBrand extends ModalContent {
     const innerContent = modal.querySelector(".modal__inner-content");
     innerContent.innerHTML = "";
 
-    const brandName = this.getAttribute('brand');
-    const brandData = brands.find(b => b.name === brandName);
+    const brandId = this.getAttribute('data-brand-id');
+    const brandData = brands.find(b => b.id === brandId);
 
     if (!brandData) {
       innerContent.innerHTML = `<p>Brand not found.</p>`;
