@@ -1,6 +1,7 @@
 class MediumArticles extends HTMLElement {
   constructor() {
     super();
+    this.articleTemplate = null; // Cache the template
   }
 
   connectedCallback() {
@@ -17,6 +18,20 @@ class MediumArticles extends HTMLElement {
     return data.items.slice(0, limit);
   }
 
+  async loadTemplate() {
+    if (this.articleTemplate) return this.articleTemplate;
+
+    try {
+      const response = await fetch('./snippets/article-card.html');
+      const html = await response.text();
+      this.articleTemplate = html;
+      return html;
+    } catch (err) {
+      console.error("Failed to load article card snippet:", err);
+      return '<div class="article-card-error">Failed to load article</div>';
+    }
+  }
+
   extractThumbnail(article) {
     if (article.thumbnail) return article.thumbnail;
     const imgMatch = article.description.match(/<img[^>]+src="([^">]+)"/);
@@ -31,50 +46,49 @@ class MediumArticles extends HTMLElement {
     const limit = parseInt(this.getAttribute('data-limit')) || 5;
     const username = this.getAttribute('data-username');
 
-    const template = this.querySelector('template[data-type="article-card"]');
-
     try {
-      const articles = await this.fetchArticles(username, limit);
+      const [articles, templateHTML] = await Promise.all([
+        this.fetchArticles(username, limit),
+        this.loadTemplate()
+      ]);
+
       articles.forEach(article => {
         const thumbnailSrc = this.extractThumbnail(article);
         const cleanDesc = this.cleanDescription(article.description);
 
-        const articleHTML = template.innerHTML
-          .replace('{{ article.guid }}', article.guid)
-          .replace('{{ article.thumbnail }}', thumbnailSrc)
-          .replace(/{{ article.title }}/g, article.title)
-          .replace('{{ article.description }}', cleanDesc)
-          .replace('{{ article.author }}', article.author)
-          .replace('{{ article.pubDate }}', new Date(article.pubDate).toLocaleDateString())
-          .replace('{{ article.categories }}', article.categories.join(', '))
-          .replace('{{ article.link }}', article.link);
+        const articleHTML = templateHTML
+          .replace(/{{ article\.guid }}/g, article.guid)
+          .replace(/{{ article\.thumbnail }}/g, thumbnailSrc)
+          .replace(/{{ article\.title }}/g, article.title)
+          .replace(/{{ article\.description }}/g, cleanDesc)
+          .replace(/{{ article\.author }}/g, article.author)
+          .replace(/{{ article\.pubDate }}/g, new Date(article.pubDate).toLocaleDateString())
+          .replace(/{{ article\.categories }}/g, article.categories.join(', '))
+          .replace(/{{ article\.link }}/g, article.link);
 
         const articleElement = document.createElement('div');
         articleElement.innerHTML = articleHTML;
 
-        
-        // check if swiper-wrapper already exists
         const swiperWrapper = this.querySelector('.swiper-wrapper');
         if (swiperWrapper) {
-          // If it exists, append the new article element to it
           swiperWrapper.appendChild(articleElement.firstElementChild);
         } else {
           this.appendChild(articleElement.firstElementChild);
         }
       });
-      
+
       window.animateText(document);
-      // Initialize Swiper after appending all articles
+
       new Swiper(this, {
-        slidesPerView: 1.15, // Default for small screens
+        slidesPerView: 1.15,
         spaceBetween: 24,
         loop: true,
         grabCursor: true,
         freeModeMomentum: false,
         autoplay: false,
         navigation: {
-            nextEl: '#articles-btn-next',
-            prevEl: '#articles-btn-previous',
+          nextEl: '#articles-btn-next',
+          prevEl: '#articles-btn-previous',
         },
         breakpoints: {
           768: {
@@ -98,5 +112,4 @@ class MediumArticles extends HTMLElement {
   }
 }
 
-// Register the custom element
 customElements.define('medium-articles', MediumArticles);

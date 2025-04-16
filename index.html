@@ -245,21 +245,6 @@
 
     <medium-articles class="articles__content swiper" data-limit="10" data-username="craigmroberts">
       <div class="swiper-wrapper"></div>
-      <template data-type="article-card">
-        <article-card id="{{ article.guid }}" class="article-card swiper-slide">
-          <img class="article-card__thumbnail" src="{{ article.thumbnail }}" alt="{{ article.title }}">
-          <div class="article-card__content">
-            <h3 class="article-card__title">{{ article.title }}</h3>
-            <p class="article-card__description">{{ article.description }}</p>
-            <div class="article-card__meta">
-              <span class="article-card__author">{{ article.author }}</span>
-              <span class="article-card__date">{{ article.pubDate }}</span>
-              <span class="article-card__categories">{{ article.categories }}</span>
-            </div>
-            <a class="article-card__link" href="{{ article.link }}" target="_blank">Read more →</a>
-          </div>
-        </article-card>
-      </template>
     </medium-articles>
   </section>
 
