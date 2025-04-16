@@ -1,3 +1,5 @@
+import { medium } from './helpers/medium.js';
+
 class MediumArticles extends HTMLElement {
   constructor() {
     super();
@@ -6,16 +8,6 @@ class MediumArticles extends HTMLElement {
 
   connectedCallback() {
     this.render();
-  }
-
-  async fetchArticles(username, limit) {
-    const feedURL = `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/@${username}/feed`;
-    const response = await fetch(feedURL);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    return data.items.slice(0, limit);
   }
 
   async loadTemplate() {
@@ -48,7 +40,7 @@ class MediumArticles extends HTMLElement {
 
     try {
       const [articles, templateHTML] = await Promise.all([
-        this.fetchArticles(username, limit),
+        medium.fetchArticles(username, limit),
         this.loadTemplate()
       ]);
 
@@ -77,7 +69,7 @@ class MediumArticles extends HTMLElement {
         }
       });
 
-      window.animateText(document);
+      window.animateText?.(document);
 
       new Swiper(this, {
         slidesPerView: 1.15,
