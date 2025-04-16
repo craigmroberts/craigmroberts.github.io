@@ -1,0 +1,18 @@
+<div id="brands-item-{{ brand.key }}"
+    class="brands__item swiper-slide">
+    <div class="brands__brand-logo">
+      <img class="invert"
+        src="{{ brand.logo }}"
+        alt="{{ brand.name }} logo" />
+    </div>
+    <div class="brands__brand-lifestyle-image-wrapper">
+      <img class="brands__brand-lifestyle-image"
+        src="{{ brand.lifestyleImage }}"
+        alt="{{ brand.name }} logo" />
+    </div>
+    <modal-content-brand class="modal-content"
+        data-triggers="#brands-item-{{ brand.key }}"
+        data-nav="true"
+        data-brand-id="{{ brand.key }}">
+    </modal-content-brand>
+</div>
