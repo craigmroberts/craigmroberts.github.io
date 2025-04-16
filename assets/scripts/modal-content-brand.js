@@ -33,7 +33,6 @@ class ModalBrand extends ModalContent {
       return;
     }
 
-    // --- Image ---
     const img = document.createElement("img");
     img.src = brandData.lifestyleImage;
     img.alt = `${brandData.name} lifestyle image`;
@@ -42,20 +41,16 @@ class ModalBrand extends ModalContent {
     img.style.objectFit = "cover";
     img.style.marginBottom = "1.25rem";
 
-    // --- Logo ---
     const logo = document.createElement("img");
     logo.src = brandData.logo;
     logo.alt = `${brandData.name} logo`;
-    logo.style.maxHeight = "40px";
-    logo.style.marginBottom = "1rem";
+    logo.classList.add("modal__brand-logo");
 
-    // --- HTML description block ---
     const wrapper = document.createElement("div");
     wrapper.innerHTML = brandData.modal.description_html;
 
-    // --- Append all ---
-    innerContent.appendChild(logo);
     innerContent.appendChild(img);
+    innerContent.appendChild(logo);
     innerContent.appendChild(wrapper);
 
     if (this.dataset.nav === "true") {
@@ -73,46 +68,44 @@ class ModalBrand extends ModalContent {
     const currentIndex = allModals.indexOf(this);
     const nextIndex = (currentIndex + 1) % allModals.length;
     const prevIndex = (currentIndex - 1 + allModals.length) % allModals.length;
-  
+
     const nextBtn = modal.querySelector(".modal__nav--next");
     const prevBtn = modal.querySelector(".modal__nav--prev");
-  
-    // 🧠 Lock to prevent rapid calls
-    this._navLock = false;
-  
-    const throttle = (fn) => {
-      if (this._navLock) return;
-      this._navLock = true;
-      fn();
-      setTimeout(() => {
-        this._navLock = false;
-      }, 500); // Adjust to match modal transition duration
-    };
-  
-    const goToNext = () => throttle(() => {
-      this.constructor.prototype.showModal.call(allModals[nextIndex]);
-    });
-  
-    const goToPrev = () => throttle(() => {
-      this.constructor.prototype.showModal.call(allModals[prevIndex]);
-    });
-  
-    if (nextBtn) nextBtn.onclick = goToNext;
-    if (prevBtn) prevBtn.onclick = goToPrev;
-  
+
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        this.constructor.prototype.showModal.call(allModals[nextIndex]);
+      };
+    }
+
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        this.constructor.prototype.showModal.call(allModals[prevIndex]);
+      };
+    }
+
+    // Clean up previous key handler
+    if (this.constructor._keyHandler) {
+      window.removeEventListener("keydown", this.constructor._keyHandler);
+    }
+
     const keyHandler = (e) => {
-      if (e.key === "ArrowRight") goToNext();
-      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "ArrowRight") {
+        this.constructor.prototype.showModal.call(allModals[nextIndex]);
+      }
+      if (e.key === "ArrowLeft") {
+        this.constructor.prototype.showModal.call(allModals[prevIndex]);
+      }
       if (e.key === "Escape") {
         modal.classList.remove("is-active");
         unlockBody();
         window.removeEventListener("keydown", keyHandler);
       }
     };
-  
+
     window.addEventListener("keydown", keyHandler);
-    modal.dataset.keyHandler = keyHandler;
-  }  
+    this.constructor._keyHandler = keyHandler;
+  }
 }
 
 customElements.define("modal-content-brand", ModalBrand);

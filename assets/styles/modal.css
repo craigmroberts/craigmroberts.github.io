@@ -195,3 +195,12 @@ modal.is-active .modal__content {
 .modal .stats {
   margin-bottom: 1rem;
 }
+
+.modal__brand-logo {
+  max-height: 30px;
+  filter: invert(1);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
+}

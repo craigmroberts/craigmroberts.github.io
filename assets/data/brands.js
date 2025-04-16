@@ -328,7 +328,7 @@ const brands = [
   {
     "id": "rhino-greenhouses",
     "name": "Rhino Greenhouses",
-    "logo": "./assets/images/logos/logo-rhino-greenhouses.svg",
+    "logo": "./assets/images/logos/logo-rhino-greenhouses.png",
     "lifestyleImage": "./assets/images/brand-lifestyle/rhino-greenhouses.jpg",
     "website": "https://www.rhino.co.uk/",
     "agency": "Fostr",
@@ -351,7 +351,7 @@ const brands = [
   {
     "id": "protectapet",
     "name": "Protectapet",
-    "logo": "./assets/images/logos/logo-protectapet.svg",
+    "logo": "./assets/images/logos/logo-protectapet.png",
     "lifestyleImage": "./assets/images/brand-lifestyle/protectapet.jpg",
     "website": "https://www.protectapet.com/",
     "agency": "Fostr",
@@ -374,7 +374,7 @@ const brands = [
   {
     "id": "and-sons",
     "name": "And Sons",
-    "logo": "./assets/images/logos/logo-and-sons.svg",
+    "logo": "./assets/images/logos/logo-and-sons.png",
     "lifestyleImage": "./assets/images/brand-lifestyle/and-sons.jpg",
     "website": "https://andsons.co.uk/",
     "agency": "Fostr",
