@@ -77,17 +77,41 @@ class ModalBrand extends ModalContent {
     const nextBtn = modal.querySelector(".modal__nav--next");
     const prevBtn = modal.querySelector(".modal__nav--prev");
   
-    if (nextBtn) {
-      nextBtn.onclick = () => {
-        this.constructor.prototype.showModal.call(allModals[nextIndex]);
-      };
-    }
+    // 🧠 Lock to prevent rapid calls
+    this._navLock = false;
   
-    if (prevBtn) {
-      prevBtn.onclick = () => {
-        this.constructor.prototype.showModal.call(allModals[prevIndex]);
-      };
-    }
+    const throttle = (fn) => {
+      if (this._navLock) return;
+      this._navLock = true;
+      fn();
+      setTimeout(() => {
+        this._navLock = false;
+      }, 500); // Adjust to match modal transition duration
+    };
+  
+    const goToNext = () => throttle(() => {
+      this.constructor.prototype.showModal.call(allModals[nextIndex]);
+    });
+  
+    const goToPrev = () => throttle(() => {
+      this.constructor.prototype.showModal.call(allModals[prevIndex]);
+    });
+  
+    if (nextBtn) nextBtn.onclick = goToNext;
+    if (prevBtn) prevBtn.onclick = goToPrev;
+  
+    const keyHandler = (e) => {
+      if (e.key === "ArrowRight") goToNext();
+      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "Escape") {
+        modal.classList.remove("is-active");
+        unlockBody();
+        window.removeEventListener("keydown", keyHandler);
+      }
+    };
+  
+    window.addEventListener("keydown", keyHandler);
+    modal.dataset.keyHandler = keyHandler;
   }  
 }
 
