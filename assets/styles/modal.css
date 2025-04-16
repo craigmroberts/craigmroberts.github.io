@@ -108,11 +108,13 @@ modal.is-active .modal__content {
 
 .modal__drag-bar {
   width: 40px;
-  height: 4px;
-  background: #333;
+  height: 2px;
+  background: #ffffff;
   border-radius: 2px;
   margin: 0 auto 0.5rem;
   display: block;
+  border: 0;
+  opacity: 0.5;
 }
 
 @media (min-width: 768px) {
