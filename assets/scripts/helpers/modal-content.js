@@ -58,6 +58,8 @@ class ModalContent extends HTMLElement {
 
     setTimeout(() => {
       lockBody();
+      document.body.classList.
+      document.body.classList.add("modal-open");add("modal-open");
       modal.classList.add("is-active");
     }, 50);
   }
@@ -82,6 +84,7 @@ class ModalContent extends HTMLElement {
   closeModal() {
     const modal = document.getElementById("modal");
     unlockBody();
+    document.body.classList.remove("modal-open");
     modal.classList.remove("is-active");
   }
 }

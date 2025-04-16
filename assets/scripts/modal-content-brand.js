@@ -63,6 +63,7 @@ class ModalBrand extends ModalContent {
 
     setTimeout(() => {
       lockBody();
+      document.body.classList.add("modal-open");
       modal.classList.add("is-active");
     }, 50);
   }
@@ -101,6 +102,7 @@ class ModalBrand extends ModalContent {
         this.constructor.prototype.showModal.call(allModals[prevIndex]);
       }
       if (e.key === "Escape") {
+        document.body.classList.remove("modal-open");
         modal.classList.remove("is-active");
         unlockBody();
         window.removeEventListener("keydown", keyHandler);

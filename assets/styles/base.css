@@ -433,3 +433,12 @@ figcaption {
   z-index: 2;
   background: black;
 }
+
+.main {
+  transform: scale(1);
+  transition: ease 250ms transform;
+}
+
+body.modal-open .main {
+  transform: scale(0.95);
+}
