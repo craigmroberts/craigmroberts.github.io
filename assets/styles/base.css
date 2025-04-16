@@ -167,6 +167,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
+  touch-action: manipulation; 
 }
 
 .button::before {
