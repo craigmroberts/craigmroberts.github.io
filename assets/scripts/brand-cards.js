@@ -33,7 +33,7 @@ class BrandCards extends HTMLElement {
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
-        .replace(/{{\s*brand\.name\s*}}/g, brand.name);
+        .replace(/{{\s*brand\.name\s*}}/g, brand.name)
   
       const wrapper = document.createElement('div');
       wrapper.innerHTML = cardHTML;

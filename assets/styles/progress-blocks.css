@@ -1,0 +1,18 @@
+.progress-blocks {
+    display: flex;
+    gap: 0.25rem;
+    height: 10px;
+    max-width: 200px;
+    margin-top: 0.5rem;
+}
+  
+.progress-blocks .block {
+    flex: 1;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5); /* Neutral/inactive */
+    transition: background 0.3s ease;
+}
+
+.progress-blocks .block.filled {
+    background-color: #4bc0af; /* Active/filled block */
+}

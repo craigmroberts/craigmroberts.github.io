@@ -1,6 +1,7 @@
 import { lockBody, unlockBody } from './helpers/bodyLock.js';
 import ModalContent from './helpers/modal-content.js';
 import brands from '../data/brands.js';
+import { createProgressBlocks } from './helpers/progressBlocks.js';
 
 class ModalBrand extends ModalContent {
   async ensureModalLoaded() {
@@ -47,7 +48,10 @@ class ModalBrand extends ModalContent {
     logo.classList.add("modal__brand-logo");
 
     const wrapper = document.createElement("div");
-    wrapper.innerHTML = brandData.modal.description_html;
+    let description = brandData.modal.description_html;
+
+    description = description.replace(/{{\s*brand\.involvement_progress\s*}}/g, createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML);
+    wrapper.innerHTML = description;
 
     innerContent.appendChild(img);
     innerContent.appendChild(logo);

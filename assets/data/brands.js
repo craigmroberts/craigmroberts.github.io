@@ -7,7 +7,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/patou.jpg",
     "website": "https://www.patou.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 3,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-patou",
       "description_html": `
@@ -16,7 +19,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -31,7 +34,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/triangl.jpg",
     "website": "https://triangl.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-triangl",
       "description_html": `
@@ -40,7 +46,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -55,7 +61,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/pucci.jpg",
     "website": "https://www.pucci.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 4,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-pucci",
       "description_html": `
@@ -64,7 +73,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -79,7 +88,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/victoria-beckham.jpg",
     "website": "https://www.victoriabeckham.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 1,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-victoria-beckham",
       "description_html": `
@@ -88,7 +100,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -103,7 +115,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/kit-and-kaboodal.jpg",
     "website": "https://www.kitandkaboodal.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 4,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-kit-and-kaboodal",
       "description_html": `
@@ -112,7 +127,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -127,7 +142,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/mutt-motorcycles.jpg",
     "website": "https://muttmotorcycles.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 5,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-mutt-motorcycles",
       "description_html": `
@@ -136,7 +154,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -151,7 +169,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/medik8.webp",
     "website": "https://www.medik8.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-medik8",
       "description_html": `
@@ -162,7 +183,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>
           I worked closely with the Medik8 team to redesign their Shopify storefront with a modern, responsive layout and improved UX for both mobile and desktop. My responsibilities included performance optimization, integrating flexible content blocks for campaigns, and refining animations to align with their brand aesthetic.
@@ -179,7 +200,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/indu.jpg",
     "website": "https://indu.me/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 1,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-indu",
       "description_html": `
@@ -188,7 +212,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -203,7 +227,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/beis.jpg",
     "website": "https://uk.beistravel.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-beis",
       "description_html": `
@@ -212,7 +239,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -227,7 +254,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/pattern.jpg",
     "website": "https://pattern.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-pattern",
       "description_html": `
@@ -236,7 +266,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -251,7 +281,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/st-john.jpg",
     "website": "https://www.stjohnknits.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-st-john",
       "description_html": `
@@ -260,7 +293,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -275,7 +308,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/kjaer-weis.jpg",
     "website": "https://kjaerweis.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 4,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-kjaer-weis",
       "description_html": `
@@ -284,7 +320,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -299,7 +335,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/new-era.jpg",
     "website": "https://www.neweracap.eu/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-new-era",
       "description_html": `
@@ -308,7 +347,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -323,7 +362,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/rad.jpg",
     "website": "https://rad.co.uk/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 3,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-rad",
       "description_html": `
@@ -332,7 +374,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -347,7 +389,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/rhino-greenhouses.jpg",
     "website": "https://www.rhino.co.uk/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-rhino-greenhouses",
       "description_html": `
@@ -356,7 +401,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -371,7 +416,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/protectapet.jpg",
     "website": "https://www.protectapet.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 1,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-protectapet",
       "description_html": `
@@ -380,7 +428,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -395,7 +443,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/and-sons.jpg",
     "website": "https://andsons.co.uk/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-and-sons",
       "description_html": `
@@ -404,7 +455,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -419,7 +470,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/pandco.jpg",
     "website": "https://pandco.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-pandco",
       "description_html": `
@@ -428,7 +482,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -443,7 +497,10 @@ const brands = [
     "lifestyleImage": "./assets/images/brand-lifestyle/pangaia.jpg",
     "website": "https://pangaia.com/",
     "agency": "Fostr",
-    "involvement": "[X][X][][][]",
+    "involvement": {
+      "progress": 2,
+      "max": 5
+    },
     "modal": {
       "id": "brands-item-pangaia",
       "description_html": `
@@ -452,7 +509,7 @@ const brands = [
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>Fostr</span></strong></p>
-          <p><strong>Involvement: <span>[X][X][][][]</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
         </div>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. In distinctio numquam quos repudiandae voluptate delectus maiores. Debitis sit alias ipsum, doloremque modi harum porro pariatur qui et sed culpa atque?</p>
         <a class="button button--style-1" href="#work">Learn more</a>
