@@ -31,12 +31,12 @@ export function watchInViewElements(scope = document, options = {}) {
       if (rect.top >= -settings.topThreshold && rect.top <= windowHeight) {
         if (!element.classList.contains('top-in-view')) {
           element.classList.add('top-in-view');
-          console.log(`⬆️ ${label} top edge is IN view`);
+          // console.log(`⬆️ ${label} top edge is IN view`);
         }
       } else {
         if (element.classList.contains('top-in-view')) {
           element.classList.remove('top-in-view');
-          console.log(`⬆️ ${label} top edge is OUT of view (beyond threshold)`);
+          // console.log(`⬆️ ${label} top edge is OUT of view (beyond threshold)`);
         }
       }
       
@@ -44,12 +44,12 @@ export function watchInViewElements(scope = document, options = {}) {
       if (rect.bottom >= 0 && rect.bottom <= windowHeight + settings.bottomThreshold) {
         if (!element.classList.contains('bottom-in-view')) {
           element.classList.add('bottom-in-view');
-          console.log(`⬇️ ${label} bottom edge is IN view`);
+          // console.log(`⬇️ ${label} bottom edge is IN view`);
         }
       } else {
         if (element.classList.contains('bottom-in-view')) {
           element.classList.remove('bottom-in-view');
-          console.log(`⬇️ ${label} bottom edge is OUT of view (beyond threshold)`);
+          // console.log(`⬇️ ${label} bottom edge is OUT of view (beyond threshold)`);
         }
       }
       
@@ -74,12 +74,12 @@ export function watchInViewElements(scope = document, options = {}) {
     if (isIntersecting) {
       // General visibility
       element.classList.add('in-view');
-      console.log(`✅ ${label} entered view (ratio: ${intersectionRatio.toFixed(2)})`);
+      // console.log(`✅ ${label} entered view (ratio: ${intersectionRatio.toFixed(2)})`);
       
       // Full visibility
       if (intersectionRatio === 1) {
         element.classList.add('in-full-view');
-        console.log(`💯 ${label} entered FULL view`);
+        // console.log(`💯 ${label} entered FULL view`);
       } else {
         element.classList.remove('in-full-view');
       }
@@ -106,7 +106,7 @@ export function watchInViewElements(scope = document, options = {}) {
         }
       }
       
-      console.log(`❌ ${label} exited view${exitDirection}`);
+      // console.log(`❌ ${label} exited view${exitDirection}`);
       
       // Also make sure edge classes are removed when completely out of view
       element.classList.remove('top-in-view', 'bottom-in-view');

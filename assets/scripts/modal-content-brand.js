@@ -4,6 +4,7 @@ import brands from '../data/brands.js';
 import { createProgressBlocks } from './helpers/progressBlocks.js';
 
 class ModalBrand extends ModalContent {
+
   async ensureModalLoaded() {
     if (document.getElementById("modal")) return;
 
@@ -13,13 +14,15 @@ class ModalBrand extends ModalContent {
       const wrapper = document.createElement("div");
       wrapper.innerHTML = html;
       const modal = wrapper.querySelector("#modal");
-      if (!modal) throw new Error("Modal not found in modal-brand.html");
+      if (!modal) throw new Error("Modal not found in snippet");
       document.body.appendChild(modal);
       this.attachCloseHandlers(modal);
+      this.setupDragFunctionality(modal);
     } catch (err) {
-      console.error("Failed to load modal-brand snippet:", err);
+      console.error("Failed to load modal snippet:", err);
     }
   }
+
 
   async showModal() {
     const modal = document.getElementById("modal");
