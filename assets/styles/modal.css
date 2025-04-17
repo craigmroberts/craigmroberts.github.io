@@ -96,8 +96,8 @@ modal.is-active .modal__content {
 /* Close + Drag */
 .modal__close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 0;
   height: 3rem;
   background: transparent;
   color: #fff;
@@ -105,6 +105,7 @@ modal.is-active .modal__content {
   border: none;
   cursor: pointer;
   z-index: 2;
+  aspect-ratio: 1;
 }
 
 .modal__drag-bar {
