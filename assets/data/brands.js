@@ -518,7 +518,88 @@ const brands = [
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://pangaia.com/" target="_blank">View Website</a>`
     }
-  }    
+  },
+  {
+    "id": "bad-monday",
+    "largeBlock": false,
+    "name": "bad-monday",
+    "logo": "./assets/images/logos/logo-bad-monday.svg",
+    "lifestyleImage": "./assets/images/brand-lifestyle/bad-monday.jpg",
+    "website": "https://bad-monday.com/",
+    "agency": "Cage Agency",
+    "involvement": {
+      "progress": 5,
+      "max": 5
+    },
+    "modal": {
+      "id": "brands-item-bad-monday",
+      "description_html": `
+        <h2>Earth-First Innovation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <h3 class="h4">Contribution</h3>
+        <div class="stats">
+          <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <a class="button button--style-1" href="#work">Learn more</a>
+        <a class="button button--style-2 button--filled" href="https://bad-monday.com/" target="_blank">View Website</a>`
+    }
+  },
+  {
+    "id": "goose-and-gander",
+    "largeBlock": false,
+    "name": "goose-and-gander",
+    "logo": "./assets/images/logos/logo-goose-and-gander.svg",
+    "lifestyleImage": "./assets/images/brand-lifestyle/goose-and-gander.jpg",
+    "website": "https://gooseandgander.com/",
+    "agency": "Cage Agency",
+    "involvement": {
+      "progress": 5,
+      "max": 5
+    },
+    "modal": {
+      "id": "brands-item-goose-and-gander",
+      "description_html": `
+        <h2>Earth-First Innovation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <h3 class="h4">Contribution</h3>
+        <div class="stats">
+          <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <a class="button button--style-1" href="#work">Learn more</a>
+        <a class="button button--style-2 button--filled" href="https://gooseandgander.com/" target="_blank">View Website</a>`
+    }
+  },
+  {
+    "id": "dancing-leopard",
+    "largeBlock": false,
+    "name": "dancing-leopard",
+    "logo": "./assets/images/logos/logo-dancing-leopard.svg",
+    "lifestyleImage": "./assets/images/brand-lifestyle/dancing-leopard.jpg",
+    "website": "https://dancingleopard.com/",
+    "agency": "Cage Agency",
+    "involvement": {
+      "progress": 5,
+      "max": 5
+    },
+    "modal": {
+      "id": "brands-item-dancing-leopard",
+      "description_html": `
+        <h2>Earth-First Innovation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <h3 class="h4">Contribution</h3>
+        <div class="stats">
+          <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
+          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <a class="button button--style-1" href="#work">Learn more</a>
+        <a class="button button--style-2 button--filled" href="https://dancingleopard.com/" target="_blank">View Website</a>`
+    }
+  }
 ]
 
 export default brands;
