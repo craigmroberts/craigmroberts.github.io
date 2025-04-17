@@ -111,7 +111,13 @@ a:hover { text-decoration: underline; }
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: var(--space-sm);
+  padding: var(--space-sm) 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    padding: var(--space-sm);
+  }
 }
 
 .section {

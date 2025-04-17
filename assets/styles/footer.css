@@ -1,6 +1,17 @@
 .footer {
   padding: 2rem;
   position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 3rem 0.2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    padding: 3rem 1rem;
+  }
 }
 
 .footer::before {
@@ -19,11 +30,6 @@
 .footer__logo {
   width: 130px;
   margin: auto
-}
-
-.footer {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
 }
 
 .footer__social img {
@@ -45,12 +51,6 @@ ul.footer__social {
   height: fit-content;
   margin: auto 0;
   width: fit-content;
-}
-
-.footer {
-  padding: 3rem 1rem;
-  background-color: #000;
-  color: #fff;
 }
 
 .footer__grid {
