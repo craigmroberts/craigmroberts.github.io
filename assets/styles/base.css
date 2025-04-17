@@ -442,3 +442,30 @@ figcaption {
 body.modal-open .main {
   transform: scale(0.95);
 }
+
+.section[aria-label]::before {
+  content: attr(aria-label);
+  position: sticky;
+  background: white;
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  top: 0.5rem;
+  margin: auto;
+  width: fit-content;
+  opacity: 0;
+  transition: transform ease-in-out 250ms, opacity ease-in-out 250ms;
+  transform: translateY(-150%) scale(0);
+}
+
+.section.in-view[aria-label]::before {
+  transform: translateY(0%) scale(1);
+  opacity: 1;
+}

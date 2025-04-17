@@ -1,24 +1,21 @@
-export function wrapTextWithSpans(el) {
-    const text = el.textContent;
-    el.textContent = ''; // Clear original content
+import { wrapTextWithSpans } from './wrapTextWithSpans.js';
+import { createInViewObserver } from './createInViewObserver.js';
+
+export function animateScrollText(scope = document) {
+  const observer = createInViewObserver((el, inView, entry, obs) => {
+    const label = el.getAttribute('aria-label') || el.textContent?.slice(0, 20) || '[text]';
+
+    if (inView) {
+      el.classList.add('in-view');
+      console.log(`🌀 ${label} is in view`);
+      obs.unobserve(el);
+    }
+  }, { threshold: 0.1 });
+
+  const textElements = scope.querySelectorAll('.scroll-animate:not(.animated-init)');
+  textElements.forEach(el => {
+    wrapTextWithSpans(el);
     el.classList.add('animated-init');
-  
-    const words = text.split(' ');
-  
-    words.forEach((word, wordIndex) => {
-      const wordSpan = document.createElement('span');
-      wordSpan.className = 'word';
-  
-      Array.from(word).forEach((char, charIndex) => {
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.setProperty('--char-index', wordIndex * 10 + charIndex); // delay offset
-        wordSpan.appendChild(span);
-      });
-  
-      const space = document.createTextNode('\u00A0');
-      el.appendChild(wordSpan);
-      el.appendChild(space);
-    });
+    observer.observe(el);
+  });
 }
-  
