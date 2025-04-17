@@ -1,5 +1,5 @@
 import { lockBody, unlockBody } from './helpers/bodyLock.js';
-import ModalContent from './helpers/modal-content.js';
+import ModalContent from './helpers/modalContent.js';
 import brands from '../data/brands.js';
 import { createProgressBlocks } from './helpers/progressBlocks.js';
 
