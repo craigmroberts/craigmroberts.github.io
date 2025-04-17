@@ -124,6 +124,14 @@ ul.footer__social {
   filter: invert(1);
 }
 
+.status {
+  margin-left: 5px;
+}
+
+.status .icon {
+  margin-right: 5px;
+}
+
 @media screen and (max-width: 768px) {
   ul.footer__social {
     display: grid;
