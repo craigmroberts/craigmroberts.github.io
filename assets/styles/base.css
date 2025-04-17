@@ -96,7 +96,6 @@ strong * {
   font-size: inherit
 }
 
-
 p { margin-bottom: var(--space-sm); }
 a { color: var(--color-accent-3); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -452,7 +451,7 @@ body.modal-open .main {
 .section[aria-label]::before {
   content: attr(aria-label);
   position: sticky;
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  background: linear-gradient(90deg, var(--color-accent-4), var(--color-accent-3), var(--color-accent-2), var(--color-accent-1));
   color: white;
   font-size: 14px;
   font-weight: bold;
@@ -474,6 +473,26 @@ body.modal-open .main {
 .section.in-view[aria-label]:not(.in-full-view,.top-in-view)::before {
   transform: translateY(0%) scale(1);
   opacity: 1;
+}
+
+.section[aria-label]::before {
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: background-position 1s ease, opacity 250ms ease-in-out, transform 250ms ease-in-out;
+}
+
+.section.in-view[aria-label]::before {
+  animation: gradientScroll 4s linear infinite alternate;
+}
+
+/* Looping gradient background */
+@keyframes gradientScroll {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .logo {
