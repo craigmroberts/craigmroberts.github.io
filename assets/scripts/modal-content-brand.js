@@ -68,6 +68,12 @@ class ModalBrand extends ModalContent {
       lockBody();
       document.body.classList.add("modal-open");
       modal.classList.add("is-active");
+
+      const progressBlocks = modal.querySelector('.progress-blocks');
+      if (!progressBlocks) return;
+      setTimeout(() => {
+        progressBlocks.classList.add('in-view');
+      }, 1000);
     }, 50);
   }
 

@@ -1,18 +1,40 @@
-.progress-blocks {
+@keyframes fillBlock {
+    from {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scaleY(0.8);
+    }
+    to {
+      background-color: #4bc0af;
+      transform: scaleY(1);
+    }
+  }
+  
+  .progress-blocks {
     display: flex;
     gap: 0.25rem;
     height: 10px;
     max-width: 200px;
     margin-top: 0.5rem;
-}
+    overflow: hidden;
+  }
   
-.progress-blocks .block {
+  .progress-blocks .block {
     flex: 1;
     border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.5); /* Neutral/inactive */
+    background-color: rgba(255, 255, 255, 0.2);
     transition: background 0.3s ease;
-}
-
-.progress-blocks .block.filled {
-    background-color: #4bc0af; /* Active/filled block */
-}
+    transform-origin: bottom;
+  }
+  
+  /* Animate filled blocks only when in-view */
+  .progress-blocks.in-view .block.filled {
+    animation: fillBlock 0.4s ease forwards;
+  }
+  
+  /* Stagger delays */
+  .progress-blocks.in-view .block.filled[data-index="0"] { animation-delay: 0s; }
+  .progress-blocks.in-view .block.filled[data-index="1"] { animation-delay: 0.1s; }
+  .progress-blocks.in-view .block.filled[data-index="2"] { animation-delay: 0.2s; }
+  .progress-blocks.in-view .block.filled[data-index="3"] { animation-delay: 0.3s; }
+  .progress-blocks.in-view .block.filled[data-index="4"] { animation-delay: 0.4s; }
+  
