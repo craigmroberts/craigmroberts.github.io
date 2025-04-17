@@ -48,9 +48,9 @@ class ModalBrand extends ModalContent {
     logo.classList.add("modal__brand-logo");
 
     const wrapper = document.createElement("div");
-    let description = brandData.modal.description_html;
-
-    description = description.replace(/{{\s*brand\.involvement_progress\s*}}/g, createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML);
+    let description = brandData.modal.description_html
+      .replace(/{{\s*brand\.involvement_progress\s*}}/g, createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML)
+      .replace(/{{\s*brand\.agency\s*}}/g, brandData.agency);
     wrapper.innerHTML = description;
 
     innerContent.appendChild(img);
