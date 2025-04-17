@@ -465,7 +465,7 @@ body.modal-open .main {
   transform: translateY(-150%) scale(0);
 }
 
-.section.in-view[aria-label]::before {
+.section.in-view[aria-label]:not(.in-full-view)::before {
   transform: translateY(0%) scale(1);
   opacity: 1;
 }
