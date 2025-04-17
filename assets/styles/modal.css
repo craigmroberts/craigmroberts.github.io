@@ -14,10 +14,10 @@ modal.modal {
   inset: 0;
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(0px);
-  animation: blur-in 0.4s forwards;
+  animation: blur-in 0.5s forwards;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.4s ease;
+  transition: opacity 0.5s ease;
 }
 
 modal.is-active .modal__overlay {
@@ -37,8 +37,8 @@ modal.is-active .modal__overlay {
   width: 100%;
   z-index: 1;
   transform: translateY(100%);
-  transition: transform 0.4s ease, opacity 0.4s ease;
-  opacity: 0;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
   margin-top: auto;
 }
 
@@ -80,7 +80,8 @@ modal.is-active .modal__content {
     width: 100%;
     max-width: 640px;
     transform: scale(0);
-    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    transition: transform 0.5s ease, opacity 0.5s ease;
   }
 
   modal.is-active .modal__content {

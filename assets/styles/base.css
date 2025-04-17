@@ -436,7 +436,7 @@ figcaption {
 
 .main {
   transform: scale(1);
-  transition: ease 250ms transform;
+  transition: ease 500ms transform;
 }
 
 body.modal-open .main {
