@@ -8,7 +8,7 @@ const brands = [
     website: "https://www.patou.com/",
     agency: "Fostr",
     involvement: {
-      progress: 3,
+      progress: 2,
       max: 5
     },
     modal: {
@@ -62,7 +62,7 @@ const brands = [
     website: "https://www.pucci.com/",
     agency: "Fostr",
     involvement: {
-      progress: 4,
+      progress: 2,
       max: 5
     },
     modal: {
@@ -116,7 +116,7 @@ const brands = [
     "website": "https://www.kitandkaboodal.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 4,
+      "progress": 3,
       "max": 5
     },
     "modal": {
@@ -171,7 +171,7 @@ const brands = [
     "website": "https://www.medik8.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 2,
+      "progress": 1,
       "max": 5
     },
     "modal": {
@@ -202,7 +202,7 @@ const brands = [
     "website": "https://indu.me/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 1,
+      "progress": 5,
       "max": 5
     },
     "modal": {
@@ -230,7 +230,7 @@ const brands = [
     "website": "https://uk.beistravel.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 2,
+      "progress": 3,
       "max": 5
     },
     "modal": {
@@ -276,8 +276,6 @@ const brands = [
         <a class="button button--style-2 button--filled" href="https://pattern.com/" target="_blank">View Website</a>`
     }
   },
-
-
   {
     "id": "st-john",
     "largeBlock": true,
@@ -287,7 +285,7 @@ const brands = [
     "website": "https://www.stjohnknits.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 2,
+      "progress": 5,
       "max": 5
     },
     "modal": {
@@ -314,7 +312,7 @@ const brands = [
     "website": "https://kjaerweis.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 4,
+      "progress": 2,
       "max": 5
     },
     "modal": {
@@ -341,7 +339,7 @@ const brands = [
     "website": "https://www.neweracap.eu/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 2,
+      "progress": 5,
       "max": 5
     },
     "modal": {
@@ -422,7 +420,7 @@ const brands = [
     "website": "https://www.protectapet.com/",
     "agency": "Cake Agency",
     "involvement": {
-      "progress": 1,
+      "progress": 3,
       "max": 5
     },
     "modal": {
@@ -449,7 +447,7 @@ const brands = [
     "website": "https://andsons.co.uk/",
     "agency": "Cake Agency",
     "involvement": {
-      "progress": 2,
+      "progress": 4,
       "max": 5
     },
     "modal": {
@@ -503,7 +501,7 @@ const brands = [
     "website": "https://pangaia.com/",
     "agency": "Fostr",
     "involvement": {
-      "progress": 2,
+      "progress": 5,
       "max": 5
     },
     "modal": {
