@@ -68,7 +68,7 @@ class ModalContent extends HTMLElement {
     dragBar.setAttribute('aria-label', 'Drag to close');
 
     // Add touch event listeners to modal content and drag bar
-    console.log('Setting up touch events for modal drag');
+    // console.log('Setting up touch events for modal drag');
     dragBar.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
     innerContent.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
     document.addEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
@@ -84,27 +84,40 @@ class ModalContent extends HTMLElement {
     const contentRect = modalContent.getBoundingClientRect();
     const touchY = touch.clientY - contentRect.top;
 
+    // Allow normal scrolling if the user is not pulling down
+    if (innerContent.scrollTop > 0 && touchY > 60) {
+        this.isDragging = false;
+        return;
+    }
+
     if (touchY <= 60 || (innerContent.scrollTop === 0 && touchY > 60)) {
-      this.isDragging = true;
-      this.initialTouchY = touch.clientY;
-      this.startY = touch.clientY;
+        this.isDragging = true;
+        this.initialTouchY = touch.clientY;
+        this.startY = touch.clientY;
 
-      const transform = window.getComputedStyle(modalContent).transform;
-      const matrix = new DOMMatrix(transform);
-      this.currentY = matrix.m42;
+        const transform = window.getComputedStyle(modalContent).transform;
+        const matrix = new DOMMatrix(transform);
+        this.currentY = matrix.m42;
 
-      modalContent.classList.add('is-dragging');
+        modalContent.classList.add('is-dragging');
     }
   }
 
   handleTouchMove(e) {
     if (!this.isDragging) return;
 
-    e.preventDefault();
-
     const modalContent = document.querySelector('.modal__content');
+    const innerContent = modalContent.querySelector('.modal__inner-content');
     const touch = e.touches[0];
     const deltaY = touch.clientY - this.startY;
+
+    // Allow normal scrolling if the user is scrolling up
+    if (deltaY < 0 && innerContent.scrollTop > 0) {
+        this.isDragging = false;
+        return;
+    }
+
+    e.preventDefault();
 
     const newY = Math.max(0, this.currentY + deltaY);
 
@@ -114,12 +127,12 @@ class ModalContent extends HTMLElement {
     const overlay = modal.querySelector('.modal__overlay');
 
     if (overlay) {
-      const dragPercentage = Math.min(1, newY / this.closeThreshold);
-      overlay.style.opacity = 1 - (dragPercentage * 0.5);
+        const dragPercentage = Math.min(1, newY / this.closeThreshold);
+        overlay.style.opacity = 1 - (dragPercentage * 0.5);
     }
   }
 
-  handleTouchEnd(e) {
+  handleTouchEnd() {
     if (!this.isDragging) return;
 
     const modalContent = document.querySelector('.modal__content');
