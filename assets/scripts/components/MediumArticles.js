@@ -1,4 +1,4 @@
-import { medium } from '../helpers/medium.js';
+import { medium } from '../helpers/api/medium.js';
 import { debounce } from '../helpers/utils/debounce.js';
 
 /**
