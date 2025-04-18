@@ -16,7 +16,7 @@
 .brands .brands__content brand-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: var(--space-sm);
+  gap: 0.5rem;
   align-items: center;
   margin-top: var(--space-lg);
   max-width: initial;
