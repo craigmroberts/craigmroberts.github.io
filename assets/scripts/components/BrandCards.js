@@ -53,7 +53,6 @@ class BrandCards extends HTMLElement {
       // Apply special class if the brand has a large block flag
       if (brand.largeBlock) {
         cardEl.classList.add('large-block');
-        // cardEl.setAttribute('data-snap-section', 'true');
       }
 
       container.appendChild(cardEl);

@@ -26,7 +26,7 @@
 .brands .large-block {
   grid-column: span 2;
   grid-row: span 2;
-  height: 100vh;
+  height: 70vh;
 }
 
 .brands__brand-lifestyle-image-wrapper {
@@ -34,6 +34,10 @@
 }
 
 @media (min-width: 768px) {
+  .brands .large-block {
+    height: initial;
+  }
+
   .brands .brands__content brand-cards {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }

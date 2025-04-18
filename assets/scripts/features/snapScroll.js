@@ -25,7 +25,6 @@ export default function enableSnapScroll() {
 
   function handleSwipe(section, direction) {
     if (direction === 'down') {
-        //console.log('Swiped down', section.nextElementSibling);
       const nextSection = section.nextElementSibling;
       if (nextSection) {
         nextSection.scrollIntoView({ behavior: 'smooth' });

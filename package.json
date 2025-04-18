@@ -1,5 +1,5 @@
 {
-  "version": "1.0.12",
+  "version": "1.0.13",
   "dependencies": {
     "mustache": "^4.2.0",
     "swiper": "^11.2.6"
