@@ -1,4 +1,5 @@
 import { medium } from '../helpers/medium.js';
+import { debounce } from '../helpers/utils/debounce.js';
 
 /**
  * @class MediumArticles
@@ -13,13 +14,16 @@ class MediumArticles extends HTMLElement {
   constructor() {
     super();
     this.articleTemplate = null; // Cache the template
+
+    // Debounce the render method to avoid excessive calls
+    this.debouncedRender = debounce(this.render.bind(this), 300);
   }
 
   /**
    * Called when the element is added to the DOM. Triggers rendering.
    */
   connectedCallback() {
-    this.render();
+    this.debouncedRender();
   }
 
   /**

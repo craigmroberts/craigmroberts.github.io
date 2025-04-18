@@ -1,4 +1,5 @@
-import { lockBody, unlockBody } from '../helpers/bodyLock.js';
+import { lockBody, unlockBody } from '../helpers/dom/bodyLock.js';
+import { throttle } from '../helpers/utils/throttle.js';
 
 class ModalContent extends HTMLElement {
   constructor() {
@@ -9,7 +10,7 @@ class ModalContent extends HTMLElement {
     this.initialTouchY = 0;
     this.closeThreshold = 150; // Pixels to drag down before closing
     this.boundHandleTouchStart = this.handleTouchStart.bind(this);
-    this.boundHandleTouchMove = this.handleTouchMove.bind(this);
+    this.boundHandleTouchMove = throttle(this.handleTouchMove.bind(this), 100); // Throttled
     this.boundHandleTouchEnd = this.handleTouchEnd.bind(this);
   }
 
@@ -73,28 +74,22 @@ class ModalContent extends HTMLElement {
   }
 
   handleTouchStart(e) {
-    // Only initiate drag from the top part of the modal
     const touch = e.touches[0];
     const modalContent = document.querySelector('.modal__content');
     const dragBar = document.querySelector('.modal__drag-bar');
     
-    // Get the bounding boxes to check if touch is near the drag bar
     const contentRect = modalContent.getBoundingClientRect();
     const touchY = touch.clientY - contentRect.top;
     
-    // Allow dragging if touch is in the top 60px of the modal
-    // Adjust this value based on your design
     if (touchY <= 60) {
       this.isDragging = true;
       this.initialTouchY = touch.clientY;
       this.startY = touch.clientY;
       
-      // Get the current transform value
       const transform = window.getComputedStyle(modalContent).transform;
       const matrix = new DOMMatrix(transform);
-      this.currentY = matrix.m42; // The Y translation value from the matrix
+      this.currentY = matrix.m42;
       
-      // Add a class to indicate dragging
       modalContent.classList.add('is-dragging');
     }
   }
@@ -102,20 +97,16 @@ class ModalContent extends HTMLElement {
   handleTouchMove(e) {
     if (!this.isDragging) return;
     
-    // Prevent scrolling when dragging
     e.preventDefault();
     
     const modalContent = document.querySelector('.modal__content');
     const touch = e.touches[0];
     const deltaY = touch.clientY - this.startY;
     
-    // Don't allow dragging the modal up past its starting position
     const newY = Math.max(0, this.currentY + deltaY);
     
-    // Apply the transform
     modalContent.style.transform = `translateY(${newY}px)`;
     
-    // Optional: adjust opacity of overlay based on drag distance
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
     
@@ -132,36 +123,29 @@ class ModalContent extends HTMLElement {
     this.isDragging = false;
     modalContent.classList.remove('is-dragging');
     
-    // Get current position
     const transform = window.getComputedStyle(modalContent).transform;
     const matrix = new DOMMatrix(transform);
     const currentY = matrix.m42;
     
-    // If dragged past threshold, close the modal
     if (currentY > this.closeThreshold) {
       this.animateAndClose(modalContent);
     } else {
-      // Return to original position
       this.resetPosition(modalContent);
     }
   }
 
   animateAndClose(modalContent) {
-    // Animate the modal moving down
     modalContent.style.transition = 'transform 0.3s ease';
     modalContent.style.transform = `translateY(100%)`;
     
-    // Reset the overlay opacity
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
     if (overlay) {
       overlay.style.opacity = '';
     }
     
-    // Close the modal after animation
     setTimeout(() => {
       this.closeModal();
-      // Reset the transform after closing
       modalContent.style.transform = '';
       modalContent.style.transition = '';
     }, 300);
@@ -171,14 +155,12 @@ class ModalContent extends HTMLElement {
     modalContent.style.transition = 'transform 0.3s ease';
     modalContent.style.transform = '';
     
-    // Reset the overlay opacity
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
     if (overlay) {
       overlay.style.opacity = '';
     }
     
-    // Remove the transition after it completes
     setTimeout(() => {
       modalContent.style.transition = '';
     }, 300);
@@ -201,7 +183,6 @@ class ModalContent extends HTMLElement {
       document.body.classList.add("modal-open");
       modal.classList.add("is-active");
       
-      // Ensure any lingering transforms are reset
       const modalContent = modal.querySelector(".modal__content");
       if (modalContent) {
         modalContent.style.transform = '';
@@ -233,10 +214,8 @@ class ModalContent extends HTMLElement {
     document.body.classList.remove("modal-open");
     modal.classList.remove("is-active");
     
-    // Reset any transforms and transitions
     const modalContent = modal.querySelector(".modal__content");
     if (modalContent) {
-      // Let CSS handle the closing animation
       modalContent.style.transform = '';
       modalContent.style.transition = '';
     }

@@ -1,4 +1,5 @@
-import { createInViewObserver } from './createInViewObserver.js';
+import { createInViewObserver } from '../createInViewObserver.js';
+import { throttle } from '../utils/throttle.js'; // Import throttle from the external file
 
 /**
  * Observes elements with [data-watch-inview="true"] and adds/removes
@@ -140,20 +141,6 @@ export function watchInViewElements(scope = document, options = {}) {
       window.removeEventListener('resize', throttledScrollHandler);
       observer.disconnect();
       observedElements.clear();
-    }
-  };
-}
-
-// Simple throttle function to limit how often the scroll handler runs
-function throttle(func, limit) {
-  let inThrottle;
-  return function() {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
     }
   };
 }

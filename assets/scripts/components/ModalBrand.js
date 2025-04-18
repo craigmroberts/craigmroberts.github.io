@@ -1,4 +1,4 @@
-import { lockBody, unlockBody } from '../helpers/bodyLock.js';
+import { lockBody, unlockBody } from '../helpers/dom/bodyLock.js';
 import ModalContent from './ModalContent.js'; // Base class
 import brands from '../../data/brands.js';
 import { createProgressBlocks } from '../helpers/progressBlocks.js';

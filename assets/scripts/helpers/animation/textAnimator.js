@@ -1,5 +1,6 @@
-import { wrapTextWithSpans } from './wrapTextWithSpans.js';
-import { createInViewObserver } from './createInViewObserver.js';
+import { wrapTextWithSpans } from '../wrapTextWithSpans.js';
+import { createInViewObserver } from '../createInViewObserver.js';
+import { debounce } from '../utils/debounce.js';
 
 /**
  * Initializes text animations for elements when they scroll into view.
@@ -9,21 +10,19 @@ import { createInViewObserver } from './createInViewObserver.js';
  * @param {Document|Element} [scope=document] - The scope within which to search for elements.
  */
 export function animateScrollText(scope = document) {
-  // Create an observer that triggers once when an element is 10% visible
-  const observer = createInViewObserver(
-    (el, isIntersecting, entry, obs) => {
-      // Use isIntersecting for clarity, though threshold 0.1 means it triggers only on entry
-      if (isIntersecting) {
-        const label = el.getAttribute('aria-label') || el.textContent?.slice(0, 20) || '[text]';
-        el.classList.add('in-view');
-        // console.log(`🌀 ${label} is in view, starting animation.`);
+  // Create a debounced observer callback
+  const debouncedCallback = debounce((el, isIntersecting, entry, obs) => {
+    if (isIntersecting) {
+      const label = el.getAttribute('aria-label') || el.textContent?.slice(0, 20) || '[text]';
+      el.classList.add('in-view');
 
-        // Stop observing the element once it has become visible
-        obs.unobserve(el);
-      }
-    },
-    { threshold: 0.1 } // Trigger when 10% of the element is visible
-  );
+      // Stop observing the element once it has become visible
+      obs.unobserve(el);
+    }
+  }, 100); // Adjust debounce delay as needed (e.g., 100ms)
+
+  // Create an observer that triggers once when an element is 10% visible
+  const observer = createInViewObserver(debouncedCallback, { threshold: 0.1 });
 
   // Find all elements intended for scroll animation that haven't been initialized
   const textElements = scope.querySelectorAll('.scroll-animate:not(.animated-init)');
