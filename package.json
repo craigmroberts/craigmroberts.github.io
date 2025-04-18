@@ -1,6 +1,7 @@
 {
-  "version": "1.0.4",
+  "version": "1.0.5",
   "dependencies": {
+    "mustache": "^4.2.0",
     "swiper": "^11.2.6"
   },
   "devDependencies": {

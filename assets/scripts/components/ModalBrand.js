@@ -2,6 +2,7 @@ import { lockBody, unlockBody } from '../helpers/dom/bodyLock.js';
 import ModalContent from './ModalContent.js'; // Base class
 import brands from '../../data/brands.js';
 import { createProgressBlocks } from '../helpers/progressBlocks.js';
+import Mustache from 'mustache'; // Import Mustache.js
 
 /**
  * @class ModalBrand
@@ -12,20 +13,37 @@ class ModalBrand extends ModalContent {
   // Instance property to store the keyboard handler for cleanup
   _keyHandler = null;
 
+  // Cache for the modal HTML snippet
+  static modalHtmlCache = null;
+
+  // Instance property to store the last focused element
+  _lastFocusedElement = null;
+
   /**
    * Ensures the brand-specific modal template is loaded.
    * @override
    */
   async ensureModalLoaded() {
+    // Check if the modal is already in the DOM
     if (document.getElementById('modal')) {
-      return; // Already loaded
+      return; // Modal is already loaded
     }
 
+    // Check if the modal HTML is cached
+    if (ModalBrand.modalHtmlCache) {
+      // Clone the cached modal and append it to the DOM
+      const cachedModal = ModalBrand.modalHtmlCache.cloneNode(true);
+      document.body.appendChild(cachedModal);
+      return;
+    }
+
+    // Fetch the modal HTML snippet and cache it
     try {
       const response = await fetch('./snippets/modal-brand.html');
-      if (!response.ok) { // Check if fetch was successful
+      if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
+
       const html = await response.text();
       const wrapper = document.createElement('div');
       wrapper.innerHTML = html.trim();
@@ -35,14 +53,24 @@ class ModalBrand extends ModalContent {
         throw new Error('Modal structure (#modal) not found in snippet: ./snippets/modal-brand.html');
       }
 
+      // Cache the modal HTML for future use
+      ModalBrand.modalHtmlCache = modal;
+
+      // Append the modal to the DOM
       document.body.appendChild(modal);
+
+      // Add ARIA roles and attributes
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-hidden', 'true');
+      modal.setAttribute('tabindex', '-1'); // Make modal focusable
+
       // Inherited methods from ModalContent:
       this.attachCloseHandlers(modal); // Assumes base class provides this
       this.setupDragFunctionality(modal); // Assumes base class provides this
-
     } catch (err) {
       console.error('Failed to load modal-brand snippet:', err);
-      // Consider displaying a user-facing error
+      // Optionally display a user-facing error message
     }
   }
 
@@ -93,11 +121,19 @@ class ModalBrand extends ModalContent {
       }
     }
 
+    // Save the last focused element
+    this._lastFocusedElement = document.activeElement;
+
     // Show the modal container and trigger animations/locks
     requestAnimationFrame(() => {
       lockBody(); // Assumes this handles locking correctly
       document.body.classList.add('modal-open');
       modal.classList.add('is-active');
+      modal.setAttribute('aria-hidden', 'false');
+      modal.focus(); // Set focus to the modal
+
+      // Trap focus within the modal
+      this.trapFocus(modal);
 
       // Animate progress blocks after modal is visible
       const progressBlocks = modal.querySelector('.progress-blocks');
@@ -116,18 +152,20 @@ class ModalBrand extends ModalContent {
    * @param {object} brandData - The data for the brand.
    */
   populateBrandContent(container, brandData) {
-    // Create Lifestyle Image
+    // Create a DocumentFragment to batch DOM updates
+    const fragment = document.createDocumentFragment();
 
+    // Create Lifestyle Image
     const img = document.createElement('img');
     img.src = brandData.lifestyleImage || 'placeholder-image.jpg'; // Fallback src
     img.alt = `${brandData.name || 'Brand'} lifestyle image`;
-    // Consider using CSS classes for styling instead of inline styles
 
     const imgWrapper = document.createElement('div');
-    imgWrapper.classList.add('modal__brand-image-wrapper')
+    imgWrapper.classList.add('modal__brand-image-wrapper');
     imgWrapper.appendChild(img);
-    container.appendChild(imgWrapper);
+    fragment.appendChild(imgWrapper);
 
+    // Create Container for Logo and Description
     const container2 = document.createElement('div');
     container2.classList.add('modal__container');
 
@@ -145,14 +183,24 @@ class ModalBrand extends ModalContent {
       ? createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML
       : ''; // Default if no involvement data
 
-    // Replace placeholders
-    let description = descriptionHtml
-      .replace(/{{\s*brand\.involvement_progress\s*}}/g, progressHtml)
-      .replace(/{{\s*brand\.agency\s*}}/g, brandData.agency || 'N/A');
-    wrapper.innerHTML = description;
+    // Define the data for the template
+    const templateData = {
+      brand: {
+        involvement_progress: progressHtml,
+        agency: brandData.agency || 'N/A',
+      },
+    };
+
+    // Render the template using Mustache.js
+    const renderedHtml = Mustache.render(descriptionHtml, templateData);
+    wrapper.innerHTML = renderedHtml;
     container2.appendChild(wrapper);
 
-    container.appendChild(container2);
+    // Append the container to the fragment
+    fragment.appendChild(container2);
+
+    // Append the fragment to the container
+    container.appendChild(fragment);
   }
 
 
@@ -212,12 +260,27 @@ class ModalBrand extends ModalContent {
   }
 
   /**
-   * Closes the modal and cleans up instance-specific listeners.
+   * Closes the modal and restores focus.
    * @override
    */
   closeModal() {
     // Call the parent class's close logic first (handles classes, body lock)
     super.closeModal(); // Assumes ModalContent has a closeModal method
+
+    const modal = document.getElementById('modal');
+    if (!modal) return;
+
+    modal.setAttribute('aria-hidden', 'true');
+    modal.classList.remove('is-active');
+
+    // Restore focus to the last focused element
+    if (this._lastFocusedElement) {
+      this._lastFocusedElement.focus();
+    }
+
+    // Unlock the body
+    unlockBody();
+    document.body.classList.remove('modal-open');
 
     // Clean up the keyboard listener associated with this specific instance
     if (this._keyHandler) {
@@ -225,6 +288,37 @@ class ModalBrand extends ModalContent {
       this._keyHandler = null; // Clear the reference
       // console.log('Cleaned up key handler on close for instance:', this.getAttribute('data-brand-id'));
     }
+  }
+
+  /**
+   * Traps focus within the modal.
+   * @param {Element} modal - The modal element.
+   */
+  trapFocus(modal) {
+    const focusableElements = modal.querySelectorAll(
+      'a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])'
+    );
+    const firstElement = focusableElements[0];
+    const lastElement = focusableElements[focusableElements.length - 1];
+
+    const handleFocus = (e) => {
+      if (e.key === 'Tab') {
+        if (e.shiftKey && document.activeElement === firstElement) {
+          e.preventDefault();
+          lastElement.focus();
+        } else if (!e.shiftKey && document.activeElement === lastElement) {
+          e.preventDefault();
+          firstElement.focus();
+        }
+      }
+    };
+
+    modal.addEventListener('keydown', handleFocus);
+
+    // Remove the event listener when the modal is closed
+    modal.addEventListener('transitionend', () => {
+      modal.removeEventListener('keydown', handleFocus);
+    }, { once: true });
   }
 }
 
