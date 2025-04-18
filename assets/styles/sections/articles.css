@@ -6,7 +6,7 @@
 .articles .articles__header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: var(--space-sm) 0;
 }
 
 .articles .articles__header h2 {
@@ -15,10 +15,10 @@
 
 .articles .swiper-buttons button {
   aspect-ratio: 1;
-  width: 40px;
+  width: 40px; /* No matching variable for width */
   display: flex;
   position: relative;
-  color: var(--color-white);
+  color: var(--color-text);
   left: initial;
   right: initial;
 }
@@ -29,4 +29,5 @@
 
 .articles .swiper-buttons {
   display: flex;
+  gap: var(--space-xs);
 }

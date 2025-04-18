@@ -1,11 +1,11 @@
 .scroll-animate span {
   display: inline-block;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(var(--translate-distance, 20px));
   transition:
-    opacity 0.5s ease-out,
-    transform 0.5s ease-out;
-  transition-delay: calc(var(--char-index) * 40ms);
+    opacity var(--animation-duration, 0.5s) var(--animation-ease, ease-out),
+    transform var(--animation-duration, 0.5s) var(--animation-ease, ease-out);
+  transition-delay: calc(var(--char-index) * 40ms); /* Retained as no matching variable exists */
   background: inherit;
 }
 

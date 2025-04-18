@@ -6,7 +6,7 @@
 .brands__header {
   display: flex;
   justify-content: space-between;
-  padding: 1rem 0;
+  padding: var(--space-sm) 0;
 }
 
 .brands__header h2 {
@@ -16,9 +16,9 @@
 .brands .brands__content brand-cards {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
+  gap: var(--space-sm);
   align-items: center;
-  margin-top: 3rem;
+  margin-top: var(--space-lg);
   max-width: initial;
   grid-auto-flow: dense;
 }
@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-xs);
 }
 
 .brands__brand-logo img {
@@ -67,9 +67,9 @@
 }
 
 .brands__item {
-  background-color: rgba(255,255,255,0.09);
-  padding: 0.6rem;
-  border-radius: 0.6rem;
+  background-color: rgba(255, 255, 255, 0.09);
+  padding: var(--space-xs);
+  border-radius: var(--radius-md);
   overflow: hidden;
   cursor: pointer;
 }

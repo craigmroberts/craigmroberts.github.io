@@ -1,5 +1,5 @@
 .section-hero {
-  background-color: initial;
+  background-color: var(--color-bg);
 }
 
 .hero {
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 3rem 1.5rem;
+  padding: var(--space-lg) var(--space-sm);
   text-align: center;
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
 }

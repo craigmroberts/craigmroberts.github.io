@@ -1,34 +1,34 @@
 @keyframes fillBlock {
     from {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: var(--color-bg-2);
       transform: scaleY(0.8);
     }
     to {
-      background-color: #4bc0af;
+      background-color: var(--color-accent-3);
       transform: scaleY(1);
     }
 }
 
 .progress-blocks {
     display: flex;
-    gap: 0.25rem;
-    height: 10px;
-    max-width: 200px;
-    margin-top: 0.5rem;
+    gap: var(--space-xs);
+    height: 10px; /* No matching variable for height */
+    max-width: 200px; /* No matching variable for max-width */
+    margin-top: var(--space-xs);
     overflow: hidden;
 }
 
 .progress-blocks .block {
     flex: 1;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.2);
-    transition: background 0.3s ease;
+    border-radius: var(--radius-sm);
+    background-color: var(--color-bg-2);
+    transition: background var(--animation-duration) var(--animation-ease);
     transform-origin: bottom;
 }
 
 /* Animate filled blocks only when in-view */
 .progress-blocks.in-view .block.filled {
-    fillBlock 0.4s ease forwards;
+    animation: fillBlock var(--animation-duration) var(--animation-ease) forwards;
 }
 
 /* Stagger delays */

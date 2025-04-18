@@ -15,7 +15,7 @@ body {
   color: var(--color-text);
   font-family: var(--font-body);
   font-size: var(--font-size-base);
-  line-height: 1.6;
+  line-height: var(--line-height);
   margin: 0;
   padding: 0;
   -ms-overflow-style: none;  /* IE and Edge */
@@ -30,7 +30,7 @@ body::-webkit-scrollbar {
 /* Typography */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-sm);
 }
 
@@ -58,7 +58,7 @@ h4 *,
 h5 *,
 .h5 *,
 h6 *,
-h6 *,
+.h6 *,
 p *,
 a *,
 strong * {
@@ -77,7 +77,7 @@ a:hover { text-decoration: underline; }
 
 /* Layout */
 .container {
-  max-width: 1200px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
   padding: var(--space-sm) 0.2rem;
 }
@@ -134,7 +134,7 @@ a:hover { text-decoration: underline; }
   display: inline-block;
   padding: var(--space-xs) var(--space-sm);
   border-radius: var(--radius-lg);
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   border: 2px solid transparent;
   background-color: transparent;
   color: var(--color-text);
@@ -150,7 +150,7 @@ a:hover { text-decoration: underline; }
   inset: 0;
   border-radius: inherit;
   padding: 2px;
-  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+  background: var(--color-gradient-2);
   background-size: 200% 200%;
   background-position: 0% 50%;
   transition: background-position 0.3s ease;
@@ -171,13 +171,13 @@ a,
 
 /* Gradient Text Utilities */
 .text-gradient-1 {
-  background: linear-gradient(90deg, var(--color-accent-1), var(--color-accent-2));
+  background: var(--color-gradient-1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-2 {
-  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+  background: var(--color-gradient-2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -224,7 +224,7 @@ a,
 input,
 textarea,
 select {
-  background: #111;
+  background: var(--color-bg-2);
   color: var(--color-text);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -261,7 +261,7 @@ select:disabled {
 label {
   display: block;
   margin-bottom: var(--space-xs);
-  font-weight: 500;
+  font-weight: var(--font-weight-bold);
 }
 
 fieldset {
@@ -272,7 +272,7 @@ fieldset {
 }
 
 legend {
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   padding: 0 var(--space-xs);
   color: var(--color-accent-1);
 }
@@ -307,20 +307,20 @@ th, td {
 }
 
 th {
-  background-color: #111;
-  font-weight: 600;
+  background-color: var(--color-bg-2);
+  font-weight: var(--font-weight-bold);
 }
 
 /* Code & Blockquote */
 code {
-  background-color: #111;
+  background-color: var(--color-bg-2);
   padding: 0.2em 0.4em;
   border-radius: var(--radius-sm);
   font-family: monospace;
 }
 
 pre {
-  background-color: #111;
+  background-color: var(--color-bg-2);
   padding: var(--space-sm);
   border-radius: var(--radius-md);
   overflow-x: auto;
@@ -362,7 +362,7 @@ figcaption {
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-sm);
   font-size: var(--font-size-sm);
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   text-transform: uppercase;
 }
 
@@ -381,7 +381,7 @@ figcaption {
 
 .button-group {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-md);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -400,12 +400,11 @@ figcaption {
   color: transparent;
 }
 
-
 .sticky {
   position: sticky;
   top: 0 !important;
   z-index: 2;
-  background: black;
+  background: var(--color-bg);
 }
 
 .main {
@@ -420,17 +419,17 @@ body.modal-open .main {
 .section[aria-label]::before {
   content: attr(aria-label);
   position: sticky;
-  background: linear-gradient(90deg, var(--color-accent-4), var(--color-accent-3), var(--color-accent-2), var(--color-accent-1));
-  color: white;
-  font-size: 14px;
-  font-weight: bold;
+  background: var(--color-gradient-1);
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
   padding: 0.25rem 0.75rem;
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   z-index: 99;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow);
   top: 0.5rem;
   margin: auto;
   width: fit-content;
@@ -466,8 +465,8 @@ body.modal-open .main {
 
 .logo {
   position: fixed;
-  top: 1.5rem;
-  left: 1.5rem;
+  top: var(--space-md);
+  left: var(--space-md);
   width: 70px;
   z-index: 2;
 }
@@ -481,24 +480,24 @@ body.modal-open .main {
 }
 
 .status-icon--available {
-  background-color: #4CAF50; /* Green color */
-  box-shadow: 0 0 0 0 rgba(76, 175, 80, 1);
+  background-color: var(--color-accent-4);
+  box-shadow: 0 0 0 0 rgba(52, 168, 83, 1);
   animation: pulse-green 2s infinite;
 }
 
 @keyframes pulse-green {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7);
   }
   
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(76, 175, 80, 0);
+    box-shadow: 0 0 0 10px rgba(52, 168, 83, 0);
   }
   
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0);
+    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0);
   }
 }

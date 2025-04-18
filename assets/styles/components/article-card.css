@@ -4,18 +4,18 @@
     border-radius: var(--radius-lg);
     overflow: hidden;
     box-shadow: var(--box-shadow-lg);
-    transition: transform var(--animation-duration) var(--animation-ease), 
+    transition: transform var(--animation-duration) var (--animation-ease), 
                 box-shadow var(--animation-duration) var(--animation-ease);
 }
   
 .article-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-4px); /* No matching variable for translateY */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* No matching variable for shadow */
 }
   
 .article-card__thumbnail {
     width: 100%;
-    height: 150px;
+    height: 150px; /* No matching variable for height */
     object-fit: cover;
     border-bottom: 1px solid var(--color-border);
 }

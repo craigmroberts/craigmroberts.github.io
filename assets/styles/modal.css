@@ -12,12 +12,12 @@ modal.modal {
 .modal__overlay {
   position: fixed;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.1); /* No matching variable for this color */
   backdrop-filter: blur(0px);
-  animation: blur-in 0.5s forwards;
+  animation: blur-in var(--animation-duration) forwards;
   z-index: 0;
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity var(--animation-duration) var(--animation-ease);
 }
 
 modal.is-active .modal__overlay {
@@ -27,7 +27,7 @@ modal.is-active .modal__overlay {
 
 @keyframes blur-in {
   to {
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(var(--overlay-blur));
   }
 }
 
@@ -37,7 +37,7 @@ modal.is-active .modal__overlay {
   width: 100%;
   z-index: 1;
   transform: translateY(100%);
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform var(--animation-duration) var(--animation-ease), opacity var(--animation-duration) var(--animation-ease);
   opacity: 1;
   margin-top: auto;
 }
@@ -56,12 +56,12 @@ modal.is-active .modal__content {
 
 /* Inner Box Styling */
 .modal__inner-content {
-  background-color: rgba(0,0,0, 0.8);
-  border-radius: 1rem 1rem 0 0;
-  padding: 3rem 1.5rem 4rem;
+  background-color: rgba(0, 0, 0, 0.8); /* No matching variable for this color */
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg) var(--space-sm) var(--space-xl);
   overflow-y: scroll;
-  max-height: 95dvh;
-  color: white;
+  max-height: 95dvh; /* No matching variable for max-height */
+  color: var(--color-text);
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -78,10 +78,10 @@ modal.is-active .modal__content {
 
   .modal__content {
     width: 100%;
-    max-width: 640px;
+    max-width: 640px; /* No matching variable for max-width */
     transform: scale(0);
     opacity: 0;
-    transition: transform 0.5s ease, opacity 0.5s ease;
+    transition: transform var(--animation-duration) var(--animation-ease), opacity var(--animation-duration) var(--animation-ease);
   }
 
   modal.is-active .modal__content {
@@ -89,19 +89,19 @@ modal.is-active .modal__content {
   }
 
   .modal__inner-content {
-    border-radius: 1rem;
+    border-radius: var(--radius-lg);
   }
 }
 
 /* Close + Drag */
 .modal__close {
   position: absolute;
-  top: 0.5rem;
+  top: var(--space-xs);
   right: 0;
-  height: 3rem;
+  height: var(--space-lg);
   background: transparent;
-  color: #fff;
-  font-size: 1.5rem;
+  color: var(--color-text);
+  font-size: var(--font-size-lg);
   border: none;
   cursor: pointer;
   z-index: 2;
@@ -109,11 +109,11 @@ modal.is-active .modal__content {
 }
 
 .modal__drag-bar {
-  width: 40px;
-  height: 2px;
-  background: #ffffff;
-  border-radius: 2px;
-  margin: 0 auto 0.5rem;
+  width: 40px; /* No matching variable for width */
+  height: 2px; /* No matching variable for height */
+  background: var(--color-text);
+  border-radius: var(--radius-sm);
+  margin: 0 auto var(--space-xs);
   display: block;
   border: 0;
   opacity: 0.5;
@@ -125,7 +125,7 @@ modal.is-active .modal__content {
   }
 
   .modal__content .button {
-    max-width: 240px;
+    max-width: 240px; /* No matching variable for max-width */
     display: inline-block;
   }
 }
@@ -133,10 +133,10 @@ modal.is-active .modal__content {
 /* Typography */
 .modal__inner-content h2:first-of-type {
   font-size: var(--font-size-lg);
-  font-weight: 600;
-  line-height: 1.3;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height);
   margin-bottom: var(--space-xs);
-  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
+  background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4)); /* Already using variables */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -153,13 +153,13 @@ modal.is-active .modal__content {
 }
 
 .modal__inner-content img:first-of-type {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
   width: 100%;
   aspect-ratio: 16/9;
   object-fit: cover;
-  min-width: calc(100% + 3rem);
-  margin-left: -1.5rem;
-  margin-top: -3rem;
+  min-width: calc(100% + var(--space-lg));
+  margin-left: calc(-1 * var(--space-sm));
+  margin-top: calc(-1 * var(--space-lg));
 }
 
 .modal-content {
@@ -168,14 +168,14 @@ modal.is-active .modal__content {
 
 .modal__nav {
   width: 100%;
-  background: rgba(0,0,0, 0.8);
+  background: rgba(0, 0, 0, 0.8); /* No matching variable for this color */
   position: fixed;
   bottom: 0;
   display: flex;
   justify-content: end;
   z-index: 1;
-  padding: 0.4rem 1rem;
-  border-radius: 0 0 1rem 1rem;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
 }
 
 @media (min-width: 768px) {
@@ -185,11 +185,11 @@ modal.is-active .modal__content {
 }
 
 .modal__nav-btn {
-  height: 46px;
+  height: 46px; /* No matching variable for height */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.8rem;
+  gap: var(--space-xs);
 }
 
 .modal .stats p {
@@ -197,14 +197,14 @@ modal.is-active .modal__content {
 }
 
 .modal .stats {
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-sm);
 }
 
 .modal__brand-logo {
-  max-height: 30px;
-  filter: invert(1);
+  max-height: 30px; /* No matching variable for max-height */
+  filter: invert(1); /* No matching variable for filter */
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 2rem;
-  margin-top: 3rem;
+  margin-bottom: var(--space-sm);
+  margin-top: var(--space-md);
 }
