@@ -1,6 +1,7 @@
 // initInViewAnimations.js
 import { animateScrollText } from '../helpers/animation/textAnimator.js';
 import { watchInViewElements } from '../helpers/animation/inViewWatcher.js';
+import enableSnapScroll from '../features/snapScroll.js';
 
 export function initInViewAnimations(scope = document) {
   // Assuming animateScrollText also uses scope or is independent
@@ -13,4 +14,5 @@ export function initInViewAnimations(scope = document) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initInViewAnimations();
+  enableSnapScroll();
 });
