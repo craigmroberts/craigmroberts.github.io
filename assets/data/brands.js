@@ -7,6 +7,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/patou.jpg",
     website: "https://www.patou.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 2,
       max: 5
@@ -34,6 +41,23 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/triangl.jpg",
     website: "https://triangl.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      },
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 2",
+        caption: "Triangl Gallery Image 2"
+      },
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 3",
+        caption: "Triangl Gallery Image 3"
+      }
+    ],
     involvement: {
       progress: 2,
       max: 5
@@ -61,6 +85,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/pucci.jpg",
     website: "https://www.pucci.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 2,
       max: 5
@@ -88,6 +119,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/victoria-beckham.jpg",
     website: "https://www.victoriabeckham.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 1,
       max: 5
@@ -108,20 +146,20 @@ const brands = [
     }
   },
   {
-    "id": "kit-and-kaboodal",
-    "largeBlock": false,
-    "name": "Kit and Kaboodal",
-    "logo": "./assets/images/brand/logo/logo-kit-and-kaboodal.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/kit-and-kaboodal.jpg",
-    "website": "https://www.kitandkaboodal.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 3,
-      "max": 5
+    id: "kit-and-kaboodal",
+    largeBlock: false,
+    name: "Kit and Kaboodal",
+    logo: "./assets/images/brand/logo/logo-kit-and-kaboodal.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/kit-and-kaboodal.jpg",
+    website: "https://www.kitandkaboodal.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 3,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-kit-and-kaboodal",
-      "description_html": `
+    modal: {
+      id: "brands-item-kit-and-kaboodal",
+      description_html: `
         <h2>Elevating a Boutique Experience</h2>
         <p>Kit and Kaboodal is a family-run brand offering relaxed, easy-to-wear fashion for women of all ages. I collaborated closely with their team to help refresh their Shopify storefront while maintaining their warm, approachable aesthetic.</p>
         <h3 class="h4">Contribution</h3>
@@ -136,20 +174,27 @@ const brands = [
     }
   },
   {
-    "id": "mutt-motorcycles",
-    "largeBlock": false,
-    "name": "Mutt Motorcycles",
-    "logo": "./assets/images/brand/logo/logo-mutt-motorcycles.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/mutt-motorcycles.jpg",
-    "website": "https://muttmotorcycles.com/",
-    "agency": "Cake Agency",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "mutt-motorcycles",
+    largeBlock: false,
+    name: "Mutt Motorcycles",
+    logo: "./assets/images/brand/logo/logo-mutt-motorcycles.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/mutt-motorcycles.jpg",
+    website: "https://muttmotorcycles.com/",
+    agency: "Cake Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-mutt-motorcycles",
-      "description_html": `
+    modal: {
+      id: "brands-item-mutt-motorcycles",
+      description_html: `
         <h2>A Custom Ride for Every Customer</h2>
         <p>Mutt Motorcycles crafts small engine motorcycles with classic styling and a bold identity. I partnered with Cake Agency to help align their digital experience with the gritty, rebellious nature of the brand.</p>
         <h3 class="h4">Contribution</h3>
@@ -163,20 +208,20 @@ const brands = [
     }
   },
   {
-    "id": "medik8",
-    "largeBlock": false,
-    "name": "Medik8",
-    "logo": "./assets/images/brand/logo/logo-medik8.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/medik8.webp",
-    "website": "https://www.medik8.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 1,
-      "max": 5
+    id: "medik8",
+    largeBlock: false,
+    name: "Medik8",
+    logo: "./assets/images/brand/logo/logo-medik8.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/medik8.webp",
+    website: "https://www.medik8.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 1,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-medik8",
-      "description_html": `
+    modal: {
+      id: "brands-item-medik8",
+      description_html: `
         <h2>Medik8 – Skincare Reimagined</h2>
         <p>
           Medik8 is a premium skincare brand known for its science-backed formulations and commitment to sustainability. Their products focus on delivering visible results without compromising skin health.
@@ -194,20 +239,20 @@ const brands = [
     }
   },
   {
-    "id": "indu",
-    "largeBlock": true,
-    "name": "Indu",
-    "logo": "./assets/images/brand/logo/logo-indu.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/indu.jpg",
-    "website": "https://indu.me/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "indu",
+    largeBlock: true,
+    name: "Indu",
+    logo: "./assets/images/brand/logo/logo-indu.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/indu.jpg",
+    website: "https://indu.me/",
+    agency: "Fostr",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-indu",
-      "description_html": `
+    modal: {
+      id: "brands-item-indu",
+      description_html: `
         <h2>Wellness Meets Modern Design</h2>
         <p>Indu blends contemporary lifestyle with holistic wellbeing. As part of their launch, I supported the Shopify build with foundational frontend work and best practices to futureproof the store’s structure.</p>
         <h3 class="h4">Contribution</h3>
@@ -222,20 +267,20 @@ const brands = [
     }
   },
   {
-    "id": "beis",
-    "largeBlock": false,
-    "name": "BÉIS",
-    "logo": "./assets/images/brand/logo/logo-beis.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/beis.jpg",
-    "website": "https://uk.beistravel.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 3,
-      "max": 5
+    id: "beis",
+    largeBlock: false,
+    name: "BÉIS",
+    logo: "./assets/images/brand/logo/logo-beis.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/beis.jpg",
+    website: "https://uk.beistravel.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 3,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-beis",
-      "description_html": `
+    modal: {
+      id: "brands-item-beis",
+      description_html: `
         <h2>Travel Made Beautiful</h2>
         <p>BÉIS delivers stylish travel gear with a cult following. I worked on improving their Shopify frontend to streamline content delivery and enhance mobile performance across high-traffic pages.</p>
         <h3 class="h4">Contribution</h3>
@@ -250,20 +295,20 @@ const brands = [
     }
   },
   {
-    "id": "pattern",
-    "largeBlock": true,
-    "name": "Pattern",
-    "logo": "./assets/images/brand/logo/logo-pattern.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/pattern.jpg",
-    "website": "https://pattern.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 2,
-      "max": 5
+    id: "pattern",
+    largeBlock: true,
+    name: "Pattern",
+    logo: "./assets/images/brand/logo/logo-pattern.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/pattern.jpg",
+    website: "https://pattern.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 2,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-pattern",
-      "description_html": `
+    modal: {
+      id: "brands-item-pattern",
+      description_html: `
         <h2>A Future-Forward Shopify Experience</h2>
         <p>Pattern offers a suite of home and lifestyle brands built for modern consumers. I helped refine reusable blocks and navigation on their Shopify build to keep things modular and on-brand.</p>
         <h3 class="h4">Contribution</h3>
@@ -277,20 +322,37 @@ const brands = [
     }
   },
   {
-    "id": "st-john",
-    "largeBlock": true,
-    "name": "St John",
-    "logo": "./assets/images/brand/logo/logo-st-john.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/st-john.jpg",
-    "website": "https://www.stjohnknits.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "st-john",
+    largeBlock: true,
+    name: "St John",
+    logo: "./assets/images/brand/logo/logo-st-john.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/st-john.jpg",
+    website: "https://www.stjohnknits.com/",
+    agency: "Fostr",
+    galleryImages: [
+      {
+        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
+        "alt": "St John Gallery Image 1",
+        "caption": "St John Gallery Image 1"
+      },
+      {
+        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
+        "alt": "St John Gallery Image 2",
+        "caption": "St John Gallery Image 2"
+      },
+      {
+        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
+        "alt": "St John Gallery Image 3",
+        "caption": "St John Gallery Image 3"
+      }
+    ],
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-st-john",
-      "description_html": `
+    modal: {
+      id: "brands-item-st-john",
+      description_html: `
         <h2>Luxury Refined for Digital</h2>
         <p>St. John is a heritage fashion brand known for timeless silhouettes and elevated craftsmanship. I contributed to frontend refinement and collaborated on layout adjustments for Shopify sections used across campaigns.</p>
         <h3 class="h4">Contribution</h3>
@@ -304,20 +366,20 @@ const brands = [
     }
   },
   {
-    "id": "kjear-weis",
-    "largeBlock": false,
-    "name": "Kjaer Weis",
-    "logo": "./assets/images/brand/logo/logo-kjaer-weis.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/kjaer-weis.jpg",
-    "website": "https://kjaerweis.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 2,
-      "max": 5
+    id: "kjear-weis",
+    largeBlock: false,
+    name: "Kjaer Weis",
+    logo: "./assets/images/brand/logo/logo-kjaer-weis.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/kjaer-weis.jpg",
+    website: "https://kjaerweis.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 2,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-kjaer-weis",
-      "description_html": `
+    modal: {
+      id: "brands-item-kjaer-weis",
+      description_html: `
         <h2>Clean Beauty, Clean Code</h2>
         <p>Kjaer Weis blends luxury aesthetics with clean beauty. I was involved in optimising their Shopify theme with a focus on accessibility, flexible content modules, and elegant micro-interactions.</p>
         <h3 class="h4">Contribution</h3>
@@ -331,20 +393,20 @@ const brands = [
     }
   },
   {
-    "id": "new-era",
-    "largeBlock": true,
-    "name": "New Era",
-    "logo": "./assets/images/brand/logo/logo-new-era.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/new-era.jpg",
-    "website": "https://www.neweracap.eu/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "new-era",
+    largeBlock: true,
+    name: "New Era",
+    logo: "./assets/images/brand/logo/logo-new-era.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/new-era.jpg",
+    website: "https://www.neweracap.eu/",
+    agency: "Fostr",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-new-era",
-      "description_html": `
+    modal: {
+      id: "brands-item-new-era",
+      description_html: `
         <h2>Heritage Meets High Performance</h2>
         <p>New Era's digital presence had to match the legacy of their globally recognised brand. I supported the team by refining the Shopify frontend and improving mobile UX consistency across high-traffic flows.</p>
         <h3 class="h4">Contribution</h3>
@@ -358,20 +420,20 @@ const brands = [
     }
   },
   {
-    "id": "rad",
-    "largeBlock": false,
-    "name": "Rad",
-    "logo": "./assets/images/brand/logo/logo-rad.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/rad.jpg",
-    "website": "https://rad.co.uk/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 3,
-      "max": 5
+    id: "rad",
+    largeBlock: false,
+    name: "Rad",
+    logo: "./assets/images/brand/logo/logo-rad.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/rad.jpg",
+    website: "https://rad.co.uk/",
+    agency: "Fostr",
+    involvement: {
+      progress: 3,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-rad",
-      "description_html": `
+    modal: {
+      id: "brands-item-rad",
+      description_html: `
         <h2>Culture-Driven eCommerce</h2>
         <p>Rad is bold, playful, and full of personality—and the frontend needed to match. I contributed to cleaning up their theme structure and introduced animation tweaks to energise the user experience.</p>
         <h3 class="h4">Contribution</h3>
@@ -385,20 +447,20 @@ const brands = [
     }
   },
   {
-    "id": "rhino-greenhouses",
-    "largeBlock": false,
-    "name": "Rhino Greenhouses",
-    "logo": "./assets/images/brand/logo/logo-rhino-greenhouses.png",
-    "lifestyleImage": "./assets/images/brand/lifestyle/rhino-greenhouses.jpg",
-    "website": "https://www.rhino.co.uk/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 2,
-      "max": 5
+    id: "rhino-greenhouses",
+    largeBlock: false,
+    name: "Rhino Greenhouses",
+    logo: "./assets/images/brand/logo/logo-rhino-greenhouses.png",
+    lifestyleImage: "./assets/images/brand/lifestyle/rhino-greenhouses.jpg",
+    website: "https://www.rhino.co.uk/",
+    agency: "Fostr",
+    involvement: {
+      progress: 2,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-rhino-greenhouses",
-      "description_html": `
+    modal: {
+      id: "brands-item-rhino-greenhouses",
+      description_html: `
         <h2>Rooted in Functionality</h2>
         <p>Rhino Greenhouses delivers high-spec garden structures, and the frontend needed to be as robust. I worked on simplifying code, streamlining content blocks, and supporting accessibility best practices.</p>
         <h3 class="h4">Contribution</h3>
@@ -412,20 +474,27 @@ const brands = [
     }
   },
   {
-    "id": "protectapet",
-    "largeBlock": false,
-    "name": "Protectapet",
-    "logo": "./assets/images/brand/logo/logo-protectapet.png",
-    "lifestyleImage": "./assets/images/brand/lifestyle/protectapet.jpg",
-    "website": "https://www.protectapet.com/",
-    "agency": "Cake Agency",
-    "involvement": {
-      "progress": 3,
-      "max": 5
+    id: "protectapet",
+    largeBlock: false,
+    name: "Protectapet",
+    logo: "./assets/images/brand/logo/logo-protectapet.png",
+    lifestyleImage: "./assets/images/brand/lifestyle/protectapet.jpg",
+    website: "https://www.protectapet.com/",
+    agency: "Cake Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 3,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-protectapet",
-      "description_html": `
+    modal: {
+      id: "brands-item-protectapet",
+      description_html: `
         <h2>Secure Spaces for Furry Friends</h2>
         <p>Protectapet specialises in protective pet fencing systems, and their site needed to communicate reassurance and clarity. I helped improve content layout structure, ensuring their message came through with ease on mobile and desktop.</p>
         <h3 class="h4">Contribution</h3>
@@ -439,20 +508,27 @@ const brands = [
     }
   },
   {
-    "id": "and-sons",
-    "largeBlock": true,
-    "name": "And Sons",
-    "logo": "./assets/images/brand/logo/logo-and-sons.png",
-    "lifestyleImage": "./assets/images/brand/lifestyle/and-sons.jpg",
-    "website": "https://andsons.co.uk/",
-    "agency": "Cake Agency",
-    "involvement": {
-      "progress": 4,
-      "max": 5
+    id: "and-sons",
+    largeBlock: true,
+    name: "And Sons",
+    logo: "./assets/images/brand/logo/logo-and-sons.png",
+    lifestyleImage: "./assets/images/brand/lifestyle/and-sons.jpg",
+    website: "https://andsons.co.uk/",
+    agency: "Cake Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 4,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-and-sons",
-      "description_html": `
+    modal: {
+      id: "brands-item-and-sons",
+      description_html: `
         <h2>Tailoring a Story-Driven Experience</h2>
         <p>And Sons is a premium brand with a strong sense of identity. I worked on extending their Shopify theme to support custom visual storytelling blocks, as well as refining typography and layout across PDPs and landing pages.</p>
         <h3 class="h4">Contribution</h3>
@@ -466,20 +542,27 @@ const brands = [
     }
   },
   {
-    "id": "pandco",
-    "largeBlock": false,
-    "name": "Pandco",
-    "logo": "./assets/images/brand/logo/logo-pandco.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/pandco.jpg",
-    "website": "https://pandco.com/",
-    "agency": "Cake Agency",
-    "involvement": {
-      "progress": 2,
-      "max": 5
+    id: "pandco",
+    largeBlock: false,
+    name: "Pandco",
+    logo: "./assets/images/brand/logo/logo-pandco.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/pandco.jpg",
+    website: "https://pandco.com/",
+    agency: "Cake Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/triangl.jpg",
+        alt: "Triangl Gallery Image 1",
+        caption: "Triangl Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 2,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-pandco",
-      "description_html": `
+    modal: {
+      id: "brands-item-pandco",
+      description_html: `
         <h2>Raw and Refined eCommerce</h2>
         <p>P&Co needed a Shopify theme that could carry the rawness of their brand while remaining refined in execution. I contributed to UI consistency, conversion-focused layout tweaks, and product grid flexibility.</p>
         <h3 class="h4">Contribution</h3>
@@ -493,20 +576,20 @@ const brands = [
     }
   },
   {
-    "id": "pangaia",
-    "largeBlock": true,
-    "name": "Pangaia",
-    "logo": "./assets/images/brand/logo/logo-pangaia.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/pangaia.jpg",
-    "website": "https://pangaia.com/",
-    "agency": "Fostr",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "pangaia",
+    largeBlock: true,
+    name: "Pangaia",
+    logo: "./assets/images/brand/logo/logo-pangaia.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/pangaia.jpg",
+    website: "https://pangaia.com/",
+    agency: "Fostr",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-pangaia",
-      "description_html": `
+    modal: {
+      id: "brands-item-pangaia",
+      description_html: `
         <h2>Earth-First Innovation</h2>
         <p>Pangaia’s bold sustainability mission demanded a fast, flexible, and visually clean storefront. I supported their frontend with improvements to their Shopify theme structure, focusing on content hierarchy and performance.</p>
         <h3 class="h4">Contribution</h3>
@@ -520,20 +603,20 @@ const brands = [
     }
   },
   {
-    "id": "bad-monday",
-    "largeBlock": false,
-    "name": "bad-monday",
-    "logo": "./assets/images/brand/logo/logo-bad-monday.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/bad-monday.jpg",
-    "website": "https://bad-monday.com/",
-    "agency": "Cage Agency",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "bad-monday",
+    largeBlock: false,
+    name: "bad-monday",
+    logo: "./assets/images/brand/logo/logo-bad-monday.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/bad-monday.jpg",
+    website: "https://bad-monday.com/",
+    agency: "Cage Agency",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-bad-monday",
-      "description_html": `
+    modal: {
+      id: "brands-item-bad-monday",
+      description_html: `
         <h2>Earth-First Innovation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <h3 class="h4">Contribution</h3>
@@ -547,20 +630,20 @@ const brands = [
     }
   },
   {
-    "id": "goose-and-gander",
-    "largeBlock": false,
-    "name": "goose-and-gander",
-    "logo": "./assets/images/brand/logo/logo-goose-and-gander.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/goose-and-gander.jpg",
-    "website": "https://gooseandgander.com/",
-    "agency": "Cage Agency",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "goose-and-gander",
+    largeBlock: false,
+    name: "goose-and-gander",
+    logo: "./assets/images/brand/logo/logo-goose-and-gander.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/goose-and-gander.jpg",
+    website: "https://gooseandgander.com/",
+    agency: "Cage Agency",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-goose-and-gander",
-      "description_html": `
+    modal: {
+      id: "brands-item-goose-and-gander",
+      description_html: `
         <h2>Earth-First Innovation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <h3 class="h4">Contribution</h3>
@@ -574,20 +657,20 @@ const brands = [
     }
   },
   {
-    "id": "dancing-leopard",
-    "largeBlock": false,
-    "name": "dancing-leopard",
-    "logo": "./assets/images/brand/logo/logo-dancing-leopard.svg",
-    "lifestyleImage": "./assets/images/brand/lifestyle/dancing-leopard.jpg",
-    "website": "https://dancingleopard.com/",
-    "agency": "Cage Agency",
-    "involvement": {
-      "progress": 5,
-      "max": 5
+    id: "dancing-leopard",
+    largeBlock: false,
+    name: "dancing-leopard",
+    logo: "./assets/images/brand/logo/logo-dancing-leopard.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/dancing-leopard.jpg",
+    website: "https://dancingleopard.com/",
+    agency: "Cage Agency",
+    involvement: {
+      progress: 5,
+      max: 5
     },
-    "modal": {
-      "id": "brands-item-dancing-leopard",
-      "description_html": `
+    modal: {
+      id: "brands-item-dancing-leopard",
+      description_html: `
         <h2>Earth-First Innovation</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <h3 class="h4">Contribution</h3>

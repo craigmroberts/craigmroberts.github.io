@@ -506,3 +506,23 @@ body.modal-open .main {
   scroll-snap-type: y mandatory;
   overflow: hidden;
 }
+
+gallery-media {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+gallery-media::-webkit-scrollbar {
+  display: none;
+}
+
+gallery-media > div {
+  width: 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+
+}

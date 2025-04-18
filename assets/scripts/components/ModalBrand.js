@@ -155,15 +155,25 @@ class ModalBrand extends ModalContent {
     // Create a DocumentFragment to batch DOM updates
     const fragment = document.createDocumentFragment();
 
-    // Create Lifestyle Image
-    const img = document.createElement('img');
-    img.src = brandData.lifestyleImage || 'placeholder-image.jpg'; // Fallback src
-    img.alt = `${brandData.name || 'Brand'} lifestyle image`;
+    const galleryImages = brandData.galleryImages || [];
+    const galleryWrapper = document.createElement('gallery-media');
 
-    const imgWrapper = document.createElement('div');
-    imgWrapper.classList.add('modal__brand-image-wrapper');
-    imgWrapper.appendChild(img);
-    fragment.appendChild(imgWrapper);
+    // forEach image in the gallery
+    galleryImages.forEach((image) => {
+      const img = document.createElement('img');
+      console.log('Image:', image);
+      img.src = image.src || 'placeholder-image.jpg'; // Fallback src
+      img.alt = image.alt || 'Brand image';
+
+      const imgWrapper = document.createElement('div');
+      imgWrapper.classList.add('modal__brand-image-wrapper');
+      imgWrapper.appendChild(img);
+      fragment.appendChild(imgWrapper);
+
+    });
+    // Append the gallery wrapper to the fragment
+    galleryWrapper.appendChild(fragment);
+    container.appendChild(galleryWrapper);
 
     // Create Container for Logo and Description
     const container2 = document.createElement('div');
