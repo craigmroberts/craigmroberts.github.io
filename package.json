@@ -1,5 +1,5 @@
 {
-  "version": "1.0.2",
+  "version": "1.0.4",
   "dependencies": {
     "swiper": "^11.2.6"
   },
@@ -17,8 +17,8 @@
     "build:js": "esbuild assets/scripts/main.scripts.js --bundle --minify --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
     "update:html": "node update-html.js",
     "build": "npm run build:css && npm run build:js && npm run update:html",
-    "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css'",
-    "watch:js": "chokidar 'assets/scripts/**/*.js' -c 'npm run build:js'",
+    "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css && npm run update:html'",
+    "watch:js": "chokidar 'assets/scripts/**/*.js' -c 'npm run build:js && npm run update:html'",
     "dev": "npm run watch:css & npm run watch:js"
   }
 }
