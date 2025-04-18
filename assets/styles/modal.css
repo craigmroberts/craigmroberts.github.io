@@ -104,12 +104,11 @@ modal.is-active .modal__content {
   right: 0;
   height: var(--space-lg);
   background: transparent;
-  color: var(--color-text);
-  font-size: var(--font-size-lg);
   border: none;
   cursor: pointer;
   z-index: 2;
   aspect-ratio: 1;
+  text-shadow: 0px 0px 23px white;
 }
 
 .modal__drag-bar {
