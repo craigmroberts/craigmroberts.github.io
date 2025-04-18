@@ -68,9 +68,10 @@ class ModalContent extends HTMLElement {
     dragBar.setAttribute('aria-label', 'Drag to close');
 
     // Add touch event listeners to modal content and drag bar
-    // console.log('Setting up touch events for modal drag');
     dragBar.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
     innerContent.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
+
+    // Use passive: false for touchmove to allow e.preventDefault()
     document.addEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
     document.addEventListener('touchend', this.boundHandleTouchEnd);
   }
@@ -84,12 +85,13 @@ class ModalContent extends HTMLElement {
     const contentRect = modalContent.getBoundingClientRect();
     const touchY = touch.clientY - contentRect.top;
 
-    // Allow normal scrolling if the user is not pulling down
+    // Allow normal scrolling if the user is not pulling down and the content is scrollable
     if (innerContent.scrollTop > 0 && touchY > 60) {
         this.isDragging = false;
         return;
     }
 
+    // Activate dragging if the user is pulling down and the content is fully scrolled to the top
     if (touchY <= 60 || (innerContent.scrollTop === 0 && touchY > 60)) {
         this.isDragging = true;
         this.initialTouchY = touch.clientY;
@@ -104,31 +106,30 @@ class ModalContent extends HTMLElement {
   }
 
   handleTouchMove(e) {
-    if (!this.isDragging) return;
-
     const modalContent = document.querySelector('.modal__content');
     const innerContent = modalContent.querySelector('.modal__inner-content');
     const touch = e.touches[0];
     const deltaY = touch.clientY - this.startY;
 
-    // Allow normal scrolling if the user is scrolling up
-    if (deltaY < 0 && innerContent.scrollTop > 0) {
-        this.isDragging = false;
-        return;
+    // Allow normal scrolling if the user is scrolling up and the content is scrollable
+    if (!this.isDragging && deltaY < 0 && innerContent.scrollTop > 0) {
+        return; // Let the browser handle scrolling
     }
 
-    e.preventDefault();
+    // Prevent default behavior and activate dragging if pulling down
+    if (this.isDragging) {
+        e.preventDefault(); // Prevent scrolling when dragging
+        const newY = Math.max(0, this.currentY + deltaY);
 
-    const newY = Math.max(0, this.currentY + deltaY);
+        modalContent.style.transform = `translateY(${newY}px)`;
 
-    modalContent.style.transform = `translateY(${newY}px)`;
+        const modal = document.getElementById('modal');
+        const overlay = modal.querySelector('.modal__overlay');
 
-    const modal = document.getElementById('modal');
-    const overlay = modal.querySelector('.modal__overlay');
-
-    if (overlay) {
-        const dragPercentage = Math.min(1, newY / this.closeThreshold);
-        overlay.style.opacity = 1 - (dragPercentage * 0.5);
+        if (overlay) {
+            const dragPercentage = Math.min(1, newY / this.closeThreshold);
+            overlay.style.opacity = 1 - (dragPercentage * 0.5);
+        }
     }
   }
 
@@ -144,9 +145,9 @@ class ModalContent extends HTMLElement {
     const currentY = matrix.m42;
 
     if (currentY > this.closeThreshold) {
-      this.animateAndClose(modalContent);
+        this.animateAndClose(modalContent);
     } else {
-      this.resetPosition(modalContent);
+        this.resetPosition(modalContent);
     }
   }
 
