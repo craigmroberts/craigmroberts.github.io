@@ -20,7 +20,9 @@
     <img class="logo"
     src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
     alt="Craig Logo">
+
     <section class="section-hero section hero">
+      <!-- Hero content -->
       <img class="hero__background"
           src="./assets/images/hero-1.png"
           alt="Background image of Craig">
@@ -32,7 +34,9 @@
         </div>
       </div>
     </section>
+
     <section class="section-brands section brands container" aria-label="Brands i’ve worked with" data-watch-inview="true">
+      <!-- Brands content -->
       <div class="brands__header">
         <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
       </div>
@@ -45,6 +49,7 @@
     </section>
 
     <section id="recent-articles" class="section-articles articles section container" aria-label="Recent Articles" data-watch-inview="true">
+       <!-- Articles content -->
       <div class="articles__header">
         <h2 class="text-gradient-1 animate">Recent Articles</h2>
         <div class="swiper-buttons">
@@ -128,6 +133,7 @@
     </section>
 
     <footer class="section-footer footer">
+      <!-- Footer content -->
       <ul class="list-unstyled footer__links">
         <li>
           <a class="text-white" href="#Projects">Projects</a>
@@ -196,13 +202,13 @@
     </footer>
   </div>
 
-  <script type="module" src="./assets/scripts/inViewAnimations.js"></script>
+  <script type="module" src="./assets/scripts/init/inViewAnimations.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script type="module" src="./assets/scripts/medium-articles.js"></script>
-  <script type="module" src="./assets/scripts/helpers/modalContent.js"></script>
-  <script type="module" src="./assets/scripts/modal-content-brand.js"></script>
-  <script type="module" src="./assets/scripts/brand-cards.js"></script>
+  <script type="module" src="./assets/scripts/components/MediumArticles.js"></script>
+  <script type="module" src="./assets/scripts/components/ModalContent.js"></script>
+  <script type="module" src="./assets/scripts/components/ModalBrand.js"></script>
+  <script type="module" src="./assets/scripts/components/BrandCards.js"></script>
 
-  <script src="./assets/scripts/brands-swiper.js"></script>
+  <script src="./assets/scripts/init/brandsSwiper.js"></script>
 </body>
 </html>

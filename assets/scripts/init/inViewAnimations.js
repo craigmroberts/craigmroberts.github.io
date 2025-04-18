@@ -1,6 +1,6 @@
 // initInViewAnimations.js
-import { animateScrollText } from './helpers/textAnimator.js'; // Assuming this exists and works separately
-import { watchInViewElements } from './helpers/inViewWatcher.js';
+import { animateScrollText } from '../helpers/textAnimator.js';
+import { watchInViewElements } from '../helpers/inViewWatcher.js';
 
 export function initInViewAnimations(scope = document) {
   // Assuming animateScrollText also uses scope or is independent

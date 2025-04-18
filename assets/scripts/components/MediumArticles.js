@@ -1,4 +1,4 @@
-import { medium } from './helpers/medium.js';
+import { medium } from '../helpers/medium.js';
 
 /**
  * @class MediumArticles

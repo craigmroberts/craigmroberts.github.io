@@ -1,4 +1,4 @@
-import brands from '../data/brands.js';
+import brands from '../../data/brands.js';
 
 class BrandCards extends HTMLElement {
   constructor() {

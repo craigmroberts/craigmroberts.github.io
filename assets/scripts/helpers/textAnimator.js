@@ -16,7 +16,7 @@ export function animateScrollText(scope = document) {
       if (isIntersecting) {
         const label = el.getAttribute('aria-label') || el.textContent?.slice(0, 20) || '[text]';
         el.classList.add('in-view');
-        console.log(`🌀 ${label} is in view, starting animation.`);
+        // console.log(`🌀 ${label} is in view, starting animation.`);
 
         // Stop observing the element once it has become visible
         obs.unobserve(el);
