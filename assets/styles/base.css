@@ -526,3 +526,7 @@ gallery-media > div {
   scroll-snap-stop: always;
 
 }
+
+behance-cards .article-card__thumbnail {
+  height: initial;
+}

@@ -1,0 +1,17 @@
+<behance-card id="{{ behance.guid }}"
+    class="article-card swiper-slide">
+    <img class="article-card__thumbnail"
+        src="{{ behance.thumbnail }}"
+        alt="{{ behance.title }}">
+    <div class="article-card__content">
+      <h3 class="article-card__title">{{ behance.title }}</h3>
+
+      <p class="article-card__description">{{ behance.description }}</p>
+
+      <div class="article-card__meta">
+        <span class="article-card__author">{{ behance.author }}</span>
+        <span class="article-card__date">{{ behance.pubDate }}</span>
+      </div>
+      <a class="article-card__link" href="{{ behance.link }}" target="_blank">Read more →</a>
+    </div>
+</behance-card>
