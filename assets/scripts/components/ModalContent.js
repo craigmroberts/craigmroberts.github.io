@@ -57,18 +57,20 @@ class ModalContent extends HTMLElement {
   setupDragFunctionality(modal) {
     // Only setup drag on mobile/tablet
     if (window.innerWidth >= 768) return;
-    
+
     const modalContent = modal.querySelector(".modal__content");
     const dragBar = modal.querySelector(".modal__drag-bar");
-    
-    if (!modalContent || !dragBar) return;
-    
+    const innerContent = modalContent.querySelector(".modal__inner-content");
+
+    if (!modalContent || !dragBar || !innerContent) return;
+
     // Add visual indicator to drag bar if desired
     dragBar.setAttribute('aria-label', 'Drag to close');
-    
-    // Add touch event listeners to modal content
+
+    // Add touch event listeners to modal content and drag bar
     console.log('Setting up touch events for modal drag');
-    modalContent.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
+    dragBar.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
+    innerContent.addEventListener('touchstart', this.boundHandleTouchStart, { passive: true });
     document.addEventListener('touchmove', this.boundHandleTouchMove, { passive: false });
     document.addEventListener('touchend', this.boundHandleTouchEnd);
   }
@@ -76,40 +78,41 @@ class ModalContent extends HTMLElement {
   handleTouchStart(e) {
     const touch = e.touches[0];
     const modalContent = document.querySelector('.modal__content');
-    const dragBar = document.querySelector('.modal__drag-bar');
-    
+    const innerContent = modalContent.querySelector('.modal__inner-content');
+
+    // Check if the touch is on the drag bar or if the inner content is scrolled to the top
     const contentRect = modalContent.getBoundingClientRect();
     const touchY = touch.clientY - contentRect.top;
-    
-    if (touchY <= 60) {
+
+    if (touchY <= 60 || (innerContent.scrollTop === 0 && touchY > 60)) {
       this.isDragging = true;
       this.initialTouchY = touch.clientY;
       this.startY = touch.clientY;
-      
+
       const transform = window.getComputedStyle(modalContent).transform;
       const matrix = new DOMMatrix(transform);
       this.currentY = matrix.m42;
-      
+
       modalContent.classList.add('is-dragging');
     }
   }
 
   handleTouchMove(e) {
     if (!this.isDragging) return;
-    
+
     e.preventDefault();
-    
+
     const modalContent = document.querySelector('.modal__content');
     const touch = e.touches[0];
     const deltaY = touch.clientY - this.startY;
-    
+
     const newY = Math.max(0, this.currentY + deltaY);
-    
+
     modalContent.style.transform = `translateY(${newY}px)`;
-    
+
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
-    
+
     if (overlay) {
       const dragPercentage = Math.min(1, newY / this.closeThreshold);
       overlay.style.opacity = 1 - (dragPercentage * 0.5);
@@ -118,15 +121,15 @@ class ModalContent extends HTMLElement {
 
   handleTouchEnd(e) {
     if (!this.isDragging) return;
-    
+
     const modalContent = document.querySelector('.modal__content');
     this.isDragging = false;
     modalContent.classList.remove('is-dragging');
-    
+
     const transform = window.getComputedStyle(modalContent).transform;
     const matrix = new DOMMatrix(transform);
     const currentY = matrix.m42;
-    
+
     if (currentY > this.closeThreshold) {
       this.animateAndClose(modalContent);
     } else {
@@ -137,13 +140,13 @@ class ModalContent extends HTMLElement {
   animateAndClose(modalContent) {
     modalContent.style.transition = 'transform 0.3s ease';
     modalContent.style.transform = `translateY(100%)`;
-    
+
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
     if (overlay) {
       overlay.style.opacity = '';
     }
-    
+
     setTimeout(() => {
       this.closeModal();
       modalContent.style.transform = '';
@@ -154,13 +157,13 @@ class ModalContent extends HTMLElement {
   resetPosition(modalContent) {
     modalContent.style.transition = 'transform 0.3s ease';
     modalContent.style.transform = '';
-    
+
     const modal = document.getElementById('modal');
     const overlay = modal.querySelector('.modal__overlay');
     if (overlay) {
       overlay.style.opacity = '';
     }
-    
+
     setTimeout(() => {
       modalContent.style.transition = '';
     }, 300);
@@ -182,7 +185,7 @@ class ModalContent extends HTMLElement {
       lockBody();
       document.body.classList.add("modal-open");
       modal.classList.add("is-active");
-      
+
       const modalContent = modal.querySelector(".modal__content");
       if (modalContent) {
         modalContent.style.transform = '';
@@ -213,7 +216,7 @@ class ModalContent extends HTMLElement {
     unlockBody();
     document.body.classList.remove("modal-open");
     modal.classList.remove("is-active");
-    
+
     const modalContent = modal.querySelector(".modal__content");
     if (modalContent) {
       modalContent.style.transform = '';
