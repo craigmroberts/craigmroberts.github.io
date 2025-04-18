@@ -1,0 +1,17 @@
+@import "variables.css";
+@import "base.css";
+
+@import "brands.css";
+@import "brands-swiper.css";
+@import "footer.css";
+@import "hero.css";
+@import "main.css";
+@import "modal.css";
+@import "progress-blocks.css";
+@import "scroll-animate.css";
+
+/* Importing components */
+@import "components/article-card.css";
+
+/* Importing sections */
+@import "sections/articles.css";

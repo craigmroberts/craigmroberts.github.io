@@ -1,5 +1,18 @@
 {
   "dependencies": {
     "swiper": "^11.2.6"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "chokidar-cli": "^3.0.0",
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^16.1.0"
+  },
+  "scripts": {
+    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.css",
+    "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css'",
+    "dev": "npm run watch:css"
   }
 }
