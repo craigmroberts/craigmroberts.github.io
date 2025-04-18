@@ -1,126 +1,226 @@
 import { lockBody, unlockBody } from './helpers/bodyLock.js';
-import ModalContent from './helpers/modalContent.js';
+import ModalContent from './helpers/modalContent.js'; // Base class
 import brands from '../data/brands.js';
 import { createProgressBlocks } from './helpers/progressBlocks.js';
 
+/**
+ * @class ModalBrand
+ * @classdesc Extends ModalContent to display brand-specific details.
+ * @extends ModalContent
+ */
 class ModalBrand extends ModalContent {
+  // Instance property to store the keyboard handler for cleanup
+  _keyHandler = null;
 
+  /**
+   * Ensures the brand-specific modal template is loaded.
+   * @override
+   */
   async ensureModalLoaded() {
-    if (document.getElementById("modal")) return;
+    if (document.getElementById('modal')) {
+      return; // Already loaded
+    }
 
     try {
       const response = await fetch('./snippets/modal-brand.html');
+      if (!response.ok) { // Check if fetch was successful
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const html = await response.text();
-      const wrapper = document.createElement("div");
-      wrapper.innerHTML = html;
-      const modal = wrapper.querySelector("#modal");
-      if (!modal) throw new Error("Modal not found in snippet");
+      const wrapper = document.createElement('div');
+      wrapper.innerHTML = html.trim();
+      const modal = wrapper.querySelector('#modal');
+
+      if (!modal) {
+        throw new Error('Modal structure (#modal) not found in snippet: ./snippets/modal-brand.html');
+      }
+
       document.body.appendChild(modal);
-      this.attachCloseHandlers(modal);
-      this.setupDragFunctionality(modal);
+      // Inherited methods from ModalContent:
+      this.attachCloseHandlers(modal); // Assumes base class provides this
+      this.setupDragFunctionality(modal); // Assumes base class provides this
+
     } catch (err) {
-      console.error("Failed to load modal snippet:", err);
+      console.error('Failed to load modal-brand snippet:', err);
+      // Consider displaying a user-facing error
     }
   }
 
-
+  /**
+   * Populates and shows the modal with specific brand data.
+   * @override
+   */
   async showModal() {
-    const modal = document.getElementById("modal");
-    const innerContent = modal.querySelector(".modal__inner-content");
-    innerContent.innerHTML = "";
+    // Ensure modal structure is loaded before proceeding
+    await this.ensureModalLoaded(); // Wait for loading if needed
 
-    const brandId = this.getAttribute('data-brand-id');
-    const brandData = brands.find(b => b.id === brandId);
-
-    if (!brandData) {
-      innerContent.innerHTML = `<p>Brand not found.</p>`;
+    const modal = document.getElementById('modal');
+    if (!modal) {
+      console.error('Cannot show modal: #modal element not found.');
       return;
     }
 
-    const img = document.createElement("img");
-    img.src = brandData.lifestyleImage;
-    img.alt = `${brandData.name} lifestyle image`;
-    img.style.width = "100%";
-    img.style.aspectRatio = "16/9";
-    img.style.objectFit = "cover";
-    img.style.marginBottom = "1.25rem";
-
-    const logo = document.createElement("img");
-    logo.src = brandData.logo;
-    logo.alt = `${brandData.name} logo`;
-    logo.classList.add("modal__brand-logo");
-
-    const wrapper = document.createElement("div");
-    let description = brandData.modal.description_html
-      .replace(/{{\s*brand\.involvement_progress\s*}}/g, createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML)
-      .replace(/{{\s*brand\.agency\s*}}/g, brandData.agency);
-    wrapper.innerHTML = description;
-
-    innerContent.appendChild(img);
-    innerContent.appendChild(logo);
-    innerContent.appendChild(wrapper);
-
-    if (this.dataset.nav === "true") {
-      this.setupNavigation(modal);
+    const innerContent = modal.querySelector('.modal__inner-content');
+    if (!innerContent) {
+      console.error('Cannot show modal: .modal__inner-content element not found.');
+      return;
     }
 
-    setTimeout(() => {
-      lockBody();
-      document.body.classList.add("modal-open");
-      modal.classList.add("is-active");
+    // Clear previous content
+    innerContent.innerHTML = '';
 
+    const brandId = this.getAttribute('data-brand-id');
+    if (!brandId) {
+      console.error('ModalBrand: data-brand-id attribute is missing.', this);
+      innerContent.innerHTML = '<p>Error: Brand ID not specified.</p>';
+      return; // Stop if no ID
+    }
+
+    // Find the corresponding brand data
+    const brandData = brands.find(b => b.id === brandId);
+
+    if (!brandData) {
+      console.error(`Brand data not found for ID: ${brandId}`);
+      innerContent.innerHTML = `<p>Brand information not available.</p>`;
+      // Optionally still show the modal frame by not returning here
+    } else {
+      // --- Populate Modal Content ---
+      this.populateBrandContent(innerContent, brandData);
+
+      // Setup navigation if enabled for this instance
+      if (this.dataset.nav === 'true') {
+        this.setupNavigation(modal); // Call the overridden setupNavigation
+      }
+    }
+
+    // Show the modal container and trigger animations/locks
+    requestAnimationFrame(() => {
+      lockBody(); // Assumes this handles locking correctly
+      document.body.classList.add('modal-open');
+      modal.classList.add('is-active');
+
+      // Animate progress blocks after modal is visible
       const progressBlocks = modal.querySelector('.progress-blocks');
-      if (!progressBlocks) return;
-      setTimeout(() => {
-        progressBlocks.classList.add('in-view');
-      }, 1000);
-    }, 50);
+      if (progressBlocks) {
+        // Use a shorter delay for better responsiveness
+        setTimeout(() => {
+          progressBlocks.classList.add('in-view');
+        }, 300); // Reduced delay
+      }
+    });
   }
 
+  /**
+   * Helper function to create and append brand content elements.
+   * @param {Element} container - The element to append content to.
+   * @param {object} brandData - The data for the brand.
+   */
+  populateBrandContent(container, brandData) {
+    // Create Lifestyle Image
+    const img = document.createElement('img');
+    img.src = brandData.lifestyleImage || 'placeholder-image.jpg'; // Fallback src
+    img.alt = `${brandData.name || 'Brand'} lifestyle image`;
+    // Consider using CSS classes for styling instead of inline styles
+    img.style.width = '100%';
+    img.style.aspectRatio = '16/9';
+    img.style.objectFit = 'cover';
+    img.style.marginBottom = '1.25rem';
+    container.appendChild(img);
+
+    // Create Logo
+    const logo = document.createElement('img');
+    logo.src = brandData.logo || '';
+    logo.alt = `${brandData.name || 'Brand'} logo`;
+    logo.classList.add('modal__brand-logo');
+    container.appendChild(logo);
+
+    // Create Description Wrapper and Inject Dynamic Content
+    const wrapper = document.createElement('div');
+    const descriptionHtml = brandData.modal?.description_html || '<p>No description available.</p>';
+    const progressHtml = brandData.involvement
+      ? createProgressBlocks(brandData.involvement.progress, brandData.involvement.max).outerHTML
+      : ''; // Default if no involvement data
+
+    // Replace placeholders
+    let description = descriptionHtml
+      .replace(/{{\s*brand\.involvement_progress\s*}}/g, progressHtml)
+      .replace(/{{\s*brand\.agency\s*}}/g, brandData.agency || 'N/A');
+    wrapper.innerHTML = description;
+    container.appendChild(wrapper);
+  }
+
+
+  /**
+   * Sets up navigation specific to brand modals (buttons and keyboard).
+   * @param {Element} modal - The modal container element.
+   * @override
+   */
   setupNavigation(modal) {
     const allModals = Array.from(document.querySelectorAll("modal-content-brand[data-nav='true']"));
     const currentIndex = allModals.indexOf(this);
+    if (currentIndex === -1) return; // Element not found in navigable list
+
     const nextIndex = (currentIndex + 1) % allModals.length;
     const prevIndex = (currentIndex - 1 + allModals.length) % allModals.length;
 
-    const nextBtn = modal.querySelector(".modal__nav--next");
-    const prevBtn = modal.querySelector(".modal__nav--prev");
+    const nextBtn = modal.querySelector('.modal__nav--next');
+    const prevBtn = modal.querySelector('.modal__nav--prev');
 
+    // --- Navigation Button Handlers ---
     if (nextBtn) {
-      nextBtn.onclick = () => {
-        this.constructor.prototype.showModal.call(allModals[nextIndex]);
-      };
+      nextBtn.onclick = null; // Clear previous handler
+      // Call showModal directly on the target instance
+      nextBtn.onclick = () => allModals[nextIndex].showModal();
     }
 
     if (prevBtn) {
-      prevBtn.onclick = () => {
-        this.constructor.prototype.showModal.call(allModals[prevIndex]);
-      };
+      prevBtn.onclick = null; // Clear previous handler
+      prevBtn.onclick = () => allModals[prevIndex].showModal();
     }
 
-    // Clean up previous key handler
-    if (this.constructor._keyHandler) {
-      window.removeEventListener("keydown", this.constructor._keyHandler);
+    // --- Keyboard Navigation Handler (Instance-specific) ---
+    // Clean up any existing handler attached TO THIS INSTANCE
+    if (this._keyHandler) {
+      window.removeEventListener('keydown', this._keyHandler);
     }
 
-    const keyHandler = (e) => {
-      if (e.key === "ArrowRight") {
-        this.constructor.prototype.showModal.call(allModals[nextIndex]);
-      }
-      if (e.key === "ArrowLeft") {
-        this.constructor.prototype.showModal.call(allModals[prevIndex]);
-      }
-      if (e.key === "Escape") {
-        document.body.classList.remove("modal-open");
-        modal.classList.remove("is-active");
-        unlockBody();
-        window.removeEventListener("keydown", keyHandler);
+    // Define the new key handler specific to this instance when it's active
+    this._keyHandler = (e) => {
+      // Only act if the main modal element is currently active
+      if (!modal.classList.contains('is-active')) return;
+
+      if (e.key === 'ArrowRight') {
+        e.preventDefault(); // Prevent page scroll
+        allModals[nextIndex].showModal();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault(); // Prevent page scroll
+        allModals[prevIndex].showModal();
+      } else if (e.key === 'Escape') {
+        e.preventDefault();
+        this.closeModal(); // Trigger the instance's close method for proper cleanup
       }
     };
 
-    window.addEventListener("keydown", keyHandler);
-    this.constructor._keyHandler = keyHandler;
+    // Add the new listener
+    window.addEventListener('keydown', this._keyHandler);
+  }
+
+  /**
+   * Closes the modal and cleans up instance-specific listeners.
+   * @override
+   */
+  closeModal() {
+    // Call the parent class's close logic first (handles classes, body lock)
+    super.closeModal(); // Assumes ModalContent has a closeModal method
+
+    // Clean up the keyboard listener associated with this specific instance
+    if (this._keyHandler) {
+      window.removeEventListener('keydown', this._keyHandler);
+      this._keyHandler = null; // Clear the reference
+      // console.log('Cleaned up key handler on close for instance:', this.getAttribute('data-brand-id'));
+    }
   }
 }
 
-customElements.define("modal-content-brand", ModalBrand);
+// Define the custom element
+customElements.define('modal-content-brand', ModalBrand);
