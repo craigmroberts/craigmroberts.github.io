@@ -9,7 +9,6 @@ node_modules/
 *.swp
 
 # Ignore build output
-dist/
 build/
 
 # Ignore system files
