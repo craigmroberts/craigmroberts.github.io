@@ -1,4 +1,5 @@
 {
+  "version": "1.0.1",
   "dependencies": {
     "swiper": "^11.2.6"
   },
@@ -11,8 +12,10 @@
     "postcss-import": "^16.1.0"
   },
   "scripts": {
-    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.css",
-    "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css'",
+    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.v$(npm pkg get version | tr -d '\"').css",
+    "update:html": "node update-html.js",
+    "build": "npm run build:css && npm run update:html",
+    "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build'",
     "dev": "npm run watch:css"
   }
 }
