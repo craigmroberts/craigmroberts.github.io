@@ -4,7 +4,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>I worked on performance tuning and responsive layout tweaks across seasonal collection drops. Collaborated closely with their in-house team on content updates and accessibility improvements.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -14,7 +14,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>I provided technical support for campaign updates and refreshed components on key landing pages. Work included hero modules, content blocks, and global styling tweaks.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -24,7 +24,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>I collaborated with the design team to develop interactive page templates, optimized animations, and refined the core layout system for mobile users.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -34,7 +34,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>My involvement included structural content layout adjustments and theme integration during their seasonal site refresh.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -44,7 +44,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>My work included rebuilding collection templates, improving product filtering, and refining key customer journeys. The result was a faster, more intuitive site that reflected their brand personality without compromising performance.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -54,7 +54,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>I rebuilt core page templates in Shopify, introduced performance boosts for mobile-first browsing, and collaborated on animations that mirror the raw, handcrafted essence of their bikes. This project was full throttle from start to finish.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -66,7 +66,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>
           I worked closely with the Medik8 team to redesign their Shopify storefront with a modern, responsive layout and improved UX for both mobile and desktop. My responsibilities included performance optimization, integrating flexible content blocks for campaigns, and refining animations to align with their brand aesthetic.
@@ -78,7 +78,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>While my role on this project was light-touch, I contributed to key layout components and performance enhancements that ensured their online presence matched the calming clarity of the brand.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -88,7 +88,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>The project focused on performance auditing, layout cleanup, and modularising components to help the brand\u2019s team easily scale campaigns while keeping speed and UX top of mind.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -98,7 +98,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>This work included frontend enhancements across templates, tighter integration with their CMS setup, and optimisation for scalable storytelling across different product lines.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -108,7 +108,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>This project involved tailoring design components to maintain brand elegance while improving the performance of image-heavy modules and interactive storytelling elements.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -118,7 +118,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>The focus was on modernising templates, improving load times on collection pages, and ensuring pixel-perfect alignment with the brand\u2019s minimalist visual direction.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -128,7 +128,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>Part of my work included simplifying layout logic and optimising navigation transitions so that the user journey felt seamless\u2014especially across devices and international variants.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -138,7 +138,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>I also supported performance profiling and made small-but-mighty changes that helped enhance the visual impact of campaigns without sacrificing load times.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -148,7 +148,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>My involvement focused on improving page structure and refining mobile responsiveness for their product-focused content, ensuring it could scale across future content drops and seasonal campaigns.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -158,7 +158,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>My role focused on enhancing UX for their product discovery flow and refining custom Liquid sections that allow their team to build trust-driven content around their mission and solutions.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -168,7 +168,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>The project required strong attention to design consistency and performance, especially on image-heavy templates. I also helped simplify how content could be managed internally using flexible, reusable Liquid components.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -178,7 +178,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>My work also touched on adjusting animations, updating mobile navigation patterns, and improving the custom section architecture so that their team could move faster with future seasonal drops.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -188,7 +188,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>This included fine-tuning reusable content blocks and refining the way collections and storytelling pages loaded across devices, ensuring speed without sacrificing creative flexibility.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -198,7 +198,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -208,7 +208,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
@@ -218,7 +218,7 @@
         <h3 class="h4">Contribution</h3>
         <div class="stats">
           <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
-          <p><strong>Involvement:</strong> {{ brand.involvement_progress }}</p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
         </div>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
         <a class="button button--style-1" href="#work">Learn more</a>
