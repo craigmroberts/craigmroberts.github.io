@@ -1,0 +1,34 @@
+.articles {
+  max-width: initial;
+  margin-bottom: 0;
+}
+
+.articles__header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.articles .swiper-buttons button {
+  aspect-ratio: 1;
+  width: 40px;
+  display: flex;
+  position: relative;
+  color: white;
+  left: initial;
+  right: initial;
+}
+
+.articles .swiper-buttons button::after {
+  display: none;
+}
+
+.articles .swiper-buttons {
+  display: flex;
+}
+
+.articles__header h2 {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  text-align: center;
+}
