@@ -117,22 +117,26 @@ class ModalBrand extends ModalContent {
    */
   populateBrandContent(container, brandData) {
     // Create Lifestyle Image
+
     const img = document.createElement('img');
     img.src = brandData.lifestyleImage || 'placeholder-image.jpg'; // Fallback src
     img.alt = `${brandData.name || 'Brand'} lifestyle image`;
     // Consider using CSS classes for styling instead of inline styles
-    img.style.width = '100%';
-    img.style.aspectRatio = '16/9';
-    img.style.objectFit = 'cover';
-    img.style.marginBottom = '1.25rem';
-    container.appendChild(img);
+
+    const imgWrapper = document.createElement('div');
+    imgWrapper.classList.add('modal__brand-image-wrapper')
+    imgWrapper.appendChild(img);
+    container.appendChild(imgWrapper);
+
+    const container2 = document.createElement('div');
+    container2.classList.add('modal__container');
 
     // Create Logo
     const logo = document.createElement('img');
     logo.src = brandData.logo || '';
     logo.alt = `${brandData.name || 'Brand'} logo`;
     logo.classList.add('modal__brand-logo');
-    container.appendChild(logo);
+    container2.appendChild(logo);
 
     // Create Description Wrapper and Inject Dynamic Content
     const wrapper = document.createElement('div');
@@ -146,7 +150,9 @@ class ModalBrand extends ModalContent {
       .replace(/{{\s*brand\.involvement_progress\s*}}/g, progressHtml)
       .replace(/{{\s*brand\.agency\s*}}/g, brandData.agency || 'N/A');
     wrapper.innerHTML = description;
-    container.appendChild(wrapper);
+    container2.appendChild(wrapper);
+
+    container.appendChild(container2);
   }
 
 
