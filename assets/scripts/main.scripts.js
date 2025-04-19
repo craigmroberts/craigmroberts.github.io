@@ -1,3 +1,4 @@
+// import '../swiper/swiper-bundle.min.js';
 import './init/inViewAnimations.js';
 import './components/MediumArticles.js';
 import './components/ModalContent.js';

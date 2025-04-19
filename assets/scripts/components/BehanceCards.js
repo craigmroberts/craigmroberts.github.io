@@ -101,7 +101,7 @@ class BehanceCards extends HTMLElement {
           .replace(/{{\s*behance\.description\s*}}/g, cleanDesc || '')
           .replace(/{{\s*behance\.author\s*}}/g, project.author || 'Unknown Author')
           .replace(/{{\s*behance\.pubDate\s*}}/g, formattedDate || '')
-          .replace(/{{\s*behance\.link\s*}}/g, project.link || '#');
+          .replace(/{{\s*behance\.href\s*}}/g, project.href || '#');
 
         // Create element from HTML string safely
         const tempDiv = document.createElement('div');
@@ -133,11 +133,11 @@ class BehanceCards extends HTMLElement {
           },
           968: {
             slidesPerView: 3,
-            spaceBetween: 40,
+            spaceBetween: 20,
           },
           1200: {
             slidesPerView: 4,
-            spaceBetween: 48,
+            spaceBetween: 24,
           },
         },
       });

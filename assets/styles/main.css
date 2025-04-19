@@ -1,5 +1,6 @@
 @import "variables.css";
 @import "base.css";
+@import "../swiper/swiper-bundle.min.css";
 
 @import "brands.css";
 @import "brands-swiper.css";
