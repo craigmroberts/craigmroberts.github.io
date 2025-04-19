@@ -57,7 +57,7 @@ const behanceProjects = [
     title: "SL Interiors",
     href: "https://www.behance.net/gallery/73198197/SL-Interiors",
     guid: "https://www.behance.net/gallery/73198197/SL-Interiors",
-    description: "Brand Print Graphic Design for SL Interiors based in south wales neath",
+    description: "I designed the visual identity for SL Interiors, a dry lining business, including the logo and associated stationery for a professional look.",
     thumbnail: "https://mir-s3-cdn-cf.behance.net/projects/404/04e82873198197.Y3JvcCw5NTMsNzQ2LDIyNCww.png",
     pubDate: "Fri, 30 Nov 2018 14:28:55 +0000",
     author: "Craig M Roberts",
