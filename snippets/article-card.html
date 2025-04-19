@@ -1,7 +1,7 @@
 <article-card id="{{ article.guid }}"
     class="article-card swiper-slide">
     <img class="article-card__thumbnail"
-        src="{{ article.thumbnail }}"
+        src="{{ article.imageSrc }}"
         alt="{{ article.title }}">
     <div class="article-card__content">
       <h3 class="article-card__title">{{ article.title }}</h3>
@@ -13,6 +13,6 @@
         <span class="article-card__date">{{ article.pubDate }}</span>
         <span class="article-card__categories">{{ article.categories }}</span>
       </div>
-      <a class="article-card__link" href="{{ article.link }}" target="_blank">Read more →</a>
+      <a class="article-card__link" href="{{ article.href }}" target="_blank">Read more →</a>
     </div>
 </article-card>

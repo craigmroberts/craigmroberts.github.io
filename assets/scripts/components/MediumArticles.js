@@ -1,9 +1,9 @@
-import { medium } from '../helpers/api/medium.js';
+import mediumArticles from '../../data/mediumArticles.js';
 import { debounce } from '../helpers/utils/debounce.js';
 
 /**
  * @class MediumArticles
- * @classdesc A custom HTMLElement that fetches and displays Medium articles
+ * @classdesc A custom HTMLElement that displays Medium articles
  * using a template and initializes a Swiper instance for scrolling.
  * @property {string | null} articleTemplate - Cached HTML template for an article card.
  */
@@ -52,22 +52,6 @@ class MediumArticles extends HTMLElement {
   }
 
   /**
-   * Extracts a thumbnail URL from the article data.
-   * Prefers the 'thumbnail' property, otherwise searches the description HTML.
-   * @param {object} article - The Medium article data object.
-   * @returns {string} The URL of the thumbnail or a placeholder.
-   */
-  extractThumbnail(article) {
-    // Use provided thumbnail if it exists
-    if (article.thumbnail && typeof article.thumbnail === 'string' && article.thumbnail.trim() !== '') {
-      return article.thumbnail;
-    }
-    // Otherwise, try to find the first image URL in the description HTML
-    const imgMatch = article.description?.match(/<img[^>]+src="([^">]+)"/);
-    return imgMatch ? imgMatch[1] : 'placeholder-image.jpg'; // Provide a default placeholder path
-  }
-
-  /**
    * Cleans and truncates the article description HTML.
    * @param {string} description - The HTML string description from the article.
    * @returns {string} A plain text, truncated description.
@@ -79,31 +63,23 @@ class MediumArticles extends HTMLElement {
   }
 
   /**
-   * Fetches articles, renders them using the template, and initializes Swiper.
+   * Renders articles using the template and initializes Swiper.
    */
   async render() {
     // Get configuration from element attributes, with defaults
-    const limit = parseInt(this.getAttribute('data-limit'), 10) || 5; // Use radix 10
-    const username = this.getAttribute('data-username');
-
-    if (!username) {
-      console.error('MediumArticles: data-username attribute is required.', this);
-      this.innerHTML = '<p>Error: Medium username not specified.</p>'; // Display error in component
-      return;
-    }
+    const limit = parseInt(this.getAttribute('data-limit'), 10) || mediumArticles.length;
 
     try {
-      // Fetch articles and load template concurrently
-      const [articles, templateHTML] = await Promise.all([
-        medium.fetchArticles(username, limit),
-        this.loadTemplate(),
-      ]);
+      // Load the template
+      const templateHTML = await this.loadTemplate();
+
+      // Limit the number of articles to render
+      const articles = mediumArticles.slice(0, limit);
 
       if (!articles || articles.length === 0) {
-        console.warn(`No articles found for username: ${username}`);
-        // Optionally display a message inside the component
-        // this.innerHTML = '<p>No articles found.</p>';
-        // return; // Exit if no articles
+        console.warn('No Medium articles found.');
+        this.innerHTML = '<p>No articles found.</p>'; // Display message in component
+        return;
       }
 
       // Determine where to append articles (directly or inside a .swiper-wrapper)
@@ -111,26 +87,27 @@ class MediumArticles extends HTMLElement {
       const appendTarget = swiperWrapper || this; // Default to 'this' if no wrapper
 
       // Clear target before appending new items (if needed)
-      // appendTarget.innerHTML = '';
+      appendTarget.innerHTML = '';
 
       // Process and append each article
-      articles.forEach(article => {
-        const thumbnailSrc = this.extractThumbnail(article);
+      articles.forEach((article) => {
         const cleanDesc = this.cleanDescription(article.description);
-        const formattedDate = new Date(article.pubDate).toLocaleDateString('en-GB', { // Example: Use specific locale
-          year: 'numeric', month: 'short', day: 'numeric',
+        const formattedDate = new Date(article.pubDate).toLocaleDateString('en-GB', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
         });
 
         // Replace placeholders in the template
         const articleHTML = templateHTML
-          .replace(/{{\s*article\.guid\s*}}/g, article.guid || '') // Use || '' as fallback
-          .replace(/{{\s*article\.thumbnail\s*}}/g, thumbnailSrc || '')
+          .replace(/{{\s*article\.guid\s*}}/g, article.guid || '')
+          .replace(/{{\s*article\.imageSrc\s*}}/g, article.imageSrc || '')
           .replace(/{{\s*article\.title\s*}}/g, article.title || 'Untitled')
           .replace(/{{\s*article\.description\s*}}/g, cleanDesc || '')
           .replace(/{{\s*article\.author\s*}}/g, article.author || 'Unknown Author')
           .replace(/{{\s*article\.pubDate\s*}}/g, formattedDate || '')
           .replace(/{{\s*article\.categories\s*}}/g, (article.categories || []).join(', '))
-          .replace(/{{\s*article\.link\s*}}/g, article.link || '#');
+          .replace(/{{\s*article\.href\s*}}/g, article.href || '#');
 
         // Create element from HTML string safely
         const tempDiv = document.createElement('div');
@@ -159,26 +136,22 @@ class MediumArticles extends HTMLElement {
         },
         // Responsive breakpoints
         breakpoints: {
-          // when window width is >= 768px
           768: {
             slidesPerView: 2,
             spaceBetween: 32,
           },
-          // when window width is >= 968px
           968: {
             slidesPerView: 3,
             spaceBetween: 20,
           },
-          // when window width is >= 1200px
           1200: {
             slidesPerView: 4,
             spaceBetween: 24,
           },
         },
       });
-
     } catch (error) {
-      console.error('Error fetching or rendering Medium articles:', error);
+      console.error('Error rendering Medium articles:', error);
       // Display an error message within the component
       this.innerHTML = `<p>Error loading articles. ${error.message || ''}</p>`;
     }
