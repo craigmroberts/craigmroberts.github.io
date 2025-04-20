@@ -21,12 +21,15 @@
   margin-top: var(--space-lg);
   max-width: initial;
   grid-auto-flow: dense;
+  align-items: baseline;
 }
 
 .brands .large-block {
   grid-column: span 2;
   grid-row: span 2;
   height: 70vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .brands__brand-lifestyle-image-wrapper {
@@ -35,7 +38,11 @@
 
 @media (min-width: 768px) {
   .brands .large-block {
-    height: initial;
+    height: 100%;
+  }
+
+  .brands .large-block img.brands__brand-lifestyle-image {
+    height: 93%;
   }
 
   .brands .brands__content brand-cards {
@@ -61,6 +68,7 @@
 
 .brands__brand-logo {
   height: 40px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;

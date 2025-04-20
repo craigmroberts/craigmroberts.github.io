@@ -9,9 +9,9 @@ const brands = [
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/patou.jpg",
+        alt: "Patou Gallery Image 1",
+        caption: "Patou Gallery Image 1"
       }
     ],
     involvement: {
@@ -87,9 +87,9 @@ const brands = [
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/pucci.jpg",
+        alt: "Pucci Gallery Image 1",
+        caption: "Pucci Gallery Image 1"
       }
     ],
     involvement: {
@@ -121,9 +121,9 @@ const brands = [
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/victoria-beckham.jpg",
+        alt: "Victoria Beckham Gallery Image 1",
+        caption: "Victoria Beckham Gallery Image 1"
       }
     ],
     involvement: {
@@ -153,6 +153,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/kit-and-kaboodal.jpg",
     website: "https://www.kitandkaboodal.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/kit-and-kaboodal.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 3,
       max: 5
@@ -183,9 +190,9 @@ const brands = [
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/mutt-motorcycles.jpg",
+        alt: "Mutt Motorcycles Gallery Image 1",
+        caption: "Mutt Motorcycles Gallery Image 1"
       }
     ],
     involvement: {
@@ -212,9 +219,16 @@ const brands = [
     largeBlock: false,
     name: "Medik8",
     logo: "./assets/images/brand/logo/logo-medik8.svg",
-    lifestyleImage: "./assets/images/brand/lifestyle/medik8.webp",
+    lifestyleImage: "./assets/images/brand/lifestyle/medik8.jpg",
     website: "https://www.medik8.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/medik8.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 1,
       max: 5
@@ -246,6 +260,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/indu.jpg",
     website: "https://indu.me/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/indu.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 5,
       max: 5
@@ -274,6 +295,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/beis.jpg",
     website: "https://uk.beistravel.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/beis.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 3,
       max: 5
@@ -302,6 +330,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/pattern.jpg",
     website: "https://pattern.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/pattern.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 2,
       max: 5
@@ -331,19 +366,19 @@ const brands = [
     agency: "Fostr",
     galleryImages: [
       {
-        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
-        "alt": "St John Gallery Image 1",
-        "caption": "St John Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/st-john.jpg",
+        alt: "St John Gallery Image 1",
+        caption: "St John Gallery Image 1"
       },
       {
-        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
-        "alt": "St John Gallery Image 2",
-        "caption": "St John Gallery Image 2"
+        src: "./assets/images/brand/lifestyle/st-john.jpg",
+        alt: "St John Gallery Image 2",
+        caption: "St John Gallery Image 2"
       },
       {
-        "image": "./assets/images/brand/lifestyle/st-john-1.jpg",
-        "alt": "St John Gallery Image 3",
-        "caption": "St John Gallery Image 3"
+        src: "./assets/images/brand/lifestyle/st-john.jpg",
+        alt: "St John Gallery Image 3",
+        caption: "St John Gallery Image 3"
       }
     ],
     involvement: {
@@ -373,6 +408,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/kjaer-weis.jpg",
     website: "https://kjaerweis.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/kjaer-weis.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 2,
       max: 5
@@ -400,6 +442,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/new-era.jpg",
     website: "https://www.neweracap.eu/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/new-era.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 5,
       max: 5
@@ -427,6 +476,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/rad.jpg",
     website: "https://rad.co.uk/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/rad.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 3,
       max: 5
@@ -454,6 +510,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/rhino-greenhouses.jpg",
     website: "https://www.rhino.co.uk/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/rhino-greenhouses.jpg",
+        alt: "Kit and Kaboodal Gallery Image 1",
+        caption: "Kit and Kaboodal Gallery Image 1"
+      }
+    ], 
     involvement: {
       progress: 2,
       max: 5
@@ -483,9 +546,9 @@ const brands = [
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/protectapet.jpg",
+        alt: "Protectapet Gallery Image 1",
+        caption: "Protectapet Gallery Image 1"
       }
     ],
     involvement: {
@@ -510,16 +573,16 @@ const brands = [
   {
     id: "and-sons",
     largeBlock: true,
-    name: "And Sons",
+    name: "& Sons",
     logo: "./assets/images/brand/logo/logo-and-sons.png",
     lifestyleImage: "./assets/images/brand/lifestyle/and-sons.jpg",
     website: "https://andsons.co.uk/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/and-sons.jpg",
+        alt: "& Sons Gallery Image 1",
+        caption: "& Sons Gallery Image 1"
       }
     ],
     involvement: {
@@ -544,16 +607,16 @@ const brands = [
   {
     id: "pandco",
     largeBlock: false,
-    name: "Pandco",
+    name: "P&Co",
     logo: "./assets/images/brand/logo/logo-pandco.svg",
     lifestyleImage: "./assets/images/brand/lifestyle/pandco.jpg",
     website: "https://pandco.com/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./assets/images/brand/lifestyle/triangl.jpg",
-        alt: "Triangl Gallery Image 1",
-        caption: "Triangl Gallery Image 1"
+        src: "./assets/images/brand/lifestyle/pandco.jpg",
+        alt: "P&Co Gallery Image 1",
+        caption: "P&Co Gallery Image 1"
       }
     ],
     involvement: {
@@ -583,6 +646,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/pangaia.jpg",
     website: "https://pangaia.com/",
     agency: "Fostr",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/pangaia.jpg",
+        alt: "Pangaia Gallery Image 1",
+        caption: "Pangaia Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 5,
       max: 5
@@ -610,6 +680,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/bad-monday.jpg",
     website: "https://bad-monday.com/",
     agency: "Cage Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/bad-monday.jpg",
+        alt: "Bad Monday Gallery Image 1",
+        caption: "Bad Monday Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 5,
       max: 5
@@ -637,6 +714,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/goose-and-gander.jpg",
     website: "https://gooseandgander.com/",
     agency: "Cage Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/goose-and-gander.jpg",
+        alt: "Goose and Gander Gallery Image 1",
+        caption: "Goose and Gander Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 5,
       max: 5
@@ -664,6 +748,13 @@ const brands = [
     lifestyleImage: "./assets/images/brand/lifestyle/dancing-leopard.jpg",
     website: "https://dancingleopard.com/",
     agency: "Cage Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/dancing-leopard.jpg",
+        alt: "Dancing Leopard Gallery Image 1",
+        caption: "Dancing Leopard Gallery Image 1"
+      }
+    ],
     involvement: {
       progress: 5,
       max: 5

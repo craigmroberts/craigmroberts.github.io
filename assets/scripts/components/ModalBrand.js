@@ -158,10 +158,12 @@ class ModalBrand extends ModalContent {
     const galleryImages = brandData.galleryImages || [];
     const galleryWrapper = document.createElement('gallery-media');
 
+    // Log only for the current brand being viewed
+    console.log('Populating content for brand:', brandData.name);
+
     // forEach image in the gallery
     galleryImages.forEach((image) => {
       const img = document.createElement('img');
-      console.log('Image:', image);
       img.src = image.src || 'placeholder-image.jpg'; // Fallback src
       img.alt = image.alt || 'Brand image';
 
@@ -169,8 +171,8 @@ class ModalBrand extends ModalContent {
       imgWrapper.classList.add('modal__brand-image-wrapper');
       imgWrapper.appendChild(img);
       fragment.appendChild(imgWrapper);
-
     });
+
     // Append the gallery wrapper to the fragment
     galleryWrapper.appendChild(fragment);
     container.appendChild(galleryWrapper);
@@ -220,52 +222,86 @@ class ModalBrand extends ModalContent {
    * @override
    */
   setupNavigation(modal) {
-    const allModals = Array.from(document.querySelectorAll("modal-content-brand[data-nav='true']"));
-    const currentIndex = allModals.indexOf(this);
-    if (currentIndex === -1) return; // Element not found in navigable list
+    const brandCards = Array.from(document.querySelectorAll('[data-brand-id]')); // All brand cards
+    const currentBrandId = this.getAttribute('data-brand-id'); // Current brand ID
+    const currentIndex = brandCards.findIndex((card) => card.getAttribute('data-brand-id') === currentBrandId);
 
-    const nextIndex = (currentIndex + 1) % allModals.length;
-    const prevIndex = (currentIndex - 1 + allModals.length) % allModals.length;
+    if (currentIndex === -1) {
+      console.error('Current brand card not found in the list.');
+      return;
+    }
+
+    const nextIndex = (currentIndex + 1) % brandCards.length; // Wrap around to the first card
+    const prevIndex = (currentIndex - 1 + brandCards.length) % brandCards.length; // Wrap around to the last card
 
     const nextBtn = modal.querySelector('.modal__nav--next');
     const prevBtn = modal.querySelector('.modal__nav--prev');
 
     // --- Navigation Button Handlers ---
     if (nextBtn) {
-      nextBtn.onclick = null; // Clear previous handler
-      // Call showModal directly on the target instance
-      nextBtn.onclick = () => allModals[nextIndex].showModal();
+      nextBtn.onclick = () => {
+        const nextBrandCard = brandCards[nextIndex];
+        const nextBrandId = nextBrandCard.getAttribute('data-brand-id');
+        const nextModal = document.querySelector(`modal-content-brand[data-brand-id="${nextBrandId}"]`);
+
+        if (nextModal) {
+          console.log('Navigating to next modal:', nextModal);
+          nextModal.showModal();
+        } else {
+          console.error('Next modal not found for brand ID:', nextBrandId);
+        }
+      };
     }
 
     if (prevBtn) {
-      prevBtn.onclick = null; // Clear previous handler
-      prevBtn.onclick = () => allModals[prevIndex].showModal();
+      prevBtn.onclick = () => {
+        const prevBrandCard = brandCards[prevIndex];
+        const prevBrandId = prevBrandCard.getAttribute('data-brand-id');
+        const prevModal = document.querySelector(`modal-content-brand[data-brand-id="${prevBrandId}"]`);
+
+        if (prevModal) {
+          console.log('Navigating to previous modal:', prevModal);
+          prevModal.showModal();
+        } else {
+          console.error('Previous modal not found for brand ID:', prevBrandId);
+        }
+      };
     }
 
-    // --- Keyboard Navigation Handler (Instance-specific) ---
-    // Clean up any existing handler attached TO THIS INSTANCE
+    // --- Keyboard Navigation Handler ---
     if (this._keyHandler) {
       window.removeEventListener('keydown', this._keyHandler);
     }
 
-    // Define the new key handler specific to this instance when it's active
     this._keyHandler = (e) => {
-      // Only act if the main modal element is currently active
       if (!modal.classList.contains('is-active')) return;
 
       if (e.key === 'ArrowRight') {
-        e.preventDefault(); // Prevent page scroll
-        allModals[nextIndex].showModal();
+        e.preventDefault();
+        const nextBrandCard = brandCards[nextIndex];
+        const nextBrandId = nextBrandCard.getAttribute('data-brand-id');
+        const nextModal = document.querySelector(`modal-content-brand[data-brand-id="${nextBrandId}"]`);
+
+        if (nextModal) {
+          console.log('Navigating to next modal via keyboard:', nextModal);
+          nextModal.showModal();
+        }
       } else if (e.key === 'ArrowLeft') {
-        e.preventDefault(); // Prevent page scroll
-        allModals[prevIndex].showModal();
+        e.preventDefault();
+        const prevBrandCard = brandCards[prevIndex];
+        const prevBrandId = prevBrandCard.getAttribute('data-brand-id');
+        const prevModal = document.querySelector(`modal-content-brand[data-brand-id="${prevBrandId}"]`);
+
+        if (prevModal) {
+          console.log('Navigating to previous modal via keyboard:', prevModal);
+          prevModal.showModal();
+        }
       } else if (e.key === 'Escape') {
         e.preventDefault();
-        this.closeModal(); // Trigger the instance's close method for proper cleanup
+        this.closeModal();
       }
     };
 
-    // Add the new listener
     window.addEventListener('keydown', this._keyHandler);
   }
 
@@ -296,7 +332,6 @@ class ModalBrand extends ModalContent {
     if (this._keyHandler) {
       window.removeEventListener('keydown', this._keyHandler);
       this._keyHandler = null; // Clear the reference
-      // console.log('Cleaned up key handler on close for instance:', this.getAttribute('data-brand-id'));
     }
   }
 
@@ -323,12 +358,12 @@ class ModalBrand extends ModalContent {
       }
     };
 
-    modal.addEventListener('keydown', handleFocus);
+    // modal.addEventListener('keydown', handleFocus);
 
     // Remove the event listener when the modal is closed
-    modal.addEventListener('transitionend', () => {
-      modal.removeEventListener('keydown', handleFocus);
-    }, { once: true });
+    // modal.addEventListener('transitionend', () => {
+    //   modal.removeEventListener('keydown', handleFocus);
+    // }, { once: true });
   }
 }
 
