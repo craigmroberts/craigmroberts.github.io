@@ -675,7 +675,7 @@ const brands = [
   {
     id: "bad-monday",
     largeBlock: false,
-    name: "bad-monday",
+    name: "Bad Monday",
     logo: "./assets/images/brand/logo/logo-bad-monday.svg",
     lifestyleImage: "./assets/images/brand/lifestyle/bad-monday.jpg",
     website: "https://bad-monday.com/",
@@ -709,7 +709,7 @@ const brands = [
   {
     id: "goose-and-gander",
     largeBlock: false,
-    name: "goose-and-gander",
+    name: "Goose & Gander",
     logo: "./assets/images/brand/logo/logo-goose-and-gander.svg",
     lifestyleImage: "./assets/images/brand/lifestyle/goose-and-gander.jpg",
     website: "https://gooseandgander.com/",
@@ -743,7 +743,7 @@ const brands = [
   {
     id: "dancing-leopard",
     largeBlock: false,
-    name: "dancing-leopard",
+    name: "Dancing Leopard",
     logo: "./assets/images/brand/logo/logo-dancing-leopard.svg",
     lifestyleImage: "./assets/images/brand/lifestyle/dancing-leopard.jpg",
     website: "https://dancingleopard.com/",
@@ -773,6 +773,75 @@ const brands = [
         <a class="button button--style-1" href="#work">Learn more</a>
         <a class="button button--style-2 button--filled" href="https://dancingleopard.com/" target="_blank">View Website</a>`
     }
+  },
+
+  {
+    id: "flavour-blaster",
+    largeBlock: false,
+    name: "Flavour Blaster",
+    logo: "./assets/images/brand/logo/logo-flavour-blaster.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/flavour-blaster.jpg",
+    website: "https://flavourblaster.com/",
+    agency: "Cage Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/flavour-blaster.jpg",
+        alt: "Flavour Blaster Gallery Image 1",
+        caption: "Flavour Blaster Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 5,
+      max: 5
+    },
+    modal: {
+      id: "brands-item-flavour-blaster",
+      description_html: `
+        <h2>Earth-First Innovation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <h3 class="h4">Contribution</h3>
+        <div class="stats">
+          <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <a class="button button--style-1" href="#work">Learn more</a>
+        <a class="button button--style-2 button--filled" href="https://dancingleopard.com/" target="_blank">View Website</a>`
+    }
+  },
+  {
+    id: "304-clothing",
+    largeBlock: false,
+    name: "304 Clothing",
+    logo: "./assets/images/brand/logo/logo-304-clothing.svg",
+    lifestyleImage: "./assets/images/brand/lifestyle/304-clothing.jpg",
+    website: "https://304clothing.com/",
+    agency: "Cage Agency",
+    galleryImages: [
+      {
+        src: "./assets/images/brand/lifestyle/304-clothing.jpg",
+        alt: "304 Clothing Gallery Image 1",
+        caption: "304 Clothing Gallery Image 1"
+      }
+    ],
+    involvement: {
+      progress: 5,
+      max: 5
+    },
+    modal: {
+      id: "brands-item-304-clothing",
+      description_html: `
+        <h2>Earth-First Innovation</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <h3 class="h4">Contribution</h3>
+        <div class="stats">
+          <p><strong>Agency: <span>{{ brand.agency }}</span></strong></p>
+          <p><strong>Involvement:</strong> {{{ brand.involvement_progress }}}</p>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue.</p>
+        <a class="button button--style-1" href="#work">Learn more</a>
+        <a class="button button--style-2 button--filled" href="https://dancingleopard.com/" target="_blank">View Website</a>`
+    } 
   }
 ]
 
