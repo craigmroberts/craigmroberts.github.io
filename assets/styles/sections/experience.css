@@ -1,0 +1,30 @@
+.experience-list {
+    margin: 0;
+    list-style: none;
+}
+
+.experience-list-item {
+    margin: 0;
+    display: grid;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+    grid-template-columns: minmax(auto, 200px) auto;
+}
+
+.experience-list-item p {
+    margin: 0;
+}
+
+.experience-list-item__logo img {
+    max-height: 50px;
+}
+
+.experience-list-item--cake-agency .experience-list-item__logo img {
+    filter: invert(1);
+}
+
+
+.experience-list-item__content {
+    padding: 1rem 0;
+}
+
