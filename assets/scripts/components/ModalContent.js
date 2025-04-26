@@ -347,8 +347,6 @@ class ModalContent extends HTMLElement {
         overlay.style.opacity = '';
         overlay.style.transition = '';
     }
-
-    // Consider further cleanup if needed (e.g., removing instance listeners)
   }
 }
 
