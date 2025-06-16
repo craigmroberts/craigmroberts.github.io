@@ -11,6 +11,15 @@ node_modules/
 # Ignore build output
 build/
 
+# Track dist CSS/JS but ignore other dist files
+dist/*
+!dist/styles/
+!dist/scripts/
+dist/styles/*
+!dist/styles/*.css
+dist/scripts/*
+!dist/scripts/*.js
+
 # Ignore system files
 .DS_Store
 Thumbs.db
