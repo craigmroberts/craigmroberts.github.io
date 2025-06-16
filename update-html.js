@@ -35,22 +35,41 @@ async function updateHtml() {
     // Update HTML content
     let htmlContent = await fs.promises.readFile(paths.html, 'utf8');
     
-    // Update file references
+    // Update CSS references - both standard and preload
     htmlContent = htmlContent
       .replace(
-        /<link rel="stylesheet" href="\.\/dist\/styles\/main\.min\.v[\d.]+\.css" \/>/,
+        /<link[^>]*href=['"]\.\/dist\/styles\/main\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>/g,
         `<link rel="stylesheet" href="${paths.css}" />`
       )
       .replace(
-        /<script src="\.\/dist\/scripts\/main\.min\.v[\d.]+\.js"><\/script>/,
-        `<script src="${paths.js}"></script>`
+        /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/styles\/main\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>/g,
+        `<link rel="preload" href="${paths.css}" as="style" />`
       );
 
+    // Update JS references - both standard and preload
+    htmlContent = htmlContent
+      .replace(
+        /<script[^>]*src=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
+        `<script src="${paths.js}"></script>`
+      )
+      .replace(
+        /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*>/g,
+        `<link rel="preload" href="${paths.js}" as="script" />`
+      );
+
+    // Verify changes
+    if (!htmlContent.includes(paths.css) || !htmlContent.includes(paths.js)) {
+      throw new Error('Failed to update asset references in HTML');
+    }
+
     await fs.promises.writeFile(paths.html, htmlContent, 'utf8');
-    console.log(`Updated index.html with CSS file: ${paths.css} and JS file: ${paths.js}`);
+    console.log(`Updated index.html with v${version}:
+CSS: ${paths.css}
+JS: ${paths.js}`);
 
   } catch (error) {
     console.error('Error updating HTML:', error);
+    console.error('Current version:', version);
     process.exit(1);
   }
 }

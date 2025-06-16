@@ -1,5 +1,5 @@
 {
-  "version": "1.0.48",
+  "version": "1.0.50",
   "dependencies": {
     "mustache": "^4.2.0",
     "swiper": "^11.2.6"
@@ -8,16 +8,18 @@
     "autoprefixer": "^10.4.14",
     "chokidar-cli": "^3.0.0",
     "cssnano": "^7.0.6",
+    "cssnano-preset-advanced": "^7.0.6",
     "esbuild": "^0.25.2",
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^16.1.0"
   },
   "scripts": {
-    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.v$(npm pkg get version | tr -d '\"').css",
-    "build:js": "esbuild assets/scripts/main.scripts.js --bundle --minify --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
+    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.v$(npm pkg get version | tr -d '\"').css --verbose",
+    "build:js": "esbuild assets/scripts/main.scripts.js --bundle --minify --sourcemap --target=es2018 --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
     "update:html": "node update-html.js",
-    "build": "npm run build:css && npm run build:js && npm run update:html",
+    "build": "npm run clean && npm run build:css && npm run build:js && npm run update:html",
+    "clean": "rm -rf dist/styles/* dist/scripts/*",
     "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css && npm run update:html'",
     "watch:js": "chokidar 'assets/scripts/**/*.js' -c 'npm run build:js && npm run update:html'",
     "dev": "npm run watch:css & npm run watch:js"
