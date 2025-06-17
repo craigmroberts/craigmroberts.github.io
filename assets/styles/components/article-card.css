@@ -1,70 +1,100 @@
+:root {
+    /* Layout */
+    --article-card-image-height: 200px;
+    --article-card-padding: var(--space-sm);
+    --article-card-border-radius: var(--radius-lg);
+    --article-card-margin-bottom: var(--space-sm);
+    --article-card-title-margin: var(--space-xs);
+    
+    /* Colors */
+    --article-card-bg: var(--color-bg-2);
+    --article-card-border: var(--color-border);
+    --article-card-text: var(--color-muted);
+    --article-card-title-gradient: var(--color-gradient-2);
+    --article-card-link: var(--color-accent-3);
+    --article-card-link-hover: var(--color-accent-4);
+    
+    /* Typography */
+    --article-card-title-size: var(--font-size-lg);
+    --article-card-text-size: var(--font-size-sm);
+    --article-card-font-weight: var(--font-weight-bold);
+    --article-card-line-height: var(--line-height-sm);
+    
+    /* Effects */
+    --article-card-shadow: var(--box-shadow-lg);
+    --article-card-hover-offset: -4px;
+    --article-card-hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    --article-card-transition: var(--animation-duration) var(--animation-ease);
+    --article-card-meta-separator: ' • ';
+}
+
+/* Article Card Block
+-------------------------------------------------- */
 .article-card {
     display: block;
-    background-color: var(--color-bg-2);
-    border-radius: var(--radius-lg);
+    background-color: var(--article-card-bg);
+    border-radius: var(--article-card-border-radius);
     overflow: hidden;
-    box-shadow: var(--box-shadow-lg);
-    transition: transform var(--animation-duration) var (--animation-ease), 
+    box-shadow: var(--article-card-shadow);
+    transition: transform var(--animation-duration) var(--animation-ease), 
                 box-shadow var(--animation-duration) var(--animation-ease);
 }
-  
-.article-card:hover {
-    transform: translateY(-4px); /* No matching variable for translateY */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6); /* No matching variable for shadow */
-}
-  
+
+/* Card Image Element
+-------------------------------------------------- */
 .article-card__thumbnail {
     width: 100%;
-    height: 200px; /* No matching variable for height */
+    height: var(--article-card-image-height);
     object-fit: cover;
     border-bottom: 1px solid var(--color-border);
 }
-  
+
+/* Card Content Elements
+-------------------------------------------------- */
 .article-card__content {
-    padding: var(--space-sm);
+    padding: var(--article-card-padding);
 }
-  
+
 .article-card__title {
-    font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--line-height-sm);
-    margin-bottom: var(--space-xs);
-    background: var(--color-gradient-2);
+    font-size: var(--article-card-title-size);
+    font-weight: var(--article-card-font-weight);
+    line-height: var(--article-card-line-height);
+    margin-bottom: var(--article-card-title-margin);
+    background: var(--article-card-title-gradient);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-  
-.article-card__description {
-    font-size: var(--font-size-sm);
-    color: var(--color-muted);
-    margin-bottom: var(--space-sm);
-}
-  
+
+.article-card__description,
 .article-card__meta {
-    font-size: var(--font-size-sm);
-    color: var(--color-muted);
-    margin-bottom: var(--space-sm);
-}
-  
-.article-card__meta span:not(:last-child)::after {
-    content: ' • ';
-}
-  
-.article-card__link {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-normal);
-    color: var(--color-accent-3);
-    text-decoration: none;
-    display: inline-block;
-    transition: color var(--animation-duration) var(--animation-ease);
-}
-  
-.article-card__link:hover {
-    color: var(--color-accent-4);
+    font-size: var(--article-card-text-size);
+    color: var(--article-card-text);
+    margin-bottom: var(--article-card-margin-bottom);
 }
 
-/* Larger screens */
+/* Card Link Element
+-------------------------------------------------- */
+.article-card__link {
+    font-size: var(--article-card-text-size);
+    color: var(--article-card-link);
+    text-decoration: none;
+    transition: color var(--article-card-transition);
+}
+
+/* Interactive States
+-------------------------------------------------- */
+.article-card:hover {
+    transform: translateY(var(--article-card-hover-offset));
+    box-shadow: var(--article-card-hover-shadow);
+}
+
+.article-card__link:hover {
+    color: var(--article-card-link-hover);
+}
+
+/* Responsive Adjustments
+-------------------------------------------------- */
 @media (min-width: 768px) {
     .article-card__title {
         font-size: var(--font-size-lg);
