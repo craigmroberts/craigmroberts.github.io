@@ -26,7 +26,7 @@ export function watchInViewElements(scope = document, options = {}) {
     observedElements.forEach(element => {
       const rect = element.getBoundingClientRect();
       const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-      const label = element.getAttribute('aria-label') || element.textContent?.slice(0, 20) || `[${element.tagName}]`;
+      const label = element.getAttribute('data-label') || element.textContent?.slice(0, 20) || `[${element.tagName}]`;
       
       // Top edge visibility - allowing for a threshold amount to be out of view
       if (rect.top >= -settings.topThreshold && rect.top <= windowHeight) {
@@ -63,13 +63,13 @@ export function watchInViewElements(scope = document, options = {}) {
   // Throttle the scroll handler to improve performance
   const throttledScrollHandler = throttle(handleScroll, 100);
   
-  // Attach the scroll event handler
+  // Attach the scroll event handler with passive listeners for better scroll performance
   window.addEventListener('scroll', throttledScrollHandler, { passive: true });
-  window.addEventListener('resize', throttledScrollHandler, { passive: true }); // Also handle resize events
+  window.addEventListener('resize', throttledScrollHandler, { passive: true });
   
   // We'll still use IntersectionObserver for in-view and in-full-view states
   const handleIntersection = (element, isIntersecting, entry) => {
-    const label = element.getAttribute('aria-label') || element.textContent?.slice(0, 20) || `[${element.tagName}]`;
+    const label = element.getAttribute('data-label') || element.textContent?.slice(0, 20) || `[${element.tagName}]`;
     const intersectionRatio = entry.intersectionRatio;
     
     if (isIntersecting) {

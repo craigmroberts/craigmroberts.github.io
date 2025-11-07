@@ -114,33 +114,47 @@ class BehanceCards extends HTMLElement {
       });
 
       // Initialize Swiper on this custom element
-      new Swiper(this, {
-        slidesPerView: 1.15,
-        spaceBetween: 24,
-        loop: projects.length > 1, // Only loop if there's more than one project
-        grabCursor: true,
-        freeModeMomentum: false,
-        autoplay: false, // Autoplay usually not desired for project carousels
-        navigation: {
-          nextEl: '#behance-btn-next', // Ensure these selectors are correct and unique if multiple instances exist
-          prevEl: '#behance-btn-previous',
-        },
-        // Responsive breakpoints
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 32,
+      // Use requestIdleCallback to defer non-critical initialization
+      const initSwiper = () => {
+        new Swiper(this, {
+          slidesPerView: 1.15,
+          spaceBetween: 24,
+          loop: projects.length > 1, // Only loop if there's more than one project
+          grabCursor: true,
+          freeModeMomentum: false,
+          autoplay: false,
+          lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
           },
-          968: {
-            slidesPerView: 3,
-            spaceBetween: 20,
+          navigation: {
+            nextEl: '#behance-btn-next',
+            prevEl: '#behance-btn-previous',
           },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 24,
+          // Responsive breakpoints
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 32,
+            },
+            968: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
           },
-        },
-      });
+        });
+      };
+
+      // Use requestIdleCallback if available, otherwise fallback to setTimeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initSwiper);
+      } else {
+        setTimeout(initSwiper, 100);
+      }
     } catch (error) {
       console.error('Error rendering Behance projects:', error);
       // Display an error message within the component

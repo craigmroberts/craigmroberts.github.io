@@ -6,6 +6,18 @@
   scroll-behavior: smooth;
 }
 
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 html {
   scrollbar-gutter: stable;
 }
@@ -24,6 +36,26 @@ body {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--color-accent-1);
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 9999;
+  border-radius: 0 0 4px 0;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 2px;
 }
 
 /* Typography */
@@ -125,6 +157,13 @@ a:hover { text-decoration: underline; }
 .animate {
   background-size: 200% 200%;
   animation: animate-gradient 5s ease infinite;
+  will-change: background-position;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate {
+    animation: none;
+  }
 }
 
 /* Buttons */
@@ -140,7 +179,31 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  touch-action: manipulation; 
+  touch-action: manipulation;
+  will-change: transform;
+  contain: layout style paint;
+}
+
+/* Improve focus visibility */
+.button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 3px;
+}
+
+/* Enhanced keyboard navigation focus styles */
+body.keyboard-nav *:focus {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 2px;
+}
+
+body:not(.keyboard-nav) *:focus {
+  outline: none;
+}
+
+body:not(.keyboard-nav) *:focus-visible {
+  outline: 3px solid var(--color-accent-2);
+  outline-offset: 2px;
 }
 
 .button::before {
@@ -154,6 +217,7 @@ a:hover { text-decoration: underline; }
   background-position: 0% 50%;
   transition: background-position 0.3s ease;
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -172,12 +236,14 @@ a,
 .text-gradient-1 {
   background: var(--color-gradient-1);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-2 {
   background: var(--color-gradient-2);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -200,6 +266,7 @@ a,
   padding: 2px;
   background: linear-gradient(90deg, var(--color-accent-3), var(--color-accent-4));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   z-index: -1;
@@ -409,14 +476,15 @@ figcaption {
 .main {
   transform: scale(1);
   transition: ease 500ms transform;
+  will-change: transform;
 }
 
 body.modal-open .main {
   transform: scale(0.95);
 }
 
-.section[aria-label]::before {
-  content: attr(aria-label);
+.section[data-label]::before {
+  content: attr(data-label);
   position: sticky;
   background: var(--color-gradient-1);
   color: var(--color-text);
@@ -437,18 +505,18 @@ body.modal-open .main {
   transform: translateY(-150%) scale(0);
 }
 
-.section.in-view[aria-label]:not(.in-full-view,.top-in-view)::before {
+.section.in-view[data-label]:not(.in-full-view,.top-in-view)::before {
   transform: translateY(0%) scale(1);
   opacity: 1;
 }
 
-.section[aria-label]::before {
+.section[data-label]::before {
   background-size: 200% 100%;
   background-position: 0% 50%;
   transition: background-position 1s ease, opacity 250ms ease-in-out, transform 250ms ease-in-out;
 }
 
-.section.in-view[aria-label]::before {
+.section.in-view[data-label]::before {
   animation: gradientScroll 4s linear infinite alternate;
 }
 
@@ -468,6 +536,8 @@ body.modal-open .main {
   left: var(--space-md);
   width: 70px;
   z-index: 2;
+  will-change: transform;
+  contain: layout style;
 }
 
 .status-icon {
@@ -498,6 +568,15 @@ body.modal-open .main {
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(52, 168, 83, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @keyframes pulse-green {
+    0%, 100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7);
+    }
   }
 }
 

@@ -20,32 +20,43 @@
   <title>Craig - Shopify Development</title>
 
   <!-- Preload critical assets -->
+  <link rel="preload" href="./assets/images/hero-1.png" as="image" fetchpriority="high" />
+  <link rel="preload" href="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180" as="image" />
   <link rel="stylesheet" href="./dist/styles/main.min.v1.0.522.css" />
   <link rel="preload" href="./dist/scripts/main.min.v1.0.522.js" as="script" />
   
   <!-- Preconnect to external domains -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://medium.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+  <link rel="preconnect" href="https://medium.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="dns-prefetch" href="https://craigmroberts.myshopify.com" />
   
-  <!-- Add media attribute for non-critical CSS -->
-  <link rel="stylesheet" href="./dist/styles/main.min.v1.0.522.css" />
+  <!-- Defer non-critical CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" media="print" onload="this.media='all'" />
   
   <!-- Defer non-critical JS -->
   <script src="./dist/scripts/main.min.v1.0.522.js"></script>
-
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
+  <!-- Skip to main content link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  
   <div class="main">
     <img class="logo"
     src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
-    alt="Craig Logo">
+    alt="Craig M Roberts logo"
+    width="180"
+    height="180">
 
+    <main id="main-content">
     <section class="section-hero section hero" data-snap-section="true">
       <!-- Hero content -->
       <img class="hero__background"
           src="./assets/images/hero-1.png"
-          alt="Background image of Craig">
+          alt="Craig M Roberts - Shopify Developer"
+          fetchpriority="high"
+          width="1920"
+          height="800">
       <div class="hero__content">
         <h1 class="scroll-animate">Shopify development, simplified and styled</h1>
         <div class="button-group">
@@ -55,10 +66,10 @@
       </div>
     </section>
 
-    <section class="section-brands section brands container" aria-label="Brands i’ve worked with" data-watch-inview="true">
+    <section class="section-brands section brands container" id="work" data-label="Brands I've Worked With" aria-labelledby="brands-heading" data-watch-inview="true">
       <!-- Brands content -->
       <div class="brands__header">
-        <h2 class="text-gradient-2 animate">Brands I’ve Worked With</h2>
+        <h2 id="brands-heading" class="text-gradient-2 animate">Brands I've Worked With</h2>
       </div>
       <p>A selection of fashion, beauty, and lifestyle brands I’ve helped elevate through performance-led Shopify builds, collaborative design, and meaningful user experiences.</p>
       <div id="brands-worked-with">
@@ -68,15 +79,19 @@
       </div>
     </section>
 
-    <section id="experience" class="section-experience experience section container" aria-label="Experience" data-watch-inview="true">
+    <section id="experience" class="section-experience experience section container" data-label="Experience" aria-labelledby="experience-heading" data-watch-inview="true">
       <div class="experience__header">
-        <h2 class="text-gradient-2 animate">Experience</h2>
+        <h2 id="experience-heading" class="text-gradient-2 animate">Experience</h2>
 
         <ul class="experience-list">
           <li class="experience-list-item">
             <div class="experience-list-item__logo">
               <img class="experience-list-item__company-logo"
-                src="./assets/images/company/logo-fuse-fabric.png"/>
+                src="./assets/images/company/logo-fuse-fabric.png"
+                alt="FuseFabric logo"
+                loading="lazy"
+                width="187"
+                height="50"/>
             </div>
             <div class="experience-list-item__content">
               <p class="experience-list-item__role">Technical Lead</p>
@@ -98,7 +113,11 @@
           <li class="experience-list-item">
             <div class="experience-list-item__logo">
               <img class="experience-list-item__company-logo"
-                src="./assets/images/company/logo-fostr.svg" />
+                src="./assets/images/company/logo-fostr.svg"
+                alt="Fostr logo"
+                loading="lazy"
+                width="50"
+                height="50" />
             </div>
             <div class="experience-list-item__content">
               <p class="experience-list-item__role">Senior Shopify Developer</p>
@@ -110,7 +129,11 @@
           <li class="experience-list-item experience-list-item--cake-agency">
             <div class="experience-list-item__logo">
               <img class="experience-list-item__company-logo"
-                src="./assets/images/company/logo-cake-agency.png" />
+                src="./assets/images/company/logo-cake-agency.png"
+                alt="Cake Agency logo"
+                loading="lazy"
+                width="106"
+                height="50" />
             </div>
             <div class="experience-list-item__content">
               <p class="experience-list-item__role">Senior Shopify Developer</p>
@@ -123,10 +146,10 @@
       </div>
     </section>
 
-    <section id="behance-projects" class="section-articles articles section container" aria-label="Behance Projects" data-watch-inview="true">
+    <section id="behance-projects" class="section-articles articles section container" data-label="Behance Projects" aria-labelledby="behance-heading" data-watch-inview="true">
       <!-- Behance content -->
      <div class="articles__header">
-       <h2 class="text-gradient-1 animate">Behance Projects</h2>
+       <h2 id="behance-heading" class="text-gradient-1 animate">Behance Projects</h2>
        <div class="swiper-buttons">
          <button id="behance-btn-previous" class="swiper-button-prev button" aria-label="Previous slide">←</button>
          <button id="behance-btn-next" class="swiper-button-next button" aria-label="Next slide">→</button>
@@ -139,10 +162,10 @@
      </behance-cards>
    </section>
 
-    <section id="recent-articles" class="section-articles articles section container" aria-label="Recent Articles" data-watch-inview="true">
+    <section id="recent-articles" class="section-articles articles section container" data-label="Recent Articles" aria-labelledby="articles-heading" data-watch-inview="true">
        <!-- Articles content -->
       <div class="articles__header">
-        <h2 class="text-gradient-1 animate">Recent Articles</h2>
+        <h2 id="articles-heading" class="text-gradient-1 animate">Recent Articles</h2>
         <div class="swiper-buttons">
           <button id="articles-btn-previous" class="swiper-button-prev button" aria-label="Previous slide">←</button>
           <button id="articles-btn-next" class="swiper-button-next button" aria-label="Next slide">→</button>
@@ -155,115 +178,122 @@
       </medium-articles>
     </section>
 
-    <section class="section-brands-logos" aria-label="Brands Logos">
+    <section class="section-brands-logos" data-label="Brand Logos Showcase" aria-labelledby="brand-logos-heading">
+      <h2 id="brand-logos-heading" class="visually-hidden">Brand Logos Showcase</h2>
       <div class="swiper brands-swiper">
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-patou.svg" alt="Patou logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-patou.svg" alt="Patou logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-triangl.svg" alt="Triangl logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-triangl.svg" alt="Triangl logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-pucci.svg" alt="Pucci logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-pucci.svg" alt="Pucci logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-victoria-beckham.svg" alt="Victoria Beckham logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-victoria-beckham.svg" alt="Victoria Beckham logo" loading="lazy" width="120" height="60" />
           </div>
       
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-kit-and-kaboodal.svg" alt="Kit and Kaboodal logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-mutt-motorcycles.svg" alt="Mutt Motorcycles logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-medik8.svg" alt="Medik8 logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-medik8.svg" alt="Medik8 logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-indu.svg" alt="Indu logo" />
-          </div>
-          
-          <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-beis.svg" alt="BÉIS logo" />
-          </div>
-          <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-pattern.svg" alt="Pattern logo" />
-          </div>
-          <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-st-john.svg" alt="St. John logo" />
-          </div>
-          <div class="swiper-slide">
-            <img class="" src="./assets/images/brand/logo/logo-kjaer-weis.svg" alt="Kjaer Weis logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-indu.svg" alt="Indu logo" loading="lazy" width="120" height="60" />
           </div>
           
           <div class="swiper-slide">
-            <img class="" src="./assets/images/brand/logo/logo-new-era.svg" alt="New Era logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-beis.svg" alt="BÉIS logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-rad.svg" alt="R.A.D logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-pattern.svg" alt="Pattern logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="" src="./assets/images/brand/logo/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-st-john.svg" alt="St. John logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="" src="./assets/images/brand/logo/logo-protectapet.png" alt="ProtectaPet logo" />
+            <img class="" src="./assets/images/brand/logo/logo-kjaer-weis.svg" alt="Kjaer Weis logo" loading="lazy" width="120" height="60" />
           </div>
           
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-and-sons.png" alt="&Sons Trading Co logo" />
+            <img class="" src="./assets/images/brand/logo/logo-new-era.svg" alt="New Era logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-pandco.svg" alt="P&Co logo" />
+            <img class="invert" src="./assets/images/brand/logo/logo-rad.svg" alt="R.A.D logo" loading="lazy" width="120" height="60" />
           </div>
           <div class="swiper-slide">
-            <img class="invert" src="./assets/images/brand/logo/logo-pangaia.svg" alt="Pangaia logo" /> 
+            <img class="" src="./assets/images/brand/logo/logo-rhino-greenhouses.png" alt="Rhino Greenhouses logo" loading="lazy" width="120" height="60" />
+          </div>
+          <div class="swiper-slide">
+            <img class="" src="./assets/images/brand/logo/logo-protectapet.png" alt="ProtectaPet logo" loading="lazy" width="120" height="60" />
+          </div>
+          
+          <div class="swiper-slide">
+            <img class="invert" src="./assets/images/brand/logo/logo-and-sons.png" alt="&Sons Trading Co logo" loading="lazy" width="120" height="60" />
+          </div>
+          <div class="swiper-slide">
+            <img class="invert" src="./assets/images/brand/logo/logo-pandco.svg" alt="P&Co logo" loading="lazy" width="120" height="60" />
+          </div>
+          <div class="swiper-slide">
+            <img class="invert" src="./assets/images/brand/logo/logo-pangaia.svg" alt="Pangaia logo" loading="lazy" width="120" height="60" /> 
           </div>
         </div>
       </div>
     </section>
+    </main>
 
     <footer class="section-footer footer">
       <!-- Footer content -->
+      <nav aria-label="Footer navigation">
       <ul class="list-unstyled footer__links">
         <li>
-          <a class="text-white" href="#Projects">Projects</a>
+          <a class="text-white" href="#work">Projects</a>
         </li>
         <li>
-          <a class="text-white" href="#Articles">Articles</a>
+          <a class="text-white" href="#recent-articles">Articles</a>
         </li>
         <li>
-          <a class="text-white" href="#Contact">Contact</a>
+          <a class="text-white" href="mailto:contact@craigmroberts.com">Contact</a>
         </li>
       </ul>
+      </nav>
 
       <img class="footer__logo"
           src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
-          alt="Craig Logo">
+          alt="Craig M Roberts logo"
+          loading="lazy"
+          width="180"
+          height="180">
 
-      <ul class="list-unstyled footer__social">
+      <ul class="list-unstyled footer__social" aria-label="Social media links">
         <li>
-          <a class="text-white" target="_blank" href="https://www.linkedin.com/in/craig-m-roberts/">
+          <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/craig-m-roberts/" aria-label="LinkedIn profile">
             <span class="visually-hidden">LinkedIn</span>
-            <img src="./assets/icons/icon-linkedin.svg" alt="LinkedIn icon">
+            <img src="./assets/icons/icon-linkedin.svg" alt="" loading="lazy" width="24" height="24">
           </a>
         </li>
         <li>
-          <a class="text-white" target="_blank" href="http://github.com/craigmroberts">
+          <a class="text-white" target="_blank" rel="noopener noreferrer" href="http://github.com/craigmroberts" aria-label="GitHub profile">
             <span class="visually-hidden">GitHub</span>
-            <img src="./assets/icons/icon-github.svg" alt="GitHub icon">
+            <img src="./assets/icons/icon-github.svg" alt="" loading="lazy" width="24" height="24">
           </a>
         </li>
         <li>
-          <a class="text-white" target="_blank" href="//medium.com/@craigmroberts">
+          <a class="text-white" target="_blank" rel="noopener noreferrer" href="//medium.com/@craigmroberts" aria-label="Medium blog">
             <span class="visually-hidden">Medium</span>
-            <img src="./assets/icons/icon-medium.svg" alt="Medium icon">
+            <img src="./assets/icons/icon-medium.svg" alt="" loading="lazy" width="24" height="24">
           </a>
         </li>
         <li>
-          <a class="text-white" target="_blank" href="//www.behance.net/craigmroberts">
+          <a class="text-white" target="_blank" rel="noopener noreferrer" href="//www.behance.net/craigmroberts" aria-label="Behance portfolio">
             <span class="visually-hidden">Behance</span>
-            <img src="./assets/icons/icon-behance.svg" alt="Behnace icon">
+            <img src="./assets/icons/icon-behance.svg" alt="" loading="lazy" width="24" height="24">
           </a>
         </li>
       </ul>
@@ -271,21 +301,21 @@
       <ul class="list-unstyled footer__info">
         <li class="gmt-offset">
           <span class="icon"> 
-            <img src="./assets/icons/icon-clock.svg" alt="Timezone icon">
+            <img src="./assets/icons/icon-clock.svg" alt="" loading="lazy" width="16" height="16">
           </span>
           <span class="text-white">GMT+1</span>
         </li>
 
         <li class="location">
           <span class="icon"> 
-            <img src="./assets/icons/icon-map-pin.svg" alt="Location icon">
+            <img src="./assets/icons/icon-map-pin.svg" alt="" loading="lazy" width="16" height="16">
           </span>
           <span class="text-white">London, UK</span>
         </li>
 
         <li class="status">
           <span class="icon"> 
-            <div class="status-icon status-icon--available"></div>
+            <div class="status-icon status-icon--available" aria-label="Available"></div>
           </span>
           <span class="text-white">Shopify Tech Lead @ FuseFabric</span>
         </li>
@@ -293,6 +323,6 @@
     </footer>
   </div>
 
-  <script src="./assets/swiper/swiper-bundle.min.js"></script>
+  <script src="./assets/swiper/swiper-bundle.min.js" defer></script>
 </body>
 </html>

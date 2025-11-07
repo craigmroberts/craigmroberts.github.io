@@ -123,33 +123,47 @@ class MediumArticles extends HTMLElement {
       window.animateText?.(this); // Run animation within the scope of this element
 
       // Initialize Swiper on this custom element
-      new Swiper(this, {
-        slidesPerView: 1.15,
-        spaceBetween: 24,
-        loop: articles.length > 1, // Only loop if there's more than one article
-        grabCursor: true,
-        freeModeMomentum: false,
-        autoplay: false, // Autoplay usually not desired for article carousels
-        navigation: {
-          nextEl: '#articles-btn-next', // Ensure these selectors are correct and unique if multiple instances exist
-          prevEl: '#articles-btn-previous',
-        },
-        // Responsive breakpoints
-        breakpoints: {
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 32,
+      // Use requestIdleCallback to defer non-critical initialization
+      const initSwiper = () => {
+        new Swiper(this, {
+          slidesPerView: 1.15,
+          spaceBetween: 24,
+          loop: articles.length > 1, // Only loop if there's more than one article
+          grabCursor: true,
+          freeModeMomentum: false,
+          autoplay: false,
+          lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
           },
-          968: {
-            slidesPerView: 3,
-            spaceBetween: 20,
+          navigation: {
+            nextEl: '#articles-btn-next',
+            prevEl: '#articles-btn-previous',
           },
-          1200: {
-            slidesPerView: 4,
-            spaceBetween: 24,
+          // Responsive breakpoints
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 32,
+            },
+            968: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 24,
+            },
           },
-        },
-      });
+        });
+      };
+
+      // Use requestIdleCallback if available, otherwise fallback to setTimeout
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(initSwiper);
+      } else {
+        setTimeout(initSwiper, 100);
+      }
     } catch (error) {
       console.error('Error rendering Medium articles:', error);
       // Display an error message within the component
