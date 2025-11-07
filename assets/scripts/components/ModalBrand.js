@@ -222,11 +222,13 @@ class ModalBrand extends ModalContent {
     container.classList.add('modal__container');
     
     // Create logo
-    const logo = document.createElement('img');
-    logo.src = brandData.logo || '';
-    logo.alt = `${brandData.name || 'Brand'} logo`;
-    logo.classList.add('modal__brand-logo');
-    container.appendChild(logo);
+    if (brandData.logo) {
+      const logo = document.createElement('img');
+      logo.src = brandData.logo || '';
+      logo.alt = `${brandData.name || 'Brand'} logo`;
+      logo.classList.add('modal__brand-logo');
+      container.appendChild(logo);
+    }
     
     // Create description wrapper with Mustache template
     const wrapper = document.createElement('div');

@@ -1,6 +1,8 @@
 .section-brands-logos {
     padding: var(--space-md) 0;
     background: var(--color-bg);
+    /* Reduce reflow */
+    contain: layout style paint;
 }
 
 .brands-swiper .swiper-wrapper {
@@ -8,6 +10,9 @@
     -webkit-transition-timing-function: linear !important;
     transition-timing-function: linear !important; 
     position: relative;
+    /* GPU acceleration */
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .brands-swiper .swiper-slide {
@@ -15,6 +20,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /* Prevent reflow on slide changes */
+    contain: layout style;
 }
 
 .brands-swiper {
@@ -22,6 +29,10 @@
     padding: var(--space-md) 0;
     mask-image: linear-gradient(to right, transparent, var(--color-bg) 10%, var(--color-bg) 90%, transparent);
     margin: 0;
+    /* Optimize rendering */
+    contain: layout style;
+    /* Prevent layout shifts */
+    min-height: 80px;
 }
 
 .brands-swiper img {
@@ -29,6 +40,8 @@
     opacity: 0.8;
     transition: opacity var(--animation-duration) var(--animation-ease);
     filter: invert(1);
+    /* Prevent reflow */
+    transform: translateZ(0);
 }
 
 .brands-swiper img:hover {

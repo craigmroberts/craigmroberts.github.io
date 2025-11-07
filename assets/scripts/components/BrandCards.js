@@ -40,7 +40,7 @@ class BrandCards extends HTMLElement {
       // Replace template placeholders with brand data
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
-        .replace(/{{\s*brand\.logo\s*}}/g, brand.logo)
+        .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);
 
@@ -49,6 +49,14 @@ class BrandCards extends HTMLElement {
       wrapper.innerHTML = cardHTML;
 
       const cardEl = wrapper.firstElementChild;
+
+      // Hide logo container if brand has no logo
+      if (!brand.logo || brand.logo === false) {
+        const logoContainer = cardEl.querySelector('.brands__brand-logo');
+        if (logoContainer) {
+          logoContainer.style.display = 'none';
+        }
+      }
 
       // Apply special class if the brand has a large block flag
       if (brand.largeBlock) {
