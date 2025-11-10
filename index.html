@@ -9,8 +9,8 @@
   <meta name="theme-color" content="#000000">
   <meta property="og:title" content="Craig M Roberts - Shopify Development">
   <meta property="og:description" content="Shopify development, simplified and styled.">
-  <meta property="og:image" content="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180">
-  <meta property="og:url" content="https://craigmroberts.myshopify.com/">
+  <meta property="og:image" content="./dist/images/craig-logo.png">
+  <meta property="og:url" content="https://craigmroberts.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Craig M Roberts">
   <meta property="og:locale" content="en_GB">
@@ -21,8 +21,8 @@
 
   <!-- Preload critical assets -->
   <link rel="stylesheet" href="./dist/styles/main.min.v1.0.522.css" />
-  <link rel="preload" href="./assets/images/hero-1.png" as="image" fetchpriority="high" />
-  <link rel="preload" href="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180" as="image" />
+  <link rel="preload" href="./dist/images/hero-1.webp" as="image" fetchpriority="high" />
+  <link rel="preload" href="./dist/images/craig-logo.webp" as="image" />
   <link rel="stylesheet" href="./dist/styles/main.min.v1.0.522.css" />
   <link rel="preload" href="./dist/scripts/main.min.v1.0.522.js" as="script" />
   
@@ -30,7 +30,6 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
   <link rel="preconnect" href="https://medium.com" />
-  <link rel="dns-prefetch" href="https://craigmroberts.myshopify.com" />
   
   <!-- Defer non-critical CSS -->
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -44,11 +43,14 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
   
   <div class="main">
-    <img class="logo"
-    src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
-    alt="Craig M Roberts logo"
-    width="180"
-    height="180">
+    <picture>
+      <source type="image/webp" srcset="./dist/images/craig-logo.webp" />
+      <img class="logo"
+        src="./dist/images/craig-logo.png"
+        alt="Craig M Roberts logo"
+        width="180"
+        height="180">
+    </picture>
 
     <main id="main-content">
     <section class="section-hero section hero" data-snap-section="true">
@@ -269,12 +271,15 @@
       </ul>
       </nav>
 
-      <img class="footer__logo"
-          src="https://craigmroberts.myshopify.com/cdn/shop/files/craig-logo.png?v=1721112020&amp;width=180"
+      <picture>
+        <source type="image/webp" srcset="./dist/images/craig-logo.webp" />
+        <img class="footer__logo"
+          src="./dist/images/craig-logo.png"
           alt="Craig M Roberts logo"
           loading="lazy"
           width="180"
           height="180">
+      </picture>
 
       <ul class="list-unstyled footer__social" aria-label="Social media links">
         <li>
