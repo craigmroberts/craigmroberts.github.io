@@ -48,7 +48,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Critical Typography - Prevent CLS */
+/* Critical Typography - Prevent CLS - Mobile First */
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: var(--font-weight-bold);
@@ -61,14 +61,8 @@ h1, .h1 {
   font-weight: 700;
 }
 
-@media (min-width: 768px) {
-  h1, .h1 {
-    font-size: var(--font-size-xxl);
-  }
-}
-
 h2, .h2 { 
-  font-size: var(--font-size-xl); 
+  font-size: var(--font-size-lg); 
   line-height: 1.3;
   font-weight: 600;
 }
