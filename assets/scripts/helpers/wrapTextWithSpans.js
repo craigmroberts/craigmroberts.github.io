@@ -19,6 +19,9 @@ export function wrapTextWithSpans(el) {
   // Mark as initialized (Note: Might be redundant if already done by caller)
   el.classList.add('animated-init');
 
+  // Use DocumentFragment to batch DOM operations and prevent forced reflows
+  const fragment = document.createDocumentFragment();
+
   // Split text into words based on spaces
   const words = text.split(/\s+/); // Split by one or more spaces
 
@@ -33,7 +36,7 @@ export function wrapTextWithSpans(el) {
       // Using a regular space ' ' allows normal line wrapping
       // Using non-breaking space '\u00A0' prevents wrapping between words
       const space = document.createTextNode(' ');
-      el.appendChild(space);
+      fragment.appendChild(space);
     }
 
     // Create a span to wrap the entire word
@@ -57,7 +60,10 @@ export function wrapTextWithSpans(el) {
       wordSpan.appendChild(span);
     });
 
-    // Append the fully constructed word span to the original element
-    el.appendChild(wordSpan);
+    // Append the fully constructed word span to the fragment
+    fragment.appendChild(wordSpan);
   });
+
+  // Single DOM append - prevents multiple reflows
+  el.appendChild(fragment);
 }

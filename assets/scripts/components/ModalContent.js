@@ -166,8 +166,11 @@ class ModalContent extends HTMLElement {
 
     // Scrolling Down:
     if (deltaY > 0) {
+      // Cache scrollTop reads to prevent forced reflows
+      const currentScrollTop = innerContent.scrollTop;
+      
       // If content is scrolled down, allow native scroll
-      if (this.startScrollTop > 0 || innerContent.scrollTop > 0) {
+      if (this.startScrollTop > 0 || currentScrollTop > 0) {
         // Ensure scrollTop is checked *currently* as well as at the start
         return;
       }

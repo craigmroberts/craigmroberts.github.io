@@ -36,6 +36,9 @@ class BrandCards extends HTMLElement {
 
     if (!templateHTML) return;
 
+    // Use DocumentFragment to batch DOM operations and prevent forced reflows
+    const fragment = document.createDocumentFragment();
+
     brands.forEach((brand) => {
       // Generate WebP version of lifestyle image
       const lifestyleImageWebP = brand.lifestyleImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
@@ -56,11 +59,12 @@ class BrandCards extends HTMLElement {
 
       const cardEl = wrapper.firstElementChild;
 
-      // Hide logo container if brand has no logo
+      // Hide logo container if brand has no logo (batch style changes)
       if (!brand.logo || brand.logo === false) {
         const logoContainer = cardEl.querySelector('.brands__brand-logo');
         if (logoContainer) {
-          logoContainer.style.display = 'none';
+          // Use class instead of inline style to avoid forced reflow
+          logoContainer.classList.add('visually-hidden');
         }
       }
 
@@ -69,8 +73,12 @@ class BrandCards extends HTMLElement {
         cardEl.classList.add('large-block');
       }
 
-      container.appendChild(cardEl);
+      // Add to fragment instead of directly to DOM
+      fragment.appendChild(cardEl);
     });
+
+    // Single DOM append - prevents multiple reflows
+    container.appendChild(fragment);
   }
 }
 
