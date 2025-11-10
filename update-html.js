@@ -6,10 +6,11 @@ const path = require('path');
  * @throws {Error} If files cannot be read or written
  */
 async function updateHtml() {
+  let version;
   try {
     // Get version from package.json
     const packageJson = JSON.parse(await fs.promises.readFile('./package.json', 'utf8'));
-    const version = packageJson.version;
+    version = packageJson.version;
 
     // Define paths
     const paths = {
@@ -88,8 +89,9 @@ async function updateHtml() {
         `<link rel="preload" href="${paths.swiper}" as="script" />`
       );
 
-    // Verify changes
-    if (!htmlContent.includes(paths.criticalCss) || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
+    // Verify changes - check for critical CSS link OR inline style tag
+    const hasCriticalCSS = htmlContent.includes(paths.criticalCss) || htmlContent.includes('<style>:root{');
+    if (!hasCriticalCSS || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
       throw new Error('Failed to update asset references in HTML');
     }
 
