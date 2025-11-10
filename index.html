@@ -7,6 +7,27 @@
   <meta name="keywords" content="Shopify, Development, Craig M Roberts, E-commerce, Web Development">
   <meta name="author" content="Craig M Roberts">
   <meta name="theme-color" content="#000000">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline' cdn.jsdelivr.net;
+    style-src 'self' 'unsafe-inline' cdn.jsdelivr.net fonts.googleapis.com;
+    img-src 'self' data: https:;
+    font-src 'self' fonts.gstatic.com;
+    connect-src 'self' medium.com api.behance.net;
+    frame-src 'none';
+    object-src 'none';
+    base-uri 'self';
+    form-action 'self';
+    upgrade-insecure-requests;
+  ">
+  
+  <!-- Open Graph / Social Media Meta Tags -->
   <meta property="og:title" content="Craig M Roberts - Shopify Development">
   <meta property="og:description" content="Shopify development, simplified and styled.">
   <meta property="og:image" content="./dist/images/craig-logo.png">
