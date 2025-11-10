@@ -315,3 +315,15 @@ a:focus-visible {
   content-visibility: auto;
   contain-intrinsic-size: auto 400px;
 }
+
+/* Prevent CLS from section sticky labels */
+.section[data-label]::before {
+  content: attr(data-label);
+  position: sticky;
+  top: 0.5rem;
+  margin: auto;
+  width: fit-content;
+  opacity: 0;
+  transform: translateY(-150%) scale(0);
+  pointer-events: none; /* Ensure it doesn't interfere with layout */
+}
