@@ -1,12 +1,18 @@
+/* Prevent CLS - ensure text maintains space before animation */
+.scroll-animate {
+  min-height: 1em;
+  display: block;
+}
+
 .scroll-animate span {
   display: inline-block;
   opacity: 0;
-  transform: translateY(var(--translate-distance, 20px));
+  transform: translateY(0); /* Changed from 20px to 0 to prevent layout shift */
   transition:
-    opacity var(--animation-duration, 0.5s) var(--animation-ease, ease-out),
-    transform var(--animation-duration, 0.5s) var(--animation-ease, ease-out);
-  transition-delay: calc(var(--char-index) * 40ms); /* Retained as no matching variable exists */
+    opacity var(--animation-duration, 0.5s) var(--animation-ease, ease-out);
+  transition-delay: calc(var(--char-index) * 40ms);
   background: inherit;
+  will-change: opacity; /* Removed transform from will-change */
 }
 
 .scroll-animate.in-view span {

@@ -153,6 +153,16 @@ a:hover { text-decoration: underline; }
   margin-bottom: var(--space-md);
 }
 
+/* Prevent CLS from text animation - reserve space */
+.scroll-animate {
+  min-height: 1em;
+  display: block;
+}
+
+.scroll-animate span {
+  display: inline-block;
+}
+
 /* Button base - Prevent CLS */
 .button {
   position: relative;
