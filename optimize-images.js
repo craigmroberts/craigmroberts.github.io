@@ -75,6 +75,46 @@ async function optimizeImage(inputPath) {
       return;
     }
 
+    // For WebP source files, copy directly and generate responsive sizes only
+    if (parsed.ext.toLowerCase() === '.webp') {
+      const outputPath = path.join(outputDir, parsed.base);
+      fs.copyFileSync(inputPath, outputPath);
+      
+      const originalStats = fs.statSync(inputPath);
+      stats.originalSize += originalStats.size;
+      stats.optimizedSize += originalStats.size;
+      
+      // Generate responsive WebP sizes if needed
+      const sizes = getSizesForPath(relativePath);
+      if (sizes) {
+        const image = sharp(inputPath);
+        const metadata = await image.metadata();
+        
+        for (const width of sizes) {
+          if (width < metadata.width) {
+            const responsivePath = path.join(
+              outputDir,
+              `${parsed.name}-${width}w.webp`
+            );
+            await sharp(inputPath)
+              .resize(width, null, {
+                withoutEnlargement: true,
+                fit: 'inside',
+              })
+              .webp({ quality: CONFIG.quality.webp })
+              .toFile(responsivePath);
+            
+            const responsiveStats = fs.statSync(responsivePath);
+            stats.optimizedSize += responsiveStats.size;
+          }
+        }
+      }
+      
+      console.log(`✅ ${relativePath} (WebP source - copied)`);
+      stats.processed++;
+      return;
+    }
+
     const image = sharp(inputPath);
     const metadata = await image.metadata();
     const sizes = getSizesForPath(relativePath);
@@ -173,6 +213,7 @@ async function main() {
     `${CONFIG.inputDir}/**/*.jpg`,
     `${CONFIG.inputDir}/**/*.jpeg`,
     `${CONFIG.inputDir}/**/*.png`,
+    `${CONFIG.inputDir}/**/*.webp`,
     `${CONFIG.inputDir}/**/*.svg`,
   ];
 
