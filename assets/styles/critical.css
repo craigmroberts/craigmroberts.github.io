@@ -108,6 +108,12 @@ a:hover { text-decoration: underline; }
   margin-bottom: 0;
 }
 
+/* Content visibility optimization - skip rendering off-screen sections */
+.section:not(.section-hero) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px; /* Reserve ~600px for each section */
+}
+
 /* Hero Section - Critical for above-the-fold */
 .section-hero {
   background-color: var(--color-bg);
@@ -302,3 +308,10 @@ a:focus-visible {
 /* Utility classes */
 .text-center { text-align: center; }
 .text-white { color: var(--color-text); }
+
+/* Content visibility for heavy off-screen components */
+.section-brands-logos,
+.section-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 400px;
+}
