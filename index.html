@@ -8,11 +8,8 @@
   <meta name="author" content="Craig M Roberts">
   <meta name="theme-color" content="#000000">
   
-  <!-- Security Headers -->
-  <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+  <!-- Security Headers (note: X-Frame-Options requires HTTP header, not meta tag) -->
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' 'unsafe-inline' cdn.jsdelivr.net;
@@ -56,7 +53,10 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
   
-  <!-- Defer non-critical JS -->
+  <!-- Load Swiper before main.js (required dependency) -->
+  <script src="./assets/swiper/swiper-bundle.min.js"></script>
+  
+  <!-- Load main application JS -->
   <script src="./dist/scripts/main.min.v1.0.522.js"></script>
 </head>
 <body>
@@ -353,7 +353,5 @@
       </ul>
     </footer>
   </div>
-
-  <script src="./assets/swiper/swiper-bundle.min.js" async></script>
 </body>
 </html>
