@@ -7,9 +7,12 @@
         loading="lazy" />
     </div>
     <div class="brands__brand-lifestyle-image-wrapper">
-      <img class="brands__brand-lifestyle-image"
-        src="{{ brand.lifestyleImage }}"
-        alt="{{ brand.name }} logo" />
+      <picture>
+        <source type="image/webp" srcset="{{ brand.lifestyleImageWebP }}" />
+        <img class="brands__brand-lifestyle-image"
+          src="{{ brand.lifestyleImage }}"
+          alt="{{ brand.name }} lifestyle image" />
+      </picture>
     </div>
     <modal-content-brand class="modal-content"
         data-triggers="#brands-item-{{ brand.key }}"

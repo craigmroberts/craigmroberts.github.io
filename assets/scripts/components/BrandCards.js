@@ -37,10 +37,14 @@ class BrandCards extends HTMLElement {
     if (!templateHTML) return;
 
     brands.forEach((brand) => {
+      // Generate WebP version of lifestyle image
+      const lifestyleImageWebP = brand.lifestyleImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      
       // Replace template placeholders with brand data
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
+        .replace(/{{\s*brand\.lifestyleImageWebP\s*}}/g, lifestyleImageWebP)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);
 
