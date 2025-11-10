@@ -44,6 +44,8 @@ class BrandCards extends HTMLElement {
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
+        .replace(/{{\s*brand\.logoWidth\s*}}/g, brand.logoWidth || '')
+        .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '')
         .replace(/{{\s*brand\.lifestyleImageWebP\s*}}/g, lifestyleImageWebP)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);
