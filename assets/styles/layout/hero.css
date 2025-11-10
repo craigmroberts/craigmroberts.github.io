@@ -35,3 +35,8 @@
   background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
   contain: layout style;
 }
+
+/* Explicitly set h1 font-size to override deprecated user-agent behavior */
+.hero__content h1 {
+  font-size: var(--font-size-xl);
+}
