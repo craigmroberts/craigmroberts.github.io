@@ -1,0 +1,132 @@
+/* Critical CSS - Inline styles for preventing CLS and initial render */
+
+/* CSS Variables - Essential only */
+@import "./variables.css";
+
+/* Base Reset & Typography - Critical only */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+/* Critical Typography - Prevent CLS */
+h1, .h1 { 
+  font-size: var(--font-size-xl); 
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+h2, .h2 { 
+  font-size: var(--font-size-lg); 
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+/* Container - Prevent layout shift */
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-sm);
+}
+
+/* Section spacing - Prevent CLS */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+/* Hero Section - Critical for above-the-fold */
+.section-hero {
+  background-color: var(--color-bg);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  max-height: 800px;
+  overflow: hidden;
+  margin: 0;
+}
+
+.hero__background {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: var(--space-lg) var(--space-sm);
+  text-align: center;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
+}
+
+.hero__content h1 {
+  font-size: var(--font-size-xl);
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+}
+
+/* Button base - Prevent CLS */
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-md);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Image base - Prevent CLS */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+picture {
+  display: contents;
+}
+
+/* Visibility utilities - Prevent flash */
+[hidden] {
+  display: none !important;
+}
+
+/* Loading state - Prevent CLS */
+.loading {
+  min-height: 100px;
+}

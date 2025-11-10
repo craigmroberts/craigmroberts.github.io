@@ -16,7 +16,8 @@ async function updateHtml() {
       styles: path.resolve(__dirname, 'dist/styles'),
       scripts: path.resolve(__dirname, 'dist/scripts'),
       html: path.resolve(__dirname, 'index.html'),
-      css: `./dist/styles/main.min.v${version}.css`,
+      criticalCss: `./dist/styles/critical.min.v${version}.css`,
+      nonCriticalCss: `./dist/styles/non-critical.min.v${version}.css`,
       js: `./dist/scripts/main.min.v${version}.js`,
       swiper: `./dist/scripts/swiper.min.v${version}.js`
     };
@@ -29,6 +30,8 @@ async function updateHtml() {
 
     // Delete old versioned files
     await Promise.all([
+      deleteOldFiles(paths.styles, 'critical.min.v', version),
+      deleteOldFiles(paths.styles, 'non-critical.min.v', version),
       deleteOldFiles(paths.styles, 'main.min.v', version),
       deleteOldFiles(paths.scripts, 'main.min.v', version),
       deleteOldFiles(paths.scripts, 'swiper.min.v', version)
@@ -37,16 +40,34 @@ async function updateHtml() {
     // Update HTML content
     let htmlContent = await fs.promises.readFile(paths.html, 'utf8');
     
-    // Update CSS references - both standard and preload
+    // Update critical CSS reference (will be inlined later)
+    // This replaces any main.min or critical.min CSS with critical CSS link
     htmlContent = htmlContent
       .replace(
-        /<link[^>]*href=['"]\.\/dist\/styles\/main\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>/g,
-        `<link rel="stylesheet" href="${paths.css}" />`
-      )
-      .replace(
-        /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/styles\/main\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>/g,
-        `<link rel="preload" href="${paths.css}" as="style" />`
+        /<link[^>]*href=['"]\.\/dist\/styles\/(critical|main)\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>/g,
+        `<link rel="stylesheet" href="${paths.criticalCss}" />`
       );
+    
+    // Remove the old noscript tag with duplicate main.min CSS if it exists
+    htmlContent = htmlContent.replace(
+      /<noscript><link[^>]*href=['"]\.\/dist\/styles\/main\.min\.v\d+\.\d+\.\d+\.css['"][^>]*><\/noscript>/g,
+      ''
+    );
+    
+    // Add non-critical CSS reference after the critical CSS
+    // Find the critical CSS link and add non-critical after it
+    if (!htmlContent.includes('non-critical.min')) {
+      htmlContent = htmlContent.replace(
+        /(<link rel="stylesheet" href="\.\/dist\/styles\/critical\.min\.v\d+\.\d+\.\d+\.css" \/>)/,
+        `$1\n  \n  <!-- Non-critical CSS - deferred -->\n  <link rel="preload" href="${paths.nonCriticalCss}" as="style" onload="this.onload=null;this.rel='stylesheet'" />\n  <noscript><link rel="stylesheet" href="${paths.nonCriticalCss}" /></noscript>`
+      );
+    } else {
+      // Update existing non-critical CSS reference
+      htmlContent = htmlContent.replace(
+        /<!-- Non-critical CSS - deferred -->[\s\S]*?<link[^>]*href=['"]\.\/dist\/styles\/non-critical\.min\.v\d+\.\d+\.\d+\.css['"][^>]*>[\s\S]*?(?:<noscript>.*?<\/noscript>)?/g,
+        `<!-- Non-critical CSS - deferred -->\n  <link rel="preload" href="${paths.nonCriticalCss}" as="style" onload="this.onload=null;this.rel='stylesheet'" />\n  <noscript><link rel="stylesheet" href="${paths.nonCriticalCss}" /></noscript>`
+      );
+    }
 
     // Update JS references - both standard and preload
     htmlContent = htmlContent
@@ -68,13 +89,14 @@ async function updateHtml() {
       );
 
     // Verify changes
-    if (!htmlContent.includes(paths.css) || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
+    if (!htmlContent.includes(paths.criticalCss) || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
       throw new Error('Failed to update asset references in HTML');
     }
 
     await fs.promises.writeFile(paths.html, htmlContent, 'utf8');
     console.log(`Updated index.html with v${version}:
-CSS: ${paths.css}
+Critical CSS: ${paths.criticalCss}
+Non-Critical CSS: ${paths.nonCriticalCss}
 JS: ${paths.js}
 Swiper: ${paths.swiper}`);
 

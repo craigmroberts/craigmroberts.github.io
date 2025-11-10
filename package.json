@@ -17,12 +17,14 @@
     "swiper": "^12.0.3"
   },
   "scripts": {
-    "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.v$(npm pkg get version | tr -d '\"').css --verbose",
+    "build:css": "npm run build:css:critical && npm run build:css:non-critical",
+    "build:css:critical": "postcss assets/styles/critical.css -o dist/styles/critical.min.v$(npm pkg get version | tr -d '\"').css --verbose",
+    "build:css:non-critical": "postcss assets/styles/non-critical.css -o dist/styles/non-critical.min.v$(npm pkg get version | tr -d '\"').css --verbose",
     "build:js": "npm run build:js:swiper && npm run build:js:main",
     "build:js:swiper": "esbuild assets/scripts/swiper-custom.js --bundle --minify --format=iife --target=es2018 --outfile=dist/scripts/swiper.min.v$(npm pkg get version | tr -d '\"').js",
     "build:js:main": "esbuild assets/scripts/main.scripts.js --bundle --minify --sourcemap --target=es2018 --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
     "build:images": "node optimize-images.js",
-    "update:html": "node update-html.js",
+    "update:html": "node update-html.js && node inline-critical-css.js",
     "build": "npm run clean && npm run build:images && npm run build:css && npm run build:js && npm run update:html",
     "clean": "rm -rf dist/styles/* dist/scripts/* dist/images/*",
     "watch:css": "chokidar 'assets/styles/**/*.css' -c 'npm run build:css && npm run update:html'",

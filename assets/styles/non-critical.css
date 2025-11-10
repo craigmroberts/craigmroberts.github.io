@@ -1,0 +1,26 @@
+/* Non-Critical CSS - Loaded asynchronously */
+
+/* Complete base styles (beyond critical) */
+@import "./base.css";
+
+/* Third-party dependencies */
+@import "../../node_modules/swiper/swiper-bundle.min.css";
+
+/* Components */
+@import "./components/article-card.css";
+@import "./components/brands.css";
+@import "./components/brands-swiper.css";
+@import "./components/modal.css";
+@import "./components/progress-blocks.css";
+
+/* Layout (complete) */
+@import "./layout/footer.css";
+@import "./layout/hero.css";
+@import "./layout/main.css";
+
+/* Utilities */
+@import "./utilities/scroll-animate.css";
+
+/* Sections */
+@import "./sections/articles.css";
+@import "./sections/experience.css";
