@@ -1,8 +1,7 @@
 {
   "version": "1.0.522",
   "dependencies": {
-    "mustache": "^4.2.0",
-    "swiper": "^11.2.6"
+    "mustache": "^4.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
@@ -14,11 +13,14 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^16.1.0",
-    "sharp": "^0.33.5"
+    "sharp": "^0.33.5",
+    "swiper": "^12.0.3"
   },
   "scripts": {
     "build:css": "postcss assets/styles/main.css -o dist/styles/main.min.v$(npm pkg get version | tr -d '\"').css --verbose",
-    "build:js": "esbuild assets/scripts/main.scripts.js --bundle --minify --sourcemap --target=es2018 --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
+    "build:js": "npm run build:js:swiper && npm run build:js:main",
+    "build:js:swiper": "esbuild assets/scripts/swiper-custom.js --bundle --minify --format=iife --target=es2018 --outfile=dist/scripts/swiper.min.v$(npm pkg get version | tr -d '\"').js",
+    "build:js:main": "esbuild assets/scripts/main.scripts.js --bundle --minify --sourcemap --target=es2018 --outfile=dist/scripts/main.min.v$(npm pkg get version | tr -d '\"').js",
     "build:images": "node optimize-images.js",
     "update:html": "node update-html.js",
     "build": "npm run clean && npm run build:images && npm run build:css && npm run build:js && npm run update:html",

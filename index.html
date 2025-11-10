@@ -53,11 +53,9 @@
   <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
   
-  <!-- Load Swiper before main.js (required dependency) -->
-  <script src="./assets/swiper/swiper-bundle.min.js"></script>
-  
-  <!-- Load main application JS -->
-  <script src="./dist/scripts/main.min.v1.0.522.js"></script>
+  <!-- Defer JS loading - Swiper loads first, then main.js -->
+  <script defer src="./dist/scripts/swiper.min.v1.0.522.js"></script>
+  <script defer src="./dist/scripts/main.min.v1.0.522.js"></script>
 </head>
 <body>
   <!-- Skip to main content link for accessibility -->

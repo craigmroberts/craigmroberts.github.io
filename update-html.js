@@ -17,7 +17,8 @@ async function updateHtml() {
       scripts: path.resolve(__dirname, 'dist/scripts'),
       html: path.resolve(__dirname, 'index.html'),
       css: `./dist/styles/main.min.v${version}.css`,
-      js: `./dist/scripts/main.min.v${version}.js`
+      js: `./dist/scripts/main.min.v${version}.js`,
+      swiper: `./dist/scripts/swiper.min.v${version}.js`
     };
 
     // Ensure dist directories exist
@@ -29,7 +30,8 @@ async function updateHtml() {
     // Delete old versioned files
     await Promise.all([
       deleteOldFiles(paths.styles, 'main.min.v', version),
-      deleteOldFiles(paths.scripts, 'main.min.v', version)
+      deleteOldFiles(paths.scripts, 'main.min.v', version),
+      deleteOldFiles(paths.scripts, 'swiper.min.v', version)
     ]);
 
     // Update HTML content
@@ -50,22 +52,31 @@ async function updateHtml() {
     htmlContent = htmlContent
       .replace(
         /<script[^>]*src=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
-        `<script src="${paths.js}"></script>`
+        `<script defer src="${paths.js}"></script>`
+      )
+      .replace(
+        /<script[^>]*src=['"]\.\/dist\/scripts\/swiper\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
+        `<script defer src="${paths.swiper}"></script>`
       )
       .replace(
         /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*>/g,
         `<link rel="preload" href="${paths.js}" as="script" />`
+      )
+      .replace(
+        /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/scripts\/swiper\.min\.v\d+\.\d+\.\d+\.js['"][^>]*>/g,
+        `<link rel="preload" href="${paths.swiper}" as="script" />`
       );
 
     // Verify changes
-    if (!htmlContent.includes(paths.css) || !htmlContent.includes(paths.js)) {
+    if (!htmlContent.includes(paths.css) || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
       throw new Error('Failed to update asset references in HTML');
     }
 
     await fs.promises.writeFile(paths.html, htmlContent, 'utf8');
     console.log(`Updated index.html with v${version}:
 CSS: ${paths.css}
-JS: ${paths.js}`);
+JS: ${paths.js}
+Swiper: ${paths.swiper}`);
 
   } catch (error) {
     console.error('Error updating HTML:', error);
