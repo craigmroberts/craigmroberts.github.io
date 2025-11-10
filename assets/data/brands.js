@@ -6,12 +6,12 @@ const brands = [
     logo: "./dist/images/brand/logo/logo-patou.svg",
     logoWidth: 93,
     logoHeight: 22,
-    lifestyleImage: "./dist/images/brand/lifestyle/patou.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/patou.webp",
     website: "https://www.patou.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/patou.jpg",
+        src: "./dist/images/brand/lifestyle/patou.webp",
         alt: "Patou Gallery Image 1",
         caption: "Patou Gallery Image 1"
       }
@@ -42,22 +42,22 @@ const brands = [
     logo: "./dist/images/brand/logo/logo-triangl.svg",
     logoWidth: 111,
     logoHeight: 32,
-    lifestyleImage: "./dist/images/brand/lifestyle/triangl.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/triangl.webp",
     website: "https://triangl.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/triangl.jpg",
+        src: "./dist/images/brand/lifestyle/triangl.webp",
         alt: "Triangl Gallery Image 1",
         caption: "Triangl Gallery Image 1"
       },
       {
-        src: "./dist/images/brand/lifestyle/triangl.jpg",
+        src: "./dist/images/brand/lifestyle/triangl.webp",
         alt: "Triangl Gallery Image 2",
         caption: "Triangl Gallery Image 2"
       },
       {
-        src: "./dist/images/brand/lifestyle/triangl.jpg",
+        src: "./dist/images/brand/lifestyle/triangl.webp",
         alt: "Triangl Gallery Image 3",
         caption: "Triangl Gallery Image 3"
       }
@@ -88,12 +88,12 @@ const brands = [
     logo: "./dist/images/brand/logo/logo-pucci.svg",
     logoWidth: 93,
     logoHeight: 18,
-    lifestyleImage: "./dist/images/brand/lifestyle/pucci.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/pucci.webp",
     website: "https://www.pucci.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/pucci.jpg",
+        src: "./dist/images/brand/lifestyle/pucci.webp",
         alt: "Pucci Gallery Image 1",
         caption: "Pucci Gallery Image 1"
       }
@@ -124,12 +124,12 @@ const brands = [
     logo: "./dist/images/brand/logo/logo-victoria-beckham.svg",
     logoWidth: 93,
     logoHeight: 7,
-    lifestyleImage: "./dist/images/brand/lifestyle/victoria-beckham.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/victoria-beckham.webp",
     website: "https://www.victoriabeckham.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/victoria-beckham.jpg",
+        src: "./dist/images/brand/lifestyle/victoria-beckham.webp",
         alt: "Victoria Beckham Gallery Image 1",
         caption: "Victoria Beckham Gallery Image 1"
       }
@@ -160,12 +160,12 @@ const brands = [
     logo: "./dist/images/brand/logo/logo-kit-and-kaboodal.svg",
     logoWidth: 93,
     logoHeight: 11,
-    lifestyleImage: "./dist/images/brand/lifestyle/kit-and-kaboodal.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/kit-and-kaboodal.webp",
     website: "https://www.kitandkaboodal.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/kit-and-kaboodal.jpg",
+        src: "./dist/images/brand/lifestyle/kit-and-kaboodal.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -195,12 +195,12 @@ const brands = [
     largeBlock: false,
     name: "Mutt Motorcycles",
     logo: "./dist/images/brand/logo/logo-mutt-motorcycles.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/mutt-motorcycles.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/mutt-motorcycles.webp",
     website: "https://muttmotorcycles.com/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/mutt-motorcycles.jpg",
+        src: "./dist/images/brand/lifestyle/mutt-motorcycles.webp",
         alt: "Mutt Motorcycles Gallery Image 1",
         caption: "Mutt Motorcycles Gallery Image 1"
       }
@@ -229,12 +229,12 @@ const brands = [
     largeBlock: false,
     name: "Medik8",
     logo: "./dist/images/brand/logo/logo-medik8.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/medik8.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/medik8.webp",
     website: "https://www.medik8.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/medik8.jpg",
+        src: "./dist/images/brand/lifestyle/medik8.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -267,12 +267,12 @@ const brands = [
     largeBlock: true,
     name: "Indu",
     logo: "./dist/images/brand/logo/logo-indu.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/indu.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/indu.webp",
     website: "https://indu.me/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/indu.jpg",
+        src: "./dist/images/brand/lifestyle/indu.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -302,12 +302,12 @@ const brands = [
     largeBlock: false,
     name: "BÉIS",
     logo: "./dist/images/brand/logo/logo-beis.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/beis.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/beis.webp",
     website: "https://uk.beistravel.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/beis.jpg",
+        src: "./dist/images/brand/lifestyle/beis.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -337,12 +337,12 @@ const brands = [
     largeBlock: true,
     name: "Pattern",
     logo: "./dist/images/brand/logo/logo-pattern.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/pattern.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/pattern.webp",
     website: "https://pattern.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/pattern.jpg",
+        src: "./dist/images/brand/lifestyle/pattern.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -371,22 +371,22 @@ const brands = [
     largeBlock: true,
     name: "St John",
     logo: "./dist/images/brand/logo/logo-st-john.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/st-john.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/st-john.webp",
     website: "https://www.stjohnknits.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/st-john.jpg",
+        src: "./dist/images/brand/lifestyle/st-john.webp",
         alt: "St John Gallery Image 1",
         caption: "St John Gallery Image 1"
       },
       {
-        src: "./dist/images/brand/lifestyle/st-john.jpg",
+        src: "./dist/images/brand/lifestyle/st-john.webp",
         alt: "St John Gallery Image 2",
         caption: "St John Gallery Image 2"
       },
       {
-        src: "./dist/images/brand/lifestyle/st-john.jpg",
+        src: "./dist/images/brand/lifestyle/st-john.webp",
         alt: "St John Gallery Image 3",
         caption: "St John Gallery Image 3"
       }
@@ -415,12 +415,12 @@ const brands = [
     largeBlock: false,
     name: "Kjaer Weis",
     logo: "./dist/images/brand/logo/logo-kjaer-weis.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/kjaer-weis.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/kjaer-weis.webp",
     website: "https://kjaerweis.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/kjaer-weis.jpg",
+        src: "./dist/images/brand/lifestyle/kjaer-weis.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -449,12 +449,12 @@ const brands = [
     largeBlock: true,
     name: "New Era",
     logo: "./dist/images/brand/logo/logo-new-era.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/new-era.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/new-era.webp",
     website: "https://www.neweracap.eu/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/new-era.jpg",
+        src: "./dist/images/brand/lifestyle/new-era.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -483,12 +483,12 @@ const brands = [
     largeBlock: false,
     name: "Rad",
     logo: "./dist/images/brand/logo/logo-rad.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/rad.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/rad.webp",
     website: "https://rad.co.uk/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/rad.jpg",
+        src: "./dist/images/brand/lifestyle/rad.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -517,12 +517,12 @@ const brands = [
     largeBlock: false,
     name: "Rhino Greenhouses",
     logo: "./dist/images/brand/logo/logo-rhino-greenhouses.png",
-    lifestyleImage: "./dist/images/brand/lifestyle/rhino-greenhouses.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/rhino-greenhouses.webp",
     website: "https://www.rhino.co.uk/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/rhino-greenhouses.jpg",
+        src: "./dist/images/brand/lifestyle/rhino-greenhouses.webp",
         alt: "Kit and Kaboodal Gallery Image 1",
         caption: "Kit and Kaboodal Gallery Image 1"
       }
@@ -551,12 +551,12 @@ const brands = [
     largeBlock: false,
     name: "Protectapet",
     logo: "./dist/images/brand/logo/logo-protectapet.png",
-    lifestyleImage: "./dist/images/brand/lifestyle/protectapet.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/protectapet.webp",
     website: "https://www.protectapet.com/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/protectapet.jpg",
+        src: "./dist/images/brand/lifestyle/protectapet.webp",
         alt: "Protectapet Gallery Image 1",
         caption: "Protectapet Gallery Image 1"
       }
@@ -585,12 +585,12 @@ const brands = [
     largeBlock: true,
     name: "& Sons",
     logo: "./dist/images/brand/logo/logo-and-sons.png",
-    lifestyleImage: "./dist/images/brand/lifestyle/and-sons.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/and-sons.webp",
     website: "https://andsons.co.uk/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/and-sons.jpg",
+        src: "./dist/images/brand/lifestyle/and-sons.webp",
         alt: "& Sons Gallery Image 1",
         caption: "& Sons Gallery Image 1"
       }
@@ -619,12 +619,12 @@ const brands = [
     largeBlock: false,
     name: "P&Co",
     logo: "./dist/images/brand/logo/logo-pandco.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/pandco.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/pandco.webp",
     website: "https://pandco.com/",
     agency: "Cake Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/pandco.jpg",
+        src: "./dist/images/brand/lifestyle/pandco.webp",
         alt: "P&Co Gallery Image 1",
         caption: "P&Co Gallery Image 1"
       }
@@ -653,12 +653,12 @@ const brands = [
     largeBlock: true,
     name: "Pangaia",
     logo: "./dist/images/brand/logo/logo-pangaia.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/pangaia.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/pangaia.webp",
     website: "https://pangaia.com/",
     agency: "Fostr",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/pangaia.jpg",
+        src: "./dist/images/brand/lifestyle/pangaia.webp",
         alt: "Pangaia Gallery Image 1",
         caption: "Pangaia Gallery Image 1"
       }
@@ -687,12 +687,12 @@ const brands = [
     largeBlock: false,
     name: "Bad Monday",
     logo: "./dist/images/brand/logo/logo-bad-monday.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/bad-monday.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/bad-monday.webp",
     website: "https://bad-monday.com/",
     agency: "Cage Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/bad-monday.jpg",
+        src: "./dist/images/brand/lifestyle/bad-monday.webp",
         alt: "Bad Monday Gallery Image 1",
         caption: "Bad Monday Gallery Image 1"
       }
@@ -721,12 +721,12 @@ const brands = [
     largeBlock: false,
     name: "Goose & Gander",
     logo: "./dist/images/brand/logo/logo-goose-and-gander.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/goose-and-gander.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/goose-and-gander.webp",
     website: "https://gooseandgander.com/",
     agency: "Cage Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/goose-and-gander.jpg",
+        src: "./dist/images/brand/lifestyle/goose-and-gander.webp",
         alt: "Goose and Gander Gallery Image 1",
         caption: "Goose and Gander Gallery Image 1"
       }
@@ -755,12 +755,12 @@ const brands = [
     largeBlock: false,
     name: "Dancing Leopard",
     logo: "./dist/images/brand/logo/logo-dancing-leopard.svg",
-    lifestyleImage: "./dist/images/brand/lifestyle/dancing-leopard.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/dancing-leopard.webp",
     website: "https://dancingleopard.com/",
     agency: "Cage Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/dancing-leopard.jpg",
+        src: "./dist/images/brand/lifestyle/dancing-leopard.webp",
         alt: "Dancing Leopard Gallery Image 1",
         caption: "Dancing Leopard Gallery Image 1"
       }
@@ -790,12 +790,12 @@ const brands = [
     largeBlock: false,
     name: "Flavour Blaster",
     logo: false,
-    lifestyleImage: "./dist/images/brand/lifestyle/flavour-blaster.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/flavour-blaster.webp",
     website: "https://flavourblaster.com/",
     agency: "Cage Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/flavour-blaster.jpg",
+        src: "./dist/images/brand/lifestyle/flavour-blaster.webp",
         alt: "Flavour Blaster Gallery Image 1",
         caption: "Flavour Blaster Gallery Image 1"
       }
@@ -824,12 +824,12 @@ const brands = [
     largeBlock: false,
     name: "304 Clothing",
     logo: false,
-    lifestyleImage: "./dist/images/brand/lifestyle/304-clothing.jpg",
+    lifestyleImage: "./dist/images/brand/lifestyle/304-clothing.webp",
     website: "https://304clothing.com/",
     agency: "Cage Agency",
     galleryImages: [
       {
-        src: "./dist/images/brand/lifestyle/304-clothing.jpg",
+        src: "./dist/images/brand/lifestyle/304-clothing.webp",
         alt: "304 Clothing Gallery Image 1",
         caption: "304 Clothing Gallery Image 1"
       }
