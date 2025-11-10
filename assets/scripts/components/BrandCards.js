@@ -40,8 +40,10 @@ class BrandCards extends HTMLElement {
     const fragment = document.createDocumentFragment();
 
     brands.forEach((brand) => {
-      // Generate WebP version of lifestyle image
+      // Generate WebP version of lifestyle image with responsive sizes
       const lifestyleImageWebP = brand.lifestyleImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
+      const lifestyleImageWebP400 = brand.lifestyleImage.replace(/\.(jpg|jpeg|png|webp)$/i, '-400w.webp');
+      const lifestyleImageWebP800 = brand.lifestyleImage.replace(/\.(jpg|jpeg|png|webp)$/i, '-800w.webp');
       
       // Replace template placeholders with brand data
       const cardHTML = templateHTML
@@ -49,6 +51,8 @@ class BrandCards extends HTMLElement {
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
         .replace(/{{\s*brand\.logoWidth\s*}}/g, brand.logoWidth || '')
         .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '')
+        .replace(/{{\s*brand\.lifestyleImageWebP400\s*}}/g, lifestyleImageWebP400)
+        .replace(/{{\s*brand\.lifestyleImageWebP800\s*}}/g, lifestyleImageWebP800)
         .replace(/{{\s*brand\.lifestyleImageWebP\s*}}/g, lifestyleImageWebP)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);

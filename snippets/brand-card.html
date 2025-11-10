@@ -10,10 +10,15 @@
     </div>
     <div class="brands__brand-lifestyle-image-wrapper">
       <picture>
-        <source type="image/webp" srcset="{{ brand.lifestyleImageWebP }}" />
+        <source type="image/webp" 
+          srcset="{{ brand.lifestyleImageWebP400 }} 400w,
+                  {{ brand.lifestyleImageWebP800 }} 800w,
+                  {{ brand.lifestyleImageWebP }} 1200w"
+          sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px" />
         <img class="brands__brand-lifestyle-image"
           src="{{ brand.lifestyleImage }}"
-          alt="{{ brand.name }} lifestyle image" />
+          alt="{{ brand.name }} lifestyle image"
+          loading="lazy" />
       </picture>
     </div>
     <modal-content-brand class="modal-content"
