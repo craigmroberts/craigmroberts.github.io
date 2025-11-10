@@ -11,14 +11,17 @@ node_modules/
 # Ignore build output
 build/
 
-# Track dist CSS/JS but ignore other dist files
+# Track dist CSS/JS/images but ignore other dist files
 dist/*
 !dist/styles/
 !dist/scripts/
+!dist/images/
 dist/styles/*
 !dist/styles/*.css
 dist/scripts/*
 !dist/scripts/*.js
+dist/images/*
+!dist/images/**/*
 
 # Ignore system files
 .DS_Store

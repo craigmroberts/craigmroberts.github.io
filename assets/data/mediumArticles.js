@@ -5,7 +5,7 @@ const mediumArticles = [
     href: "https://medium.com/@craigmroberts/google-lighthouse-core-web-vitals-for-shopify-part-1-introduction-1d450296b362?source=rss-8139e22cfdc4------2",
     guid: "https://medium.com/p/1d450296b362",
     author: "Craig Roberts",
-    imageSrc: "../assets/images/medium/article-1.jpg",
+    imageSrc: "../dist/images/medium/article-1.jpg",
     description: "Google Lighthouse & Core Web Vitals for Shopify: Part 1 — Introduction. Why Google Lighthouse Matters for Shopify Stores.",
     categories: [
       "core-web-vitals",
@@ -21,7 +21,7 @@ const mediumArticles = [
     href: "https://medium.com/@craigmroberts/creating-custom-scrollbars-for-your-website-as-a-web-component-a-workaround-for-ios-safari-c5f6def5b408?source=rss-8139e22cfdc4------2",
     guid: "https://medium.com/p/c5f6def5b408",
     author: "Craig Roberts",
-    imageSrc: "../assets/images/medium/article-2.jpg",
+    imageSrc: "../dist/images/medium/article-2.jpg",
     description: "Creating Custom Scrollbars for Your Website as a Web Component: A Workaround for iOS Safari Limitations with Jest Tests.",
     categories: [
       "web-components",
@@ -37,7 +37,7 @@ const mediumArticles = [
     href: "https://medium.com/@craigmroberts/discover-5-little-known-but-powerful-css-properties-c04c0d168dc6?source=rss-8139e22cfdc4------2",
     guid: "https://medium.com/p/c04c0d168dc6",
     author: "Craig Roberts",
-    imageSrc: "../assets/images/medium/article-3.jpg",
+    imageSrc: "../dist/images/medium/article-3.jpg",
     description: "Unlock the Full Potential of Your Web Development with These Must-Know CSS Properties for 2023.",
     categories: [
       "css3",
@@ -53,7 +53,7 @@ const mediumArticles = [
     href: "https://medium.com/@craigmroberts/setting-up-a-shopify-theme-development-environment-on-your-local-machine-using-theme-kit-154e446f78bd?source=rss-8139e22cfdc4------2",
     guid: "https://medium.com/p/154e446f78bd",
     author: "Craig Roberts",
-    imageSrc: "../assets/images/medium/article-4.jpg",
+    imageSrc: "../dist/images/medium/article-4.jpg",
     description: "Creating a Local Development Setup for Shopify Themes Using Theme Kit: A Step-by-Step Guide.",
     categories: [
       "shopify-plus",
@@ -69,7 +69,7 @@ const mediumArticles = [
     href: "https://medium.com/@craigmroberts/how-to-migrate-repositories-from-bitbucket-to-github-423aa22683b3?source=rss-8139e22cfdc4------2",
     guid: "https://medium.com/p/423aa22683b3",
     author: "Craig Roberts",
-    imageSrc: "../assets/images/medium/article-5.jpg",
+    imageSrc: "../dist/images/medium/article-5.jpg",
     description: "Effortlessly Transfer Your Bitbucket Repositories to GitHub: A Step-by-Step Guide.",
     categories: [
       "git",
