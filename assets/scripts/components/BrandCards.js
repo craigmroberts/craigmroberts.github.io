@@ -45,15 +45,29 @@ class BrandCards extends HTMLElement {
       const lifestyleImageWebP400 = brand.lifestyleImage.replace(/\.(jpg|jpeg|png|webp)$/i, '-400w.webp');
       const lifestyleImageWebP800 = brand.lifestyleImage.replace(/\.(jpg|jpeg|png|webp)$/i, '-800w.webp');
       
+      // Build srcset - always include 400w and full size
+      // Only include 800w for larger images (these are the ones that have 800w versions)
+      const largerImages = ['and-sons', 'bad-monday', 'kjaer-weis', 'medik8', 'pangaia', 'protectapet', 'pucci', 'rhino-greenhouses', 'st-john'];
+      const hasLargeSize = largerImages.some(name => brand.lifestyleImage.includes(name));
+      
+      const srcsetParts = [
+        `${lifestyleImageWebP400} 400w`
+      ];
+      
+      if (hasLargeSize) {
+        srcsetParts.push(`${lifestyleImageWebP800} 800w`);
+      }
+      
+      srcsetParts.push(`${lifestyleImageWebP} 1200w`);
+      const lifestyleImageSrcset = srcsetParts.join(', ');
+      
       // Replace template placeholders with brand data
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
         .replace(/{{\s*brand\.logoWidth\s*}}/g, brand.logoWidth || '')
         .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '')
-        .replace(/{{\s*brand\.lifestyleImageWebP400\s*}}/g, lifestyleImageWebP400)
-        .replace(/{{\s*brand\.lifestyleImageWebP800\s*}}/g, lifestyleImageWebP800)
-        .replace(/{{\s*brand\.lifestyleImageWebP\s*}}/g, lifestyleImageWebP)
+        .replace(/{{\s*brand\.lifestyleImageSrcset\s*}}/g, lifestyleImageSrcset)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);
 
