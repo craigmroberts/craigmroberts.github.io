@@ -22,6 +22,11 @@
   max-width: initial;
   grid-auto-flow: dense;
   align-items: baseline;
+  /* Reserve space to prevent CLS when cards load */
+  min-height: 2000px;
+  /* Improve rendering performance */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2000px;
 }
 
 .brands .large-block {
@@ -47,12 +52,14 @@
 
   .brands .brands__content brand-cards {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    min-height: 1800px;
   }
 }
 
 @media (min-width: 1024px) {
   .brands .brands__content brand-cards {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    min-height: 1600px;
   }
 }
 
