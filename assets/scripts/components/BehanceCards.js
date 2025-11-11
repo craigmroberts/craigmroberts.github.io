@@ -1,4 +1,5 @@
 import behanceProjects from '../../data/behanceProjects.js'; // Import Behance projects data
+import { lazyInitSwiper } from '../helpers/lazySwiper.js';
 
 /**
  * @class BehanceCards
@@ -113,59 +114,48 @@ class BehanceCards extends HTMLElement {
         }
       });
 
-      // Initialize Swiper on this custom element
-      // Use requestIdleCallback to defer non-critical initialization
-      const initSwiper = () => {
-        // Batch DOM operations with requestAnimationFrame
-        requestAnimationFrame(() => {
-          new Swiper(this, {
-            slidesPerView: 1.15,
-            spaceBetween: 24,
-            loop: projects.length > 1,
-            grabCursor: true,
-            freeModeMomentum: false,
-            autoplay: false,
-            lazy: {
-              loadPrevNext: true,
-              loadPrevNextAmount: 2,
+      // Lazy load and initialize Swiper when element is near viewport
+      lazyInitSwiper(this, (Swiper) => {
+        new Swiper(this, {
+          slidesPerView: 1.15,
+          spaceBetween: 24,
+          loop: projects.length > 1,
+          grabCursor: true,
+          freeModeMomentum: false,
+          autoplay: false,
+          lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
+          },
+          navigation: {
+            nextEl: '#behance-btn-next',
+            prevEl: '#behance-btn-previous',
+          },
+          // Optimize performance - reduce forced reflows
+          watchSlidesProgress: false,
+          watchSlidesVisibility: false,
+          observer: false,
+          observeParents: false,
+          observeSlideChildren: false,
+          // Use CSS scroll snap as fallback
+          cssMode: false,
+          // Responsive breakpoints
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 32,
             },
-            navigation: {
-              nextEl: '#behance-btn-next',
-              prevEl: '#behance-btn-previous',
+            968: {
+              slidesPerView: 3,
+              spaceBetween: 20,
             },
-            // Optimize performance - reduce forced reflows
-            watchSlidesProgress: false,
-            watchSlidesVisibility: false,
-            observer: false,
-            observeParents: false,
-            observeSlideChildren: false,
-            // Use CSS scroll snap as fallback
-            cssMode: false,
-            // Responsive breakpoints
-            breakpoints: {
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 32,
-              },
-              968: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1200: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-              },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 24,
             },
-          });
+          },
         });
-      };
-
-      // Use requestIdleCallback if available, otherwise fallback to setTimeout
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(initSwiper, { timeout: 2000 });
-      } else {
-        setTimeout(initSwiper, 100);
-      }
+      });
     } catch (error) {
       console.error('Error rendering Behance projects:', error);
       // Display an error message within the component

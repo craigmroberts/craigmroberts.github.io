@@ -1,7 +1,11 @@
-// Defer Swiper initialization to reduce forced reflow
-const initBrandsSwiper = () => {
-  // Use requestAnimationFrame to batch DOM reads/writes
-  requestAnimationFrame(() => {
+import { lazyInitSwiper } from '../helpers/lazySwiper.js';
+
+// Get the brands swiper element
+const brandsSwiper = document.querySelector('.brands-swiper');
+
+// Lazy load and initialize Swiper when element is near viewport
+if (brandsSwiper) {
+  lazyInitSwiper(brandsSwiper, (Swiper) => {
     new Swiper('.brands-swiper', {
       slidesPerView: 'auto',
       spaceBetween: 48,
@@ -24,12 +28,4 @@ const initBrandsSwiper = () => {
       observeSlideChildren: false,
     });
   });
-};
-
-// Use requestIdleCallback to defer initialization
-if ('requestIdleCallback' in window) {
-  requestIdleCallback(initBrandsSwiper, { timeout: 2000 });
-} else {
-  // Fallback for browsers without requestIdleCallback
-  setTimeout(initBrandsSwiper, 100);
 }

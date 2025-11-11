@@ -1,4 +1,5 @@
 import mediumArticles from '../../data/mediumArticles.js';
+import { lazyInitSwiper } from '../helpers/lazySwiper.js';
 import { debounce } from '../helpers/utils/debounce.js';
 
 /**
@@ -122,59 +123,48 @@ class MediumArticles extends HTMLElement {
       // Trigger potential text animations if the function exists
       window.animateText?.(this); // Run animation within the scope of this element
 
-      // Initialize Swiper on this custom element
-      // Use requestIdleCallback to defer non-critical initialization
-      const initSwiper = () => {
-        // Batch DOM operations with requestAnimationFrame
-        requestAnimationFrame(() => {
-          new Swiper(this, {
-            slidesPerView: 1.15,
-            spaceBetween: 24,
-            loop: articles.length > 1,
-            grabCursor: true,
-            freeModeMomentum: false,
-            autoplay: false,
-            lazy: {
-              loadPrevNext: true,
-              loadPrevNextAmount: 2,
+      // Lazy load and initialize Swiper when element is near viewport
+      lazyInitSwiper(this, (Swiper) => {
+        new Swiper(this, {
+          slidesPerView: 1.15,
+          spaceBetween: 24,
+          loop: articles.length > 1,
+          grabCursor: true,
+          freeModeMomentum: false,
+          autoplay: false,
+          lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 2,
+          },
+          navigation: {
+            nextEl: '#articles-btn-next',
+            prevEl: '#articles-btn-previous',
+          },
+          // Optimize performance - reduce forced reflows
+          watchSlidesProgress: false,
+          watchSlidesVisibility: false,
+          observer: false,
+          observeParents: false,
+          observeSlideChildren: false,
+          // Use CSS scroll snap as fallback
+          cssMode: false,
+          // Responsive breakpoints
+          breakpoints: {
+            768: {
+              slidesPerView: 2,
+              spaceBetween: 32,
             },
-            navigation: {
-              nextEl: '#articles-btn-next',
-              prevEl: '#articles-btn-previous',
+            968: {
+              slidesPerView: 3,
+              spaceBetween: 20,
             },
-            // Optimize performance - reduce forced reflows
-            watchSlidesProgress: false,
-            watchSlidesVisibility: false,
-            observer: false,
-            observeParents: false,
-            observeSlideChildren: false,
-            // Use CSS scroll snap as fallback
-            cssMode: false,
-            // Responsive breakpoints
-            breakpoints: {
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 32,
-              },
-              968: {
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1200: {
-                slidesPerView: 4,
-                spaceBetween: 24,
-              },
+            1200: {
+              slidesPerView: 4,
+              spaceBetween: 24,
             },
-          });
+          },
         });
-      };
-
-      // Use requestIdleCallback if available, otherwise fallback to setTimeout
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(initSwiper, { timeout: 2000 });
-      } else {
-        setTimeout(initSwiper, 100);
-      }
+      });
     } catch (error) {
       console.error('Error rendering Medium articles:', error);
       // Display an error message within the component

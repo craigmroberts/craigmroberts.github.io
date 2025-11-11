@@ -70,28 +70,31 @@ async function updateHtml() {
       );
     }
 
-    // Update JS references - both standard and preload
+    // Update JS references - main.js only (Swiper is lazy loaded)
     htmlContent = htmlContent
       .replace(
         /<script[^>]*src=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
         `<script defer src="${paths.js}"></script>`
       )
       .replace(
-        /<script[^>]*src=['"]\.\/dist\/scripts\/swiper\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
-        `<script defer src="${paths.swiper}"></script>`
-      )
-      .replace(
         /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/scripts\/main\.min\.v\d+\.\d+\.\d+\.js['"][^>]*>/g,
         `<link rel="preload" href="${paths.js}" as="script" />`
+      );
+    
+    // Remove any Swiper script tags since it's now lazy loaded
+    htmlContent = htmlContent
+      .replace(
+        /<script[^>]*src=['"]\.\/dist\/scripts\/swiper\.min\.v\d+\.\d+\.\d+\.js['"][^>]*><\/script>/g,
+        ''
       )
       .replace(
         /<link[^>]*rel="preload"[^>]*href=['"]\.\/dist\/scripts\/swiper\.min\.v\d+\.\d+\.\d+\.js['"][^>]*>/g,
-        `<link rel="preload" href="${paths.swiper}" as="script" />`
+        ''
       );
 
     // Verify changes - check for critical CSS link OR inline style tag
     const hasCriticalCSS = htmlContent.includes(paths.criticalCss) || htmlContent.includes('<style>:root{');
-    if (!hasCriticalCSS || !htmlContent.includes(paths.js) || !htmlContent.includes(paths.swiper)) {
+    if (!hasCriticalCSS || !htmlContent.includes(paths.js)) {
       throw new Error('Failed to update asset references in HTML');
     }
 
@@ -100,7 +103,7 @@ async function updateHtml() {
 Critical CSS: ${paths.criticalCss}
 Non-Critical CSS: ${paths.nonCriticalCss}
 JS: ${paths.js}
-Swiper: ${paths.swiper}`);
+Note: Swiper (${paths.swiper}) is lazy loaded when needed`);
 
   } catch (error) {
     console.error('Error updating HTML:', error);
