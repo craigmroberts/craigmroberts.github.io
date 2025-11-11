@@ -497,7 +497,7 @@ body.modal-open .main {
 .section[data-label]::before {
   background-size: 200% 100%;
   background-position: 0% 50%;
-  transition: background-position 1s ease, opacity 250ms ease-in-out, transform 250ms ease-in-out;
+  transition: opacity 250ms ease-in-out, transform 250ms ease-in-out;
 }
 
 .section.in-view[data-label]::before {
