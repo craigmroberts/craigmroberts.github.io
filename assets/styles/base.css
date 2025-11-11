@@ -142,28 +142,11 @@ a:hover { text-decoration: underline; }
 .space-between { justify-content: space-between; }
 .align-center { align-items: center; }
 
-@keyframes animate-gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+/* Removed non-composited gradient animations */
+/* Static gradients for better performance and no CLS */
 .animate {
   background-size: 200% 200%;
-  animation: animate-gradient 5s ease infinite;
-  will-change: background-position;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate {
-    animation: none;
-  }
+  /* Animation removed - background-position is not GPU-accelerated */
 }
 
 /* Buttons */
@@ -215,7 +198,7 @@ body:not(.keyboard-nav) *:focus-visible {
   background: var(--color-gradient-2);
   background-size: 200% 200%;
   background-position: 0% 50%;
-  transition: background-position 0.3s ease;
+  /* Removed non-composited background-position transition */
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
@@ -251,10 +234,11 @@ a,
   color: var(--color-text);
 }
 
+/* Removed non-composited text gradient animation */
 .text-gradient-1.animate,
 .text-gradient-2.animate {
   background-size: 200% 200%;
-  animation: animate-gradient 5s ease infinite;
+  /* animation removed - not GPU-accelerated */
 }
 
 /* Updated Button Gradient */
@@ -517,18 +501,12 @@ body.modal-open .main {
 }
 
 .section.in-view[data-label]::before {
-  animation: gradientScroll 4s linear infinite alternate;
+  /* Remove non-composited animation - use opacity fade instead */
+  opacity: 1;
 }
 
-/* Looping gradient background */
-@keyframes gradientScroll {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
+/* Removed non-composited gradientScroll animation */
+/* Background gradients are static for better performance */
 
 .logo {
   position: fixed;
@@ -550,32 +528,62 @@ body.modal-open .main {
 
 .status-icon--available {
   background-color: var(--color-accent-4);
-  box-shadow: 0 0 0 0 rgba(52, 168, 83, 1);
   animation: pulse-green 2s infinite;
+  /* Add pseudo-element for pulse effect */
+}
+
+.status-icon--available::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(52, 168, 83, 0.7);
+  animation: pulse-ring 2s infinite;
+  will-change: transform, opacity;
 }
 
 @keyframes pulse-green {
-  0% {
+  0%, 100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7);
   }
-  
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(52, 168, 83, 0);
   }
-  
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 0;
+  }
   100% {
-    transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(52, 168, 83, 0);
+    transform: scale(1);
+    opacity: 0;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .animate::before {
+    animation: none;
+  }
+  
   @keyframes pulse-green {
     0%, 100% {
       transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(52, 168, 83, 0.7);
+    }
+  }
+  
+  @keyframes pulse-ring {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 0;
     }
   }
 }
