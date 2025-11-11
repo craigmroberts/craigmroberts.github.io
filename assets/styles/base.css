@@ -38,25 +38,7 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-/* Skip link for accessibility */
-.skip-link {
-  position: absolute;
-  top: -50px;
-  left: 0;
-  background: var(--color-accent-1);
-  color: #000;
-  padding: 8px 16px;
-  text-decoration: none;
-  font-weight: bold;
-  z-index: 9999;
-  border-radius: 0 0 4px 0;
-}
-
-.skip-link:focus {
-  top: 0;
-  outline: 3px solid var(--color-accent-2);
-  outline-offset: 2px;
-}
+/* Skip link styles moved to critical.css to prevent CLS */
 
 /* Typography */
 h1, h2, h3, h4, h5, h6,
