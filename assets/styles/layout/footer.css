@@ -45,6 +45,10 @@ ul.footer__social {
   margin: auto 0;
 }
 
+.footer__links-container {
+  grid-row: span 2;
+}
+
 .footer__links {
   align-items: center;
   height: fit-content;
@@ -78,7 +82,7 @@ ul.footer__social {
 }
 
 /* RIGHT: Social and Info */
-ulul.footer__social {
+ul.footer__social {
   grid-column: 3 / 4;
   grid-row: 1 / 2;
   display: flex;
@@ -98,7 +102,7 @@ ul.footer__info {
 }
 
 ul.footer__social {
-  width: 242px;
+  width: 262px;
   margin-left: auto;
   justify-content: flex-start;
   margin-bottom: var(--space-sm);
@@ -140,7 +144,7 @@ ul.footer__social {
     margin: auto 0;
     justify-content: flex-end;
     height: fit-content;
-    grid-row: span 2;
+    grid-row: 1;
   }
 
   .footer__logo {

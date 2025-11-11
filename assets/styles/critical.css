@@ -261,7 +261,7 @@ body.modal-open .main {
 /* Skip link for accessibility */
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: 0;
   background: var(--color-accent-1);
   color: #000;
