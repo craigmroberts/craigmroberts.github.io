@@ -102,7 +102,7 @@ a:hover { text-decoration: underline; }
 }
 
 .section {
-  margin: var(--space-lg) 0;
+  margin: var(--space-lg) auto;
   background-color: var(--color-bg);
 }
 

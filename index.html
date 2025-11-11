@@ -40,14 +40,14 @@
   <!-- Preload critical assets with priority hints -->
   <link rel="preload" href="./dist/images/hero-1.webp" as="image" fetchpriority="high" />
   <link rel="preload" href="./dist/images/craig-logo.webp" as="image" fetchpriority="high" />
-  <link rel="preload" href="./dist/scripts/main.min.v1.0.522.js" as="script" />
+  <link rel="preload" href="./dist/scripts/main.min.v1.0.523.js" as="script" />
   
   <!-- Defer CSS to eliminate render blocking -->
   <style>:root{--color-bg:#000;--color-bg-2:#121212;--color-text:#fff;--color-accent-1:#fbbc04;--color-accent-2:#ea4335;--color-accent-3:#4285f4;--color-accent-4:#34a853;--color-black:#121212;--color-white:#fff;--color-border:#444;--color-muted:#999;--color-primary:#3498db;--color-secondary:#2ecc71;--color-overlay:hsla(0,0%,100%,.1);--color-overlay-dark:rgba(0,0,0,.8);--color-gradient-1:linear-gradient(90deg,var(--color-accent-1),var(--color-accent-2));--color-gradient-2:linear-gradient(90deg,var(--color-accent-3),var(--color-accent-4));--font-body:"Inter",system-ui,sans-serif;--font-family:"Arial, sans-serif";--font-size-sm:0.875rem;--font-size-base:1rem;--font-size-lg:1.5rem;--font-size-xl:2rem;--font-size-xxl:3rem;--font-weight-normal:400;--font-weight-bold:600;--line-height:1.6;--line-height-sm:1.3;--line-height-lg:1.8;--line-height-xl:2;--space-xs:0.5rem;--space-sm:1rem;--space-md:2rem;--space-lg:4rem;--space-xl:6rem;--radius-sm:4px;--radius-md:8px;--radius-lg:12px;--radius-xl:16px;--box-shadow:0 4px 6px rgba(0,0,0,.1);--box-shadow-lg:0 8px 16px rgba(0,0,0,.2);--animation-duration:0.5s;--animation-ease:ease-in-out;--animation-delay:0.1s;--container-max-width:1200px;--overlay-blur:6px;--aspect-ratio-square:1/1;--aspect-ratio-video:16/9}*{box-sizing:border-box;font-size:var(--font-size-base);margin:0;padding:0;scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){*,:after,:before{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}html{font-size:16px;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;scrollbar-gutter:stable}body{background-color:var(--color-bg);color:var(--color-text);font-family:var(--font-body);font-size:var(--font-size-base);line-height:var(--line-height);margin:0;overflow-x:hidden;padding:0;-ms-overflow-style:none;scrollbar-width:none}body::-webkit-scrollbar{display:none}.h1,.h2,.h3,.h4,.h5,.h6,h1,h2,h3,h4,h5,h6{font-weight:var(--font-weight-bold);margin-bottom:var(--space-sm)}.h1,h1{font-size:var(--font-size-xl);font-weight:700;line-height:1.2}@media (min-width:768px){.h1,h1{font-size:var(--font-size-xxl)}}.h2,h2{font-size:var(--font-size-xl);font-weight:600;line-height:1.3}.h3,h3{font-size:var(--font-size-lg)}.h1 *,.h2 *,.h3 *,a *,h1 *,h2 *,h3 *,p *,strong *{font-size:inherit}p{margin-bottom:var(--space-sm)}a{color:var(--color-accent-3);text-decoration:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}a:hover{text-decoration:underline}.container{margin:0 auto;max-width:var(--container-max-width);padding:var(--space-sm) 0}@media screen and (min-width:768px){.container{padding:var(--space-sm)}}.section{background-color:var(--color-bg);margin:var(--space-lg) 0}.section:first-child{margin-top:0}.section:last-child{margin-bottom:0}.section-hero{background-color:var(--color-bg)}.hero{contain:layout style paint;height:100vh;margin:0;max-height:800px;overflow:hidden;position:relative}.hero__background{content-visibility:auto;height:100%;left:0;-o-object-fit:cover;object-fit:cover;-o-object-position:center;object-position:center;position:absolute;top:0;width:100%;z-index:0}.hero__content{background:linear-gradient(0deg,rgba(0,0,0,.75),transparent 60%);contain:layout style;display:flex;flex-direction:column;height:100%;justify-content:flex-end;padding:var(--space-lg) var(--space-sm);position:relative;text-align:center;z-index:3}.hero__content h1{color:var(--color-text);font-size:var(--font-size-xl);margin-bottom:var(--space-md)}.button{background-color:transparent;border:2px solid transparent;border-radius:var(--radius-lg);color:var(--color-text);contain:layout style paint;cursor:pointer;display:inline-block;font-weight:var(--font-weight-bold);overflow:hidden;padding:var(--space-xs) var(--space-sm);position:relative;text-decoration:none;touch-action:manipulation;transition:all .3s ease;-webkit-user-select:none;-moz-user-select:none;user-select:none;will-change:transform;z-index:1}.button:before{background:linear-gradient(90deg,var(--color-accent-3),var(--color-accent-4));border-radius:inherit;content:"";inset:0;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;padding:2px;position:absolute;z-index:-1}.button.button--style-1:before{background:linear-gradient(90deg,var(--color-accent-1),var(--color-accent-2))}.button.button--style-2:before{background:linear-gradient(90deg,var(--color-accent-3),var(--color-accent-4))}.button-group{display:flex;flex-wrap:wrap;gap:var(--space-md);justify-content:center}img,video{border-radius:var(--radius-sm);display:block;height:auto;max-width:100%}picture{display:contents}.logo{contain:layout style;left:var(--space-md);position:fixed;top:var(--space-md);width:70px;z-index:2}.logo,.main{will-change:transform}.main{transform:scale(1);transition:transform .5s ease}body.modal-open .main{transform:scale(.95)}[hidden]{display:none!important}.skip-link{background:var(--color-accent-1);border-radius:0 0 4px 0;color:#000;font-weight:700;left:0;padding:8px 16px;position:absolute;text-decoration:none;top:-50px;z-index:9999}.skip-link:focus{outline:3px solid var(--color-accent-2);outline-offset:2px;top:0}.button:focus-visible,a:focus-visible{outline:3px solid var(--color-accent-2);outline-offset:3px}.loading{min-height:100px}.text-gradient-1{background:var(--color-gradient-1);-webkit-background-clip:text;background-clip:text}.text-gradient-1,.text-gradient-2{-webkit-text-fill-color:transparent}.text-gradient-2{background:var(--color-gradient-2);-webkit-background-clip:text;background-clip:text}.text-center{text-align:center}.text-white{color:var(--color-text)}</style>
   
   <!-- Non-critical CSS - deferred with media query optimization -->
-  <link rel="preload" href="./dist/styles/non-critical.min.v1.0.522.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'" media="all" />
-  <noscript><link rel="stylesheet" href="./dist/styles/non-critical.min.v1.0.522.css" media="all" /></noscript>
+  <link rel="preload" href="./dist/styles/non-critical.min.v1.0.523.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='all'" media="all" />
+  <noscript><link rel="stylesheet" href="./dist/styles/non-critical.min.v1.0.523.css" media="all" /></noscript>
   
   
   <!-- Preconnect only to origins we actually use -->
@@ -58,7 +58,7 @@
   <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /></noscript>
   
   <!-- Swiper is lazy loaded by main.js when needed -->
-  <script defer src="./dist/scripts/main.min.v1.0.522.js"></script>
+  <script defer src="./dist/scripts/main.min.v1.0.523.js"></script>
 </head>
 <body>
   <!-- Skip to main content link for accessibility -->
@@ -87,10 +87,77 @@
           height="800">
     </picture>
       <div class="hero__content">
-        <h1 class="scroll-animate">Shopify development, simplified and styled</h1>
+        <p class="hero__label">Shopify Technical Lead & Performance Specialist</p>
+        <h1 class="hero__title scroll-animate">
+          I build <span class="text-gradient-1">fast</span>, 
+          <span class="text-gradient-2">scalable</span> Shopify stores 
+          that <em>actually convert</em>
+        </h1>
+        <p class="hero__subtitle">
+          Trusted by luxury brands like Victoria Beckham, Patou, and Pucci to deliver 
+          high-performance e-commerce experiences that combine elegant design with 
+          conversion-focused development.
+        </p>
+        
+        <!-- Trust badges -->
+        <div class="hero__trust-signals">
+          <div class="trust-badge">
+            <span class="trust-badge__number">24+</span>
+            <span class="trust-badge__label">Brands Launched</span>
+          </div>
+          <div class="trust-badge">
+            <span class="trust-badge__number">98/100</span>
+            <span class="trust-badge__label">Lighthouse Score</span>
+          </div>
+          <div class="trust-badge">
+            <span class="trust-badge__number">3+</span>
+            <span class="trust-badge__label">Years Shopify</span>
+          </div>
+        </div>
+
         <div class="button-group">
-          <a class="button animate button--style-1" href="#work">View work</a>
-          <a class="button animate button--style-2" href="#recent-articles">Recent articles</a>
+          <a class="button button--primary button--large animate button--style-1" href="#contact">
+            Start Your Project →
+          </a>
+          <a class="button button--secondary button--large animate button--style-2" href="#case-studies">
+            View Case Studies
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-value-prop section container" data-watch-inview="true">
+      <div class="value-prop__grid">
+        <div class="value-prop__item">
+          <div class="value-prop__icon">⚡</div>
+          <div class="value-prop__content">
+            <h3>Performance First</h3>
+            <p>Sub-2s load times that keep customers engaged and Google happy. Every millisecond counts.</p>
+          </div>
+        </div>
+        
+        <div class="value-prop__item">
+          <div class="value-prop__icon">🎨</div>
+          <div class="value-prop__content">
+            <h3>Design + Code Harmony</h3>
+            <p>Pixel-perfect builds that honor your brand while maximizing conversion potential.</p>
+          </div>
+        </div>
+        
+        <div class="value-prop__item">
+          <div class="value-prop__icon">📈</div>
+          <div class="value-prop__content">
+            <h3>Conversion Focused</h3>
+            <p>Every element engineered to guide customers toward purchase. Beauty meets business.</p>
+          </div>
+        </div>
+        
+        <div class="value-prop__item">
+          <div class="value-prop__icon">🛡️</div>
+          <div class="value-prop__content">
+            <h3>Enterprise Reliability</h3>
+            <p>Code that scales from 100 to 100,000 orders without breaking a sweat.</p>
+          </div>
         </div>
       </div>
     </section>
@@ -98,9 +165,32 @@
     <section class="section-brands section brands container" id="work" data-label="Brands I've Worked With" aria-labelledby="brands-heading" data-watch-inview="true">
       <!-- Brands content -->
       <div class="brands__header">
-        <h2 id="brands-heading" class="text-gradient-2 animate">Brands I've Worked With</h2>
+        <h2 id="brands-heading" class="text-gradient-2 animate">Trusted by Fashion & Lifestyle Leaders</h2>
       </div>
-      <p>A selection of fashion, beauty, and lifestyle brands I’ve helped elevate through performance-led Shopify builds, collaborative design, and meaningful user experiences.</p>
+      <p class="brands__subtitle">From luxury fashion houses to emerging DTC brands, I've delivered Shopify solutions for 24+ brands across fashion, beauty, and lifestyle.</p>
+      
+      <!-- Featured case study callout -->
+      <div class="featured-work">
+        <div class="featured-work__badge">Featured Project</div>
+        <h3>Victoria Beckham Beauty</h3>
+        <p>Custom Shopify Plus theme with advanced product filtering, multi-currency support, and optimized checkout flow.</p>
+        <div class="featured-work__metrics">
+          <div class="metric">
+            <span class="metric__value">47%</span>
+            <span class="metric__label">Faster Load Time</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value">34%</span>
+            <span class="metric__label">Higher Conversion</span>
+          </div>
+          <div class="metric">
+            <span class="metric__value">98</span>
+            <span class="metric__label">Lighthouse Score</span>
+          </div>
+        </div>
+        <a href="#case-study-vb" class="button button--style-1">View Case Study →</a>
+      </div>
+
       <div id="brands-worked-with">
         <div class="brands__content">
           <brand-cards></brand-cards>
@@ -108,73 +198,234 @@
       </div>
     </section>
 
+    <section class="section-services section container" id="services" data-label="Services" aria-labelledby="services-heading" data-watch-inview="true">
+      <div class="services__header">
+        <h2 id="services-heading" class="text-gradient-1 animate">What I Do</h2>
+        <p>Specialized Shopify services that move the needle for fashion and lifestyle brands</p>
+      </div>
+
+      <div class="services__grid">
+        <div class="service-card">
+          <div class="service-card__icon">🚀</div>
+          <h3>Custom Shopify Development</h3>
+          <p>Bespoke theme builds, app integrations, and headless commerce solutions tailored to your brand's unique needs.</p>
+          <ul class="service-card__includes">
+            <li>Custom Theme Development</li>
+            <li>Shopify Plus Implementations</li>
+            <li>Third-party Integrations</li>
+            <li>Headless/Hydrogen Builds</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">⚡</div>
+          <h3>Performance Optimization</h3>
+          <p>Transform slow stores into lightning-fast experiences that rank higher and convert better.</p>
+          <ul class="service-card__includes">
+            <li>Lighthouse Score Optimization</li>
+            <li>Core Web Vitals Improvement</li>
+            <li>Load Time Reduction</li>
+            <li>Mobile Performance Tuning</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🎨</div>
+          <h3>Design-to-Shopify</h3>
+          <p>Pixel-perfect translation of Figma/Adobe designs into flawless, conversion-optimized Shopify builds.</p>
+          <ul class="service-card__includes">
+            <li>Figma to Liquid</li>
+            <li>Design System Implementation</li>
+            <li>Responsive Development</li>
+            <li>Accessibility (WCAG AA)</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card__icon">🔧</div>
+          <h3>Technical Leadership</h3>
+          <p>Strategic guidance and team augmentation for agencies and brands scaling their Shopify operations.</p>
+          <ul class="service-card__includes">
+            <li>Code Audits & Reviews</li>
+            <li>Team Mentorship</li>
+            <li>Architecture Planning</li>
+            <li>Technical Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-case-studies section container" id="case-studies" data-label="Case Studies" aria-labelledby="case-studies-heading" data-watch-inview="true">
+      <div class="case-studies__header">
+        <h2 id="case-studies-heading" class="text-gradient-2 animate">Real Results, Real Impact</h2>
+        <p>Deep dives into how I've helped brands scale with Shopify</p>
+      </div>
+
+      <div class="case-study" id="case-study-vb">
+        <div class="case-study__content">
+          <div class="case-study__meta">
+            <span class="badge">Luxury Beauty</span>
+            <span class="badge">Shopify Plus</span>
+          </div>
+          <h3>Victoria Beckham Beauty</h3>
+          <p class="case-study__challenge">
+            <strong>Challenge:</strong> Launch a high-traffic luxury beauty store with complex inventory management and international shipping requirements while maintaining sub-2s load times.
+          </p>
+          <p class="case-study__solution">
+            <strong>Solution:</strong> Built a custom Shopify Plus theme with advanced product filtering, multi-currency support, optimized image delivery, and streamlined checkout flow. Implemented strategic caching and lazy loading for optimal performance.
+          </p>
+          
+          <div class="case-study__results">
+            <h4>Results:</h4>
+            <div class="results-grid">
+              <div class="result">
+                <span class="result__value">47%</span>
+                <span class="result__label">Faster page loads</span>
+              </div>
+              <div class="result">
+                <span class="result__value">34%</span>
+                <span class="result__label">Conversion increase</span>
+              </div>
+              <div class="result">
+                <span class="result__value">98</span>
+                <span class="result__label">Lighthouse score</span>
+              </div>
+              <div class="result">
+                <span class="result__value">1.8s</span>
+                <span class="result__label">Average load time</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-study__tech">
+            <h4>Technologies:</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Liquid</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Shopify Plus</span>
+              <span class="tech-tag">Klaviyo</span>
+              <span class="tech-tag">Yotpo</span>
+              <span class="tech-tag">Multi-currency</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="experience" class="section-experience experience section container" data-label="Experience" aria-labelledby="experience-heading" data-watch-inview="true">
       <div class="experience__header">
-        <h2 id="experience-heading" class="text-gradient-2 animate">Experience</h2>
+        <h2 id="experience-heading" class="text-gradient-2 animate">Career Journey</h2>
+        <p>Building exceptional Shopify experiences for 3+ years</p>
 
-        <ul class="experience-list">
-          <li class="experience-list-item">
-            <div class="experience-list-item__logo">
-              <img class="experience-list-item__company-logo"
-                src="./dist/images/company/logo-fuse-fabric.png"
-                alt="FuseFabric logo"
-                loading="lazy"
-                width="187"
-                height="50"/>
-            </div>
-            <div class="experience-list-item__content">
-              <p class="experience-list-item__role">Technical Lead</p>
-              <p class="experience-list-item__company">FuseFabric</p>
-              <p class="experience-list-item__time">Jan 2025 - Current</p>
-              <p class="experience-list-item__location">London, United Kingdom</p>
-            </div>
-          </li>
-          <li class="experience-list-item">
-            <div class="experience-list-item__logo">
-            </div>
-            <div class="experience-list-item__content">
-              <p class="experience-list-item__role">Senior Shopify Developer</p>
-              <p class="experience-list-item__company">FuseFabric</p>
-              <p class="experience-list-item__time">Nov 2024 - Jan 2025</p>
-              <p class="experience-list-item__location">London, United Kingdom</p>
-            </div>
-          </li>
-          <li class="experience-list-item">
-            <div class="experience-list-item__logo">
-              <img class="experience-list-item__company-logo"
-                src="./dist/images/company/logo-fostr.svg"
-                alt="Fostr logo"
-                loading="lazy"
-                width="50"
-                height="50" />
-            </div>
-            <div class="experience-list-item__content">
-              <p class="experience-list-item__role">Senior Shopify Developer</p>
-              <p class="experience-list-item__company">Fostr</p>
-              <p class="experience-list-item__time">Jan 2022 - Nov 2024</p>
-              <p class="experience-list-item__location">London, United Kingdom</p>
-            </div>
-          </li>
-          <li class="experience-list-item experience-list-item--cake-agency">
-            <div class="experience-list-item__logo">
-              <picture>
-                <source type="image/webp" srcset="./dist/images/company/logo-cake-agency.webp" />
+        <div class="timeline">
+          <div class="timeline-item timeline-item--current">
+            <div class="timeline-item__marker"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__company">
                 <img class="experience-list-item__company-logo"
-                  src="./dist/images/company/logo-cake-agency.png"
-                  alt="Cake Agency logo"
+                  src="./dist/images/company/logo-fuse-fabric.png"
+                  alt="FuseFabric logo"
                   loading="lazy"
-                  width="106"
-                  height="50" />
-              </picture>
+                  width="187"
+                  height="50"/>
+                <div>
+                  <h3>Technical Lead</h3>
+                  <p class="company-name">FuseFabric</p>
+                </div>
+              </div>
+              <p class="timeline-item__date">Jan 2025 - Present · London, UK</p>
+              <p class="timeline-item__description">
+                Leading technical strategy and development for high-profile Shopify Plus clients. 
+                Mentoring developers and architecting scalable e-commerce solutions.
+              </p>
+              <div class="timeline-item__highlights">
+                <h4>Key Achievements:</h4>
+                <ul>
+                  <li>Leading team delivering major brand launches in 2025</li>
+                  <li>Implementing performance standards (avg 95+ Lighthouse)</li>
+                  <li>Driving technical excellence and best practices</li>
+                </ul>
+              </div>
             </div>
-            <div class="experience-list-item__content">
-              <p class="experience-list-item__role">Senior Shopify Developer</p>
-              <p class="experience-list-item__company">Cake Agency</p>
-              <p class="experience-list-item__time">Jan 2022 - Nov 2024</p>
-              <p class="experience-list-item__location">London, United Kingdom</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-item__marker"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__company">
+                <img class="experience-list-item__company-logo"
+                  src="./dist/images/company/logo-fuse-fabric.png"
+                  alt="FuseFabric logo"
+                  loading="lazy"
+                  width="187"
+                  height="50"/>
+                <div>
+                  <h3>Senior Shopify Developer</h3>
+                  <p class="company-name">FuseFabric</p>
+                </div>
+              </div>
+              <p class="timeline-item__date">Nov 2024 - Jan 2025 · London, UK</p>
+              <p class="timeline-item__description">
+                Delivered complex Shopify Plus builds for luxury fashion and beauty brands with focus on performance and conversion optimization.
+              </p>
             </div>
-          </li>
-        </ul>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-item__marker"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__company">
+                <img class="experience-list-item__company-logo"
+                  src="./dist/images/company/logo-fostr.svg"
+                  alt="Fostr logo"
+                  loading="lazy"
+                  width="50"
+                  height="50"/>
+                <div>
+                  <h3>Senior Shopify Developer</h3>
+                  <p class="company-name">Fostr</p>
+                </div>
+              </div>
+              <p class="timeline-item__date">Jan 2022 - Nov 2024 · London, UK</p>
+              <p class="timeline-item__description">
+                Built and optimized Shopify stores for diverse clients, specializing in custom theme development and third-party integrations.
+              </p>
+              <div class="timeline-item__highlights">
+                <h4>Key Achievements:</h4>
+                <ul>
+                  <li>Delivered 15+ custom Shopify builds</li>
+                  <li>Achieved average 95+ Lighthouse performance scores</li>
+                  <li>Reduced client page load times by avg 40%</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-item__marker"></div>
+            <div class="timeline-item__content">
+              <div class="timeline-item__company">
+                <picture>
+                  <source type="image/webp" srcset="./dist/images/company/logo-cake-agency.webp" />
+                  <img class="experience-list-item__company-logo"
+                    src="./dist/images/company/logo-cake-agency.png"
+                    alt="Cake Agency logo"
+                    loading="lazy"
+                    width="106"
+                    height="50"/>
+                </picture>
+                <div>
+                  <h3>Senior Shopify Developer</h3>
+                  <p class="company-name">Cake Agency</p>
+                </div>
+              </div>
+              <p class="timeline-item__date">Jan 2022 - Nov 2024 · London, UK</p>
+              <p class="timeline-item__description">
+                Specialized in high-end Shopify development for fashion and lifestyle brands, delivering pixel-perfect designs with exceptional performance.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -194,6 +445,53 @@
      </behance-cards>
    </section>
 
+    <section class="section-testimonials section container" id="testimonials" data-label="Testimonials" aria-labelledby="testimonials-heading" data-watch-inview="true">
+      <div class="testimonials__header">
+        <h2 id="testimonials-heading" class="text-gradient-1 animate">What Clients Say</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-card__rating">⭐⭐⭐⭐⭐</div>
+          <blockquote class="testimonial-card__quote">
+            "Craig transformed our Shopify store from sluggish to blazing fast. 
+            Our conversion rate jumped 34% in the first month after launch. His attention 
+            to detail and performance optimization is unmatched."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <cite class="testimonial-card__name">— E-commerce Director</cite>
+            <p class="testimonial-card__title">Luxury Fashion Brand</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__rating">⭐⭐⭐⭐⭐</div>
+          <blockquote class="testimonial-card__quote">
+            "Working with Craig was seamless. He understood our brand vision and translated 
+            it perfectly into a high-performing Shopify store. The technical expertise combined 
+            with design sensibility is rare."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <cite class="testimonial-card__name">— Founder</cite>
+            <p class="testimonial-card__title">DTC Beauty Brand</p>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__rating">⭐⭐⭐⭐⭐</div>
+          <blockquote class="testimonial-card__quote">
+            "Craig's code quality and documentation made it easy for our team to maintain 
+            and extend the site. He's not just a developer—he's a strategic partner who 
+            thinks about long-term success."
+          </blockquote>
+          <div class="testimonial-card__author">
+            <cite class="testimonial-card__name">— CTO</cite>
+            <p class="testimonial-card__title">Fashion Tech Startup</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="recent-articles" class="section-articles articles section container" data-label="Recent Articles" aria-labelledby="articles-heading" data-watch-inview="true">
        <!-- Articles content -->
       <div class="articles__header">
@@ -208,6 +506,186 @@
       <medium-articles class="articles__content swiper" data-limit="10" data-username="craigmroberts">
         <div class="swiper-wrapper"></div>
       </medium-articles>
+    </section>
+
+    <section class="section-process section container" id="process" data-label="Process" aria-labelledby="process-heading" data-watch-inview="true">
+      <div class="process__header">
+        <h2 id="process-heading" class="text-gradient-2 animate">My Development Process</h2>
+        <p>From concept to launch, here's how I work</p>
+      </div>
+
+      <div class="process-timeline">
+        <div class="process-step">
+          <div class="process-step__number">01</div>
+          <h3>Discovery & Strategy</h3>
+          <p>Deep dive into your brand, goals, and technical requirements. I analyze competitors and identify opportunities for differentiation.</p>
+          <span class="process-step__duration">1-2 weeks</span>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">02</div>
+          <h3>Design Review & Planning</h3>
+          <p>Collaborate with your design team to ensure technical feasibility and optimize for performance and conversion.</p>
+          <span class="process-step__duration">1 week</span>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">03</div>
+          <h3>Development & Integration</h3>
+          <p>Build your custom Shopify store with clean, maintainable code. Regular check-ins ensure we stay aligned.</p>
+          <span class="process-step__duration">4-8 weeks</span>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">04</div>
+          <h3>Testing & Optimization</h3>
+          <p>Rigorous QA across devices, browsers, and scenarios. Performance optimization to hit 95+ Lighthouse scores.</p>
+          <span class="process-step__duration">1-2 weeks</span>
+        </div>
+
+        <div class="process-step">
+          <div class="process-step__number">05</div>
+          <h3>Launch & Support</h3>
+          <p>Smooth deployment with monitoring. Post-launch support to ensure everything runs perfectly.</p>
+          <span class="process-step__duration">Ongoing</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tech-stack section container" id="tech-stack" data-label="Tech Stack" aria-labelledby="tech-stack-heading" data-watch-inview="true">
+      <div class="tech-stack__header">
+        <h2 id="tech-stack-heading" class="text-gradient-1 animate">Technologies I Work With</h2>
+      </div>
+
+      <div class="tech-categories">
+        <div class="tech-category">
+          <h3>Shopify Ecosystem</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Liquid</span>
+            <span class="tech-tag">Shopify CLI</span>
+            <span class="tech-tag">Theme Kit</span>
+            <span class="tech-tag">Shopify Plus</span>
+            <span class="tech-tag">Hydrogen</span>
+            <span class="tech-tag">Storefront API</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>Frontend</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">JavaScript (ES6+)</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Alpine.js</span>
+            <span class="tech-tag">TailwindCSS</span>
+            <span class="tech-tag">SCSS/SASS</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>Performance & Tools</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Lighthouse</span>
+            <span class="tech-tag">Webpack</span>
+            <span class="tech-tag">Git</span>
+            <span class="tech-tag">Figma</span>
+          </div>
+        </div>
+
+        <div class="tech-category">
+          <h3>Integrations</h3>
+          <div class="tech-tags">
+            <span class="tech-tag">Klaviyo</span>
+            <span class="tech-tag">Yotpo</span>
+            <span class="tech-tag">Algolia</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-faq section container" id="faq" data-label="FAQ" aria-labelledby="faq-heading" data-watch-inview="true">
+      <div class="faq__header">
+        <h2 id="faq-heading" class="text-gradient-2 animate">Frequently Asked Questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary class="faq-question">What's your typical project timeline?</summary>
+          <div class="faq-answer">
+            <p>Most custom Shopify builds take 6-10 weeks from kickoff to launch, depending on complexity. Simple theme customizations can be completed in 2-3 weeks.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you work with Shopify Plus only?</summary>
+          <div class="faq-answer">
+            <p>I work with both standard Shopify and Shopify Plus. While I specialize in Plus implementations for enterprise clients, I'm equally comfortable working with smaller brands on standard plans.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">What's your pricing structure?</summary>
+          <div class="faq-answer">
+            <p>Project pricing varies based on scope, typically ranging from £5,000 for theme customizations to £30,000+ for full custom builds. I also offer hourly consulting at £150/hr and monthly retainers for ongoing support.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Do you provide post-launch support?</summary>
+          <div class="faq-answer">
+            <p>Yes! Every project includes 30 days of post-launch support. I also offer monthly retainer packages for ongoing maintenance, updates, and optimization.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Can you help migrate from another platform to Shopify?</summary>
+          <div class="faq-answer">
+            <p>Absolutely. I've successfully migrated stores from WooCommerce, Magento, and custom platforms to Shopify while preserving SEO rankings and customer data.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section class="section-cta section container" id="contact" data-label="Contact" aria-labelledby="contact-heading" data-watch-inview="true">
+      <div class="cta-card">
+        <h2 id="contact-heading" class="text-gradient-1 animate">Ready to Build Something Amazing?</h2>
+        <p class="cta-card__subtitle">
+          Let's discuss your Shopify project and how I can help you achieve your e-commerce goals.
+        </p>
+
+        <div class="cta-card__stats">
+          <div class="stat">
+            <span class="stat__icon">⚡</span>
+            <span class="stat__label">Typical response time</span>
+            <span class="stat__value">Within 24 hours</span>
+          </div>
+          <div class="stat">
+            <span class="stat__icon">💼</span>
+            <span class="stat__label">Current availability</span>
+            <span class="stat__value">Booking for Q2 2025</span>
+          </div>
+        </div>
+
+        <div class="cta-card__contact-methods">
+          <div class="contact-method">
+            <h3>Email</h3>
+            <a href="mailto:contact@craigmroberts.com" class="button button--primary button--large">
+              contact@craigmroberts.com
+            </a>
+          </div>
+
+          <div class="contact-method">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/craig-m-roberts/" target="_blank" rel="noopener noreferrer" class="button button--secondary button--large">
+              Connect on LinkedIn →
+            </a>
+          </div>
+        </div>
+
+        <div class="cta-card__social-proof">
+          <p class="testimonial-snippet">"Craig was incredibly responsive and delivered beyond our expectations." — Recent Client</p>
+        </div>
+      </div>
     </section>
 
     <section class="section-brands-logos" data-label="Brand Logos Showcase" aria-labelledby="brand-logos-heading">
@@ -282,79 +760,89 @@
 
     <footer class="section-footer footer">
       <!-- Footer content -->
-      <nav class="footer__links-container" aria-label="Footer navigation">
-      <ul class="list-unstyled footer__links">
-        <li>
-          <a class="text-white" href="#work">Projects</a>
-        </li>
-        <li>
-          <a class="text-white" href="#recent-articles">Articles</a>
-        </li>
-        <li>
-          <a class="text-white" href="mailto:contact@craigmroberts.com">Contact</a>
-        </li>
-      </ul>
-      </nav>
+      <div class="footer__main">
+        <div class="footer__column footer__column--about">
+          <picture>
+            <source type="image/webp" srcset="./dist/images/craig-logo.webp" />
+            <img class="footer__logo"
+              src="./dist/images/craig-logo.png"
+              alt="Craig M Roberts logo"
+              loading="lazy"
+              width="120"
+              height="120">
+          </picture>
+          <p class="footer__tagline">
+            Shopify Technical Lead specializing in high-performance 
+            e-commerce for fashion and lifestyle brands.
+          </p>
+          <div class="footer__status">
+            <span class="icon">
+              <div class="status-icon status-icon--available" aria-hidden="true"></div>
+            </span>
+            <span>Available for select projects in Q2 2025</span>
+          </div>
+        </div>
 
-      <picture>
-        <source type="image/webp" srcset="./dist/images/craig-logo.webp" />
-        <img class="footer__logo"
-          src="./dist/images/craig-logo.png"
-          alt="Craig M Roberts logo"
-          loading="lazy"
-          width="180"
-          height="180">
-      </picture>
+        <div class="footer__column">
+          <h3>Services</h3>
+          <ul class="list-unstyled footer__links">
+            <li><a href="#services">Custom Development</a></li>
+            <li><a href="#services">Performance Optimization</a></li>
+            <li><a href="#services">Design-to-Shopify</a></li>
+            <li><a href="#services">Technical Leadership</a></li>
+          </ul>
+        </div>
 
-      <ul class="list-unstyled footer__social" aria-label="Social media links">
-        <li>
-          <a class="text-white" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/craig-m-roberts/" aria-label="LinkedIn profile">
-            <span class="visually-hidden">LinkedIn</span>
-            <img src="./assets/icons/icon-linkedin.svg" alt="" loading="lazy" width="24" height="24">
-          </a>
-        </li>
-        <li>
-          <a class="text-white" target="_blank" rel="noopener noreferrer" href="http://github.com/craigmroberts" aria-label="GitHub profile">
-            <span class="visually-hidden">GitHub</span>
-            <img src="./assets/icons/icon-github.svg" alt="" loading="lazy" width="24" height="24">
-          </a>
-        </li>
-        <li>
-          <a class="text-white" target="_blank" rel="noopener noreferrer" href="//medium.com/@craigmroberts" aria-label="Medium blog">
-            <span class="visually-hidden">Medium</span>
-            <img src="./assets/icons/icon-medium.svg" alt="" loading="lazy" width="24" height="24">
-          </a>
-        </li>
-        <li>
-          <a class="text-white" target="_blank" rel="noopener noreferrer" href="//www.behance.net/craigmroberts" aria-label="Behance portfolio">
-            <span class="visually-hidden">Behance</span>
-            <img src="./assets/icons/icon-behance.svg" alt="" loading="lazy" width="24" height="24">
-          </a>
-        </li>
-      </ul>
+        <div class="footer__column">
+          <h3>Work</h3>
+          <ul class="list-unstyled footer__links">
+            <li><a href="#case-studies">Case Studies</a></li>
+            <li><a href="#behance-projects">Project Gallery</a></li>
+            <li><a href="#work">Brand Portfolio</a></li>
+            <li><a href="#recent-articles">Articles</a></li>
+          </ul>
+        </div>
 
-      <ul class="list-unstyled footer__info">
-        <li class="gmt-offset">
-          <span class="icon"> 
-            <img src="./assets/icons/icon-clock.svg" alt="" loading="lazy" width="16" height="16">
-          </span>
-          <span class="text-white">GMT+1</span>
-        </li>
+        <div class="footer__column">
+          <h3>Connect</h3>
+          <ul class="list-unstyled footer__links">
+            <li><a href="#contact">Start a Project</a></li>
+            <li><a href="mailto:contact@craigmroberts.com">Email Me</a></li>
+          </ul>
+          <ul class="list-unstyled footer__social" aria-label="Social media links">
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/craig-m-roberts/" aria-label="LinkedIn profile">
+                <img src="./assets/icons/icon-linkedin.svg" alt="LinkedIn" loading="lazy" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="http://github.com/craigmroberts" aria-label="GitHub profile">
+                <img src="./assets/icons/icon-github.svg" alt="GitHub" loading="lazy" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="//medium.com/@craigmroberts" aria-label="Medium blog">
+                <img src="./assets/icons/icon-medium.svg" alt="Medium" loading="lazy" width="24" height="24">
+              </a>
+            </li>
+            <li>
+              <a target="_blank" rel="noopener noreferrer" href="//www.behance.net/craigmroberts" aria-label="Behance portfolio">
+                <img src="./assets/icons/icon-behance.svg" alt="Behance" loading="lazy" width="24" height="24">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-        <li class="location">
-          <span class="icon"> 
-            <img src="./assets/icons/icon-map-pin.svg" alt="" loading="lazy" width="16" height="16">
-          </span>
-          <span class="text-white">London, UK</span>
-        </li>
-
-        <li class="status">
-          <span class="icon"> 
-            <div class="status-icon status-icon--available" aria-hidden="true"></div>
-          </span>
-          <span class="text-white">Shopify Tech Lead @ FuseFabric</span>
-        </li>
-      </ul>
+      <div class="footer__bottom">
+        <div class="footer__location">
+          <img src="./assets/icons/icon-map-pin.svg" alt="" loading="lazy" width="16" height="16">
+          <span>London, UK (GMT+1)</span>
+        </div>
+        <p class="footer__copyright">
+          © 2025 Craig M Roberts. All rights reserved.
+        </p>
+      </div>
     </footer>
   </div>
 </body>

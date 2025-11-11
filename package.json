@@ -1,5 +1,5 @@
 {
-  "version": "1.0.522",
+  "version": "1.0.523",
   "dependencies": {
     "mustache": "^4.2.0"
   },

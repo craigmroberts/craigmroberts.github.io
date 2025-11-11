@@ -21,6 +21,9 @@
 @import "./utilities/scroll-animate.css";
 
 
-/* Sections */
+/* =========================
+   Sections
+   ========================= */
 @import "./sections/articles.css";
 @import "./sections/experience.css";
+@import "./sections/new-sections.css";

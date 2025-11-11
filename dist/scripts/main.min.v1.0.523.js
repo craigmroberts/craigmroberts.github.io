@@ -254,4 +254,4 @@ mustache/mustache.mjs:
    * http://github.com/janl/mustache.js
    *)
 */
-//# sourceMappingURL=main.min.v1.0.522.js.map
+//# sourceMappingURL=main.min.v1.0.523.js.map
