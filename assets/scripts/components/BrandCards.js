@@ -65,8 +65,8 @@ class BrandCards extends HTMLElement {
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
         .replace(/{{\s*brand\.logo\s*}}/g, brand.logo || '')
-        .replace(/{{\s*brand\.logoWidth\s*}}/g, brand.logoWidth || '')
-        .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '')
+        .replace(/{{\s*brand\.logoWidth\s*}}/g, brand.logoWidth || '120')
+        .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '40')
         .replace(/{{\s*brand\.lifestyleImageSrcset\s*}}/g, lifestyleImageSrcset)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
         .replace(/{{\s*brand\.name\s*}}/g, brand.name);
@@ -77,7 +77,7 @@ class BrandCards extends HTMLElement {
 
       const cardEl = wrapper.firstElementChild;
 
-      // Hide logo container if brand has no logo (batch style changes)
+      // Hide logo container if brand has no logo
       if (!brand.logo || brand.logo === false) {
         const logoContainer = cardEl.querySelector('.brands__brand-logo');
         if (logoContainer) {
