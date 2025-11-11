@@ -61,6 +61,14 @@ class BrandCards extends HTMLElement {
       srcsetParts.push(`${lifestyleImageWebP} 1200w`);
       const lifestyleImageSrcset = srcsetParts.join(', ');
       
+      // Calculate sizes attribute based on layout
+      // Mobile (< 768px): 2 columns, large block spans 2 = 100vw, normal = 50vw
+      // Tablet (768px - 1023px): ~3-4 columns, large block spans 2 = ~50vw, normal = ~25vw
+      // Desktop (≥ 1024px): ~4-6 columns, large block spans 2 = ~33vw, normal = ~16vw
+      const sizesAttribute = brand.largeBlock 
+        ? "(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+        : "(max-width: 767px) 50vw, (max-width: 1023px) 25vw, 16vw";
+      
       // Replace template placeholders with brand data
       const cardHTML = templateHTML
         .replace(/{{\s*brand\.key\s*}}/g, brand.id)
@@ -69,7 +77,8 @@ class BrandCards extends HTMLElement {
         .replace(/{{\s*brand\.logoHeight\s*}}/g, brand.logoHeight || '40')
         .replace(/{{\s*brand\.lifestyleImageSrcset\s*}}/g, lifestyleImageSrcset)
         .replace(/{{\s*brand\.lifestyleImage\s*}}/g, brand.lifestyleImage)
-        .replace(/{{\s*brand\.name\s*}}/g, brand.name);
+        .replace(/{{\s*brand\.name\s*}}/g, brand.name)
+        .replace(/{{\s*brand\.sizes\s*}}/g, sizesAttribute);
 
       // Create a wrapper to parse HTML string into DOM elements
       const wrapper = document.createElement('div');

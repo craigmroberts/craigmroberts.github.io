@@ -12,7 +12,7 @@
       <picture>
         <source type="image/webp" 
           srcset="{{ brand.lifestyleImageSrcset }}"
-          sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px" />
+          sizes="{{ brand.sizes }}" />
         <img class="brands__brand-lifestyle-image"
           src="{{ brand.lifestyleImage }}"
           alt="{{ brand.name }} lifestyle image"
